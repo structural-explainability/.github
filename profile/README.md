@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./logo.png" alt="Structural Explainability logo" width="220">
+</p>
+
 # Structural Explainability
 
 This work develops foundational structural constraints on ontological substrates
