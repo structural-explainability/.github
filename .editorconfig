@@ -1,37 +1,84 @@
-# .editorconfig (organization reference)
-# Ensures consistent formatting across all Civic Interconnect repos.
+# REQ.UNIVERSAL: All professional GitHub project repositories MUST include .editorconfig.
+# WHY: Establish a cross-editor baseline (VS Code, PyCharm, Vim, etc.) so diffs stay clean and formatting is consistent.
+# ALT: Repository may omit .editorconfig ONLY if formatting is enforced equivalently by CI + formatter tooling.
+# CUSTOM: Adjust indent_size defaults only if organizational standards change; keep stable across projects.
 
 root = true
 
+# === Global defaults ===
+
 [*]
-charset = utf-8
+# WHY: Normalize line endings and encoding across Windows, macOS, and Linux.
 end_of_line = lf
-indent_style = space
-indent_size = 4
+charset = utf-8
+
+# WHY: Newline at EOF avoids noisy diffs and tool warnings.
 insert_final_newline = true
+
+# WHY: Remove accidental whitespace noise in diffs.
 trim_trailing_whitespace = true
 
-# Markdown - allow trailing whitespace for line breaks
+# WHY: Default to 2 spaces for configs and markup; language-specific overrides follow.
+indent_style = space
+indent_size = 2
+
+# === Markup ===
+
 [*.md]
-trim_trailing_whitespace = false
-
-# YAML / JSON - 2 spaces (common in tooling)
-[*.yml]
+# WHY: Keep Markdown clean; use explicit <br> for hard line breaks.
 indent_size = 2
+trim_trailing_whitespace = true
 
-[*.yaml]
+[*.{tex,cls,sty}]
+# WHY: LaTeX convention is 2 spaces.
 indent_size = 2
+indent_style = space
 
-[*.json]
+[*.xml]
+# WHY: XML convention is 2 spaces.
 indent_size = 2
+indent_style = space
 
-# JavaScript / TypeScript
-[*.js]
+[*.{yml,yaml}]
+# WHY: YAML convention is 2 spaces.
 indent_size = 2
+indent_style = space
 
-[*.ts]
+# === Data and config ===
+
+[*.{json,jsonc,jsonl,ndjson}]
+# WHY: JSON tooling typically expects 2 spaces.
 indent_size = 2
+indent_style = space
 
-# TOML (pyproject)
 [*.toml]
+# WHY: TOML often follows 4-space indentation in many projects.
 indent_size = 4
+indent_style = space
+
+# === Code ===
+
+[*.{js,ts}]
+# WHY: JS/TS ecosystem commonly uses 2 spaces.
+indent_size = 2
+indent_style = space
+
+[*.{py,pyi}]
+# WHY: Python convention is 4 spaces.
+indent_size = 4
+indent_style = space
+
+[*.ps1]
+# WHY: PowerShell convention is 4 spaces.
+indent_size = 4
+indent_style = space
+
+[*.{c,cpp,h,java,cs,go,rs}]
+# WHY: Many C-family and systems languages commonly use 4 spaces (project-dependent).
+indent_size = 4
+indent_style = space
+
+[*.{sh,bash}]
+# WHY: Shell script convention is 2 spaces.
+indent_size = 2
+indent_style = space
