@@ -15,8 +15,7 @@ It establishes what must be true of any such substrate prior to concrete ontolog
 | [AccountableEntities (Lean 4)](https://github.com/structural-explainability/AccountableEntities) | Entity-regime instantiation | ![CI](https://github.com/structural-explainability/AccountableEntities/actions/workflows/ci.yml/badge.svg?branch=main) | Formalizes the bijective mapping from named accountable entity kinds to the six necessary and sufficient identity regimes established in the Structural Explainability framework. |
 | [ExchangeProtocol (Lean 4)](https://github.com/structural-explainability/ExchangeProtocol) | Structural records & exchange substrate | ![CI](https://github.com/structural-explainability/ExchangeProtocol/actions/workflows/ci.yml/badge.svg?branch=main) | Defines the neutral, time-parametric record structures (entity, relationship, exchange) and envelopes required to represent accountable exchanges without embedding causal, normative, or domain semantics. |
 | [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate) | Paper companion | Submitted | Narrative exposition of the neutrality result and its formal proof. |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes) | Paper companion | | [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate) | Paper companion | Submitted | Narrative exposition of the neutrality result and its formal proof. |
- | Narrative exposition of the identity-regimes result and its formal proof. |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes) | Paper companion | Submitted | Narrative exposition of the identity-regimes result and its formal proof. |
 
 ## Overview
 
