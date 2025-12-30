@@ -1,11 +1,10 @@
-<table>
-<tr>
-<td width="100"><img src="./logo_no_text.png" alt="Structural Explainability logo" width="80"></td>
-<td><em>We define the neutral constraints under which explainability is possible without embedding interpretation.</em></td>
-</tr>
-</table>
-
 # Structural Explainability
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Build Status](https://github.com/structural-explainability/.github/actions/workflows/ci.yml/badge.svg)
+[![Check Links](https://github.com/structural-explainability/.github/actions/workflows/links.yml/badge.svg)](https://github.com/structural-explainability/.github/actions/workflows/links.yml)
+
+> Defines neutral constraints under which explainability is possible without embedding interpretation.
 
 Structural Explainability defines the minimal, stable constraints
 under which identity, structure, change, explanation, and persistent disagreement
@@ -17,57 +16,6 @@ legal, political, scientific, or normative frameworks.
 
 This organization contains specifications, formalizations, and papers
 that define, justify, and defend that neutral space.
-
-## Core Statement
-
-Structural Explainability defines a neutral structural substrate
-that enables explainability by preserving identity, structure, and change
-while allowing disagreement to remain external, attributable, and unresolved.
-
-At its core, Structural Explainability is concerned with identity.
-Stable identity is the precondition for explanation, provenance, and disagreement over time.
-Identity must persist independently of interpretation, authority, or consensus.
-
-Structural Explainability defines the complete admissible space of representation.
-It simultaneously bounds what representation must not do and
-contains all representation that is permitted.
-Within this space, identity, structure, and change may be recorded,
-while interpretation, explanation, and judgment are constrained
-to remain external to the substrate.
-
-**Accountable Entities** define identity regimes
-that allow entities to persist across time and change.
-**Exchange Protocol** defines the evolution of structural relationships among those entities,
-recording change without embedding explanation.
-Together, they form the structural substrate.
-
-**Contextual Evidence & Explanations** provide the structural interface
-by which external interpretation may be attached to, referenced from, and reasoned about,
-without entering or contaminating the substrate.
-Context tags, explanations, attestations, and provenance are not facts about the world;
-they are structured references to interpretive acts that occur outside the substrate.
-
-Interpretation does not disappear.
-It is made explicit, attributable, and contestable.
-Structural Explainability is not anti-interpretation;
-it is anti-implicit interpretation.
-Elements of interpretation may exist only in forms
-that do not alter identity, structure, or recorded change.
-
-Structural Explainability is designed for plural systems:
-independent implementations that represent the same phenomena in different ways.
-Uniform naming, shared ontologies, or centralized authority are not required.
-Differences are addressed through explicit, accountable mappings
-rather than forced normalization or consensus.
-
-Domains such as science, model development, and law do not alter the substrate.
-They specialize explanation by contributing controlled vocabularies for contextual scoping.
-These vocabularies are constrained by Structural Explainability and
-do not assert truth, causality, or normativity.
-
-The result is a system that records reality without deciding its meaning,
-enables explanation without enforcing agreement, and
-supports long-term coordination across disagreement, institutional change, and time.
 
 ## Organization Structure
 
@@ -163,3 +111,56 @@ Domain projects may claim conformance with these specifications, but are outside
 - **To implement Structural Explainability**, start with the specifications.
 - **To understand the justification**, start with the papers.
 - **To verify coherence**, consult the Lean formalizations.
+
+## Core Statement
+
+Structural Explainability defines a neutral structural substrate
+that enables explainability by preserving identity, structure, and change
+while allowing disagreement to remain external, attributable, and unresolved.
+
+At its core, Structural Explainability is concerned with identity.
+Stable identity is the precondition for explanation, provenance, and disagreement over time.
+Identity must persist independently of interpretation, authority, or consensus.
+
+Structural Explainability defines the complete admissible space of representation.
+It simultaneously bounds what representation must not do and
+contains all representation that is permitted.
+Within this space, identity, structure, and change may be recorded,
+while interpretation, explanation, and judgment are constrained
+to remain external to the substrate.
+
+- **Accountable Entities** define identity regimes
+that allow entities to persist across time and change.
+- **Exchange Protocol** defines the evolution of structural relationships among those entities,
+recording change without embedding explanation.
+
+Together, they form the structural substrate.
+
+- **Contextual Evidence & Explanations** provide the structural interface
+by which external interpretation may be attached to, referenced from, and reasoned about,
+without entering or contaminating the substrate.
+- Context tags, explanations, attestations, and provenance are not facts about the world;
+they are structured references to interpretive acts that occur outside the substrate.
+
+Interpretation does not disappear.
+It is made explicit, attributable, and contestable.
+
+Structural Explainability is not anti-interpretation;
+it is anti-implicit interpretation.
+Elements of interpretation may exist only in forms
+that do not alter identity, structure, or recorded change.
+
+Structural Explainability is designed for plural systems:
+independent implementations that represent the same phenomena in different ways.
+Uniform naming, shared ontologies, or centralized authority are not required.
+Differences are addressed through explicit, accountable mappings
+rather than forced normalization or consensus.
+
+Domains such as science, model development, and law do not alter the substrate.
+They specialize explanation by contributing controlled vocabularies for contextual scoping.
+These vocabularies are constrained by Structural Explainability and
+do not assert truth, causality, or normativity.
+
+The result is a system that records reality without deciding its meaning,
+enables explanation without enforcing agreement, and
+supports long-term coordination across disagreement, institutional change, and time.
