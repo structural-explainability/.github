@@ -19,13 +19,16 @@ that define, justify, and defend that neutral space.
 
 ## Organization Structure
 
-This organization is structured around three roles:
+This organization is structured around roles:
 
-| Role               | Purpose                                                   |
-| ------------------ | --------------------------------------------------------- |
-| **Specifications** | Define what must be true for admissibility                |
-| **Formalizations** | Demonstrate internal coherence and consistency            |
-| **Papers**         | Justify why the constraints are necessary and unavoidable |
+| Role                                            | Purpose                                                   |
+| ----------------------------------------------- | --------------------------------------------------------- |
+| [**Specifications**](#normative-specifications) | Define what must be true for admissibility                |
+| [**Formalizations**](#formalizations)           | Demonstrate that specifications are internally consistent |
+| [**Foundations**](#foundations)                 | Establish the underlying theoretical results              |
+| [**Papers**](#papers)                           | Justify why the constraints are necessary and unavoidable |
+| **Boundaries & Overlays** | Define how interpretation may attach without entering the substrate |
+
 
 ## Normative Specifications
 
@@ -40,10 +43,11 @@ They are normative only in the sense of defining constraints, not interpretation
 | [spec-ep](https://github.com/structural-explainability/spec-ep)   | Graph evolution over accountable entities                          | Normative |
 | [spec-cee](https://github.com/structural-explainability/spec-cee) | Contextual interfaces for explanation, attestation, and provenance | Normative |
 
-## Formal Reference Implementations (Lean)
+## Formalizations
 
-These repositories do not define meaning or behavior.
-They demonstrate that the specifications are internally consistent and composable.
+These repositories **do not define meaning or behavior**.
+They demonstrate that the specifications are internally consistent,
+coherent, and composable under formal reasoning.
 
 | Repository                                                                                        | Purpose                     | CI                                                                                                                          | Description                           |
 | ------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
@@ -51,7 +55,7 @@ They demonstrate that the specifications are internally consistent and composabl
 | [ExchangeProtocol](https://github.com/structural-explainability/ExchangeProtocol)                 | Neutral exchange substrate  | ![CI](https://github.com/structural-explainability/ExchangeProtocol/actions/workflows/ci.yml/badge.svg?branch=main)         | Formalization of EP graph evolution   |
 | [StructuralExplainability](https://github.com/structural-explainability/StructuralExplainability) | Cross-cutting constraints   | ![CI](https://github.com/structural-explainability/StructuralExplainability/actions/workflows/ci.yml/badge.svg?branch=main) | Neutrality and conformance predicates |
 
-## Foundations (Lean)
+## Foundations
 
 | Repository                                                                        | Purpose            | CI                                                                                                                  | Description                                                                                                                           |
 | --------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
@@ -68,17 +72,18 @@ They are explanatory, not normative.
 | [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate) | Neutrality theorem | Submitted | Narrative exposition of the neutrality theorem and its formal proof, establishing design constraints for neutral representational substrates |
 | [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)   | Identity regimes   | Submitted | Narrative exposition of the identity-regimes result and its formal justification                                                             |
 
-## Incubating Work
+## Boundary and Overlay Specifications
 
-These are in-progress structural layers or boundary definitions.
+These repositories define **additional structural layers or boundaries**
+that operate relative to the neutral substrate.
+They do not alter identity, structure, or recorded change.
 
-| Repository                                                                                    | Purpose                           | Status     | Description                                                                                                                                                                    |
-| --------------------------------------------------------------------------------------------- | --------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [ContextualEvidence](https://github.com/structural-explainability/ContextualEvidence)         | Explanation substrate             | Draft      | Neutral structural forms for explanations, evidence groupings, and contextual justification, without asserting causal models, normative judgments, or interpretive conclusions |
-| [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Substrate-interpretation boundary | Conceptual | Boundary conditions under which external legal, ethical, or policy frameworks may interpret or profile substrate records without altering the structural core                  |
+| Repository | Purpose | Status | Description |
+| --- | --- | --- | --- |
+| CEE | Explanation overlay | Draft | Structural forms for contextual explanation and evidence |
+| InterpretationBoundary | Interpretation boundary | Conceptual | Conditions under which external frameworks may interpret substrate records |
 
-
-## Dissemination
+## Template (SE Appendix)
 
 | Repository                                                                                | Purpose                                | Status |
 | ----------------------------------------------------------------------------------------- | -------------------------------------- | ------ |
@@ -130,17 +135,17 @@ while interpretation, explanation, and judgment are constrained
 to remain external to the substrate.
 
 - **Accountable Entities** define identity regimes
-that allow entities to persist across time and change.
+  that allow entities to persist across time and change.
 - **Exchange Protocol** defines the evolution of structural relationships among those entities,
-recording change without embedding explanation.
+  recording change without embedding explanation.
 
 Together, they form the structural substrate.
 
 - **Contextual Evidence & Explanations** provide the structural interface
-by which external interpretation may be attached to, referenced from, and reasoned about,
-without entering or contaminating the substrate.
+  by which external interpretation may be attached to, referenced from, and reasoned about,
+  without entering or contaminating the substrate.
 - Context tags, explanations, attestations, and provenance are not facts about the world;
-they are structured references to interpretive acts that occur outside the substrate.
+  they are structured references to interpretive acts that occur outside the substrate.
 
 Interpretation does not disappear.
 It is made explicit, attributable, and contestable.
