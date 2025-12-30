@@ -1,65 +1,165 @@
-<p align="center">
-  <img src="./logo_no_text.png" alt="Structural Explainability logo" width="220">
-</p>
+<table>
+<tr>
+<td width="100"><img src="./logo_no_text.png" alt="Structural Explainability logo" width="80"></td>
+<td><em>We define the neutral constraints under which explainability is possible without embedding interpretation.</em></td>
+</tr>
+</table>
 
 # Structural Explainability
 
-This work develops foundational structural constraints on ontological substrates
-intended to support accountability and interoperability 
-under persistent interpretive disagreement.
-It establishes what must be true of any such substrate 
-prior to concrete ontology design or implementation.
+Structural Explainability defines the minimal, stable constraints
+under which identity, structure, change, explanation, and persistent disagreement
+can coexist over time without embedding interpretation.
 
-### Foundational Results
+It characterizes the representational conditions required for explainability
+to remain possible across incompatible
+legal, political, scientific, or normative frameworks.
 
-| Artifact | Focus | Status | Description |
-|--------|-------|--------|-------------|
-| [NeutralSubstrate (Lean 4)](https://github.com/structural-explainability/NeutralSubstrate) | Ontological neutrality constraint | ![CI](https://github.com/structural-explainability/NeutralSubstrate/actions/workflows/ci.yml/badge.svg?branch=main) | Proves an impossibility result: substrates stable under incompatible extensions must be pre-causal and pre-normative. |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate) | Paper companion | Submitted | Narrative exposition of the neutrality theorem and its formal proof, establishing the design constraints for any neutral representational substrate. |
-| [IdentityRegimes (Lean 4)](https://github.com/structural-explainability/IdentityRegimes) | Identity & persistence necessity | ![CI](https://github.com/structural-explainability/IdentityRegimes/actions/workflows/ci.yml/badge.svg?branch=main) | Shows that exactly six identity-and-persistence regimes are necessary and sufficient for accountability-oriented substrates under neutrality assumptions. |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes) | Paper companion | Submitted | Narrative exposition of the identity-regimes result and its formal justification. |
+This organization contains specifications, formalizations, and papers
+that define, justify, and defend that neutral space.
+
+## Core Statement
+
+Structural Explainability defines a neutral structural substrate
+that enables explainability by preserving identity, structure, and change
+while allowing disagreement to remain external, attributable, and unresolved.
+
+At its core, Structural Explainability is concerned with identity.
+Stable identity is the precondition for explanation, provenance, and disagreement over time.
+Identity must persist independently of interpretation, authority, or consensus.
+
+Structural Explainability defines the complete admissible space of representation.
+It simultaneously bounds what representation must not do and
+contains all representation that is permitted.
+Within this space, identity, structure, and change may be recorded,
+while interpretation, explanation, and judgment are constrained
+to remain external to the substrate.
+
+**Accountable Entities** define identity regimes
+that allow entities to persist across time and change.
+**Exchange Protocol** defines the evolution of structural relationships among those entities,
+recording change without embedding explanation.
+Together, they form the structural substrate.
+
+**Contextual Evidence & Explanations** provide the structural interface
+by which external interpretation may be attached to, referenced from, and reasoned about,
+without entering or contaminating the substrate.
+Context tags, explanations, attestations, and provenance are not facts about the world;
+they are structured references to interpretive acts that occur outside the substrate.
+
+Interpretation does not disappear.
+It is made explicit, attributable, and contestable.
+Structural Explainability is not anti-interpretation;
+it is anti-implicit interpretation.
+Elements of interpretation may exist only in forms
+that do not alter identity, structure, or recorded change.
+
+Structural Explainability is designed for plural systems:
+independent implementations that represent the same phenomena in different ways.
+Uniform naming, shared ontologies, or centralized authority are not required.
+Differences are addressed through explicit, accountable mappings
+rather than forced normalization or consensus.
+
+Domains such as science, model development, and law do not alter the substrate.
+They specialize explanation by contributing controlled vocabularies for contextual scoping.
+These vocabularies are constrained by Structural Explainability and
+do not assert truth, causality, or normativity.
+
+The result is a system that records reality without deciding its meaning,
+enables explanation without enforcing agreement, and
+supports long-term coordination across disagreement, institutional change, and time.
+
+## Organization Structure
+
+This organization is structured around three roles:
+
+| Role               | Purpose                                                   |
+| ------------------ | --------------------------------------------------------- |
+| **Specifications** | Define what must be true for admissibility                |
+| **Formalizations** | Demonstrate internal coherence and consistency            |
+| **Papers**         | Justify why the constraints are necessary and unavoidable |
+
+## Normative Specifications
+
+These repositories define the admissible representational space
+for structurally explainable systems.
+They are normative only in the sense of defining constraints, not interpretations.
+
+| Repository                                                        | Purpose                                                            | Status    |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------ | --------- |
+| [spec-se](https://github.com/structural-explainability/spec-se)   | Neutrality and boundary constraints of Structural Explainability   | Normative |
+| [spec-ae](https://github.com/structural-explainability/spec-ae)   | Accountable Entities and identity regimes                          | Normative |
+| [spec-ep](https://github.com/structural-explainability/spec-ep)   | Graph evolution over accountable entities                          | Normative |
+| [spec-cee](https://github.com/structural-explainability/spec-cee) | Contextual interfaces for explanation, attestation, and provenance | Normative |
+
+## Formal Reference Implementations (Lean)
+
+These repositories do not define meaning or behavior.
+They demonstrate that the specifications are internally consistent and composable.
+
+| Repository                                                                                        | Purpose                     | CI                                                                                                                          | Description                           |
+| ------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| [AccountableEntities](https://github.com/structural-explainability/AccountableEntities)           | Entity-regime instantiation | ![CI](https://github.com/structural-explainability/AccountableEntities/actions/workflows/ci.yml/badge.svg?branch=main)      | Formalization of AE identity regimes  |
+| [ExchangeProtocol](https://github.com/structural-explainability/ExchangeProtocol)                 | Neutral exchange substrate  | ![CI](https://github.com/structural-explainability/ExchangeProtocol/actions/workflows/ci.yml/badge.svg?branch=main)         | Formalization of EP graph evolution   |
+| [StructuralExplainability](https://github.com/structural-explainability/StructuralExplainability) | Cross-cutting constraints   | ![CI](https://github.com/structural-explainability/StructuralExplainability/actions/workflows/ci.yml/badge.svg?branch=main) | Neutrality and conformance predicates |
+
+## Foundations (Lean)
+
+| Repository                                                                        | Purpose            | CI                                                                                                                  | Description                                                                                                                           |
+| --------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| [NeutralSubstrate](https://github.com/structural-explainability/NeutralSubstrate) | Neutrality theorem | ![CI](https://github.com/structural-explainability/NeutralSubstrate/actions/workflows/ci.yml/badge.svg?branch=main) | Substrates stable under incompatible extensions must be pre-causal and pre-normative                                                  |
+| [IdentityRegimes](https://github.com/structural-explainability/IdentityRegimes)   | Identity regimes   | ![CI](https://github.com/structural-explainability/IdentityRegimes/actions/workflows/ci.yml/badge.svg?branch=main)  | Six identity-and-persistence regimes are necessary and sufficient for accountability-oriented substrates under neutrality assumptions |
+
+## Papers
+
+Papers provide theoretical justification for the specifications.
+They are explanatory, not normative.
+
+| Repository                                                                                              | Focus              | Status    | Description                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------- | ------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate) | Neutrality theorem | Submitted | Narrative exposition of the neutrality theorem and its formal proof, establishing design constraints for neutral representational substrates |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)   | Identity regimes   | Submitted | Narrative exposition of the identity-regimes result and its formal justification                                                             |
+
+## Incubating Work
+
+These are in-progress structural layers or boundary definitions.
+
+| Repository                                                                                    | Purpose                           | Status     | Description                                                                                                                                                                    |
+| --------------------------------------------------------------------------------------------- | --------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [ContextualEvidence](https://github.com/structural-explainability/ContextualEvidence)         | Explanation substrate             | Draft      | Neutral structural forms for explanations, evidence groupings, and contextual justification, without asserting causal models, normative judgments, or interpretive conclusions |
+| [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Substrate-interpretation boundary | Conceptual | Boundary conditions under which external legal, ethical, or policy frameworks may interpret or profile substrate records without altering the structural core                  |
 
 
-### Structural Constructions Enabled by the Foundational Results
+## Dissemination
 
-| Artifact | Focus | Status | Description |
-|--------|-------|--------|-------------|
-| [AccountableEntities (Lean 4)](https://github.com/structural-explainability/AccountableEntities) | Entity-regime instantiation | ![CI](https://github.com/structural-explainability/AccountableEntities/actions/workflows/ci.yml/badge.svg?branch=main) | Formalizes the bijective mapping from named accountable entity kinds to the six identity-and-persistence regimes required by the framework. |
-| [ExchangeProtocol (Lean 4)](https://github.com/structural-explainability/ExchangeProtocol) | Neutral exchange substrate | ![CI](https://github.com/structural-explainability/ExchangeProtocol/actions/workflows/ci.yml/badge.svg?branch=main) | Defines neutral, time-parametric record structures (entities, relationships, exchanges, envelopes) for representing accountable exchanges without embedding causal, normative, or domain semantics. |
-| Contextual Evidence & Explanations (CEE) | Explanation substrate | Draft | Specifies the neutral structural forms of explanations, evidence groupings, and contextual justification required for accountability under disagreement, without asserting causal models, normative judgments, or interpretive conclusions. |
-| Interpretation & Conformance Boundary | Substrate-interpretation interface | Conceptual | Defines the boundary conditions under which external legal, ethical, or policy frameworks may interpret, constrain, or profile substrate records, without altering the neutral structural core or asserting normative conclusions. |
+| Repository                                                                                | Purpose                                | Status |
+| ----------------------------------------------------------------------------------------- | -------------------------------------- | ------ |
+| [template-se-appendix](https://github.com/structural-explainability/template-se-appendix) | Appendix template and identifier rules | Public |
 
-## Overview
+## Design Commitments
 
-Structural Explainability is a foundational research program
-concerned with the design of **neutral representational substrates**
-that preserve stable reference and accountability
-under persistent disagreement.
+Across all repositories:
 
-The work develops structural constraints on ontology design
-independently of domain, policy, or interpretive framework,
-with a focus on identity, persistence, and extension stability.
+- Identity precedes explanation.
+- Structure and change are recorded without interpretation.
+- Interpretation remains external, attributable, and contestable.
+- Disagreement is representable and not forced to resolve.
+- No domain semantics are embedded in the core.
 
-## Scope
+## Intentionally Excluded
 
-Structural Explainability addresses questions such as:
+The following are intentionally excluded from this organization:
 
-- What structural commitments are unavoidable if disagreement is persistent?
-- How can accountability be represented without embedding causal or normative assumptions?
-- What identity and persistence regimes are required for stable reference?
+- Domain vocabularies (except clearly labeled examples)
+- Application schemas or data models
+- Analytics, inference, or decision systems
+- Governance or enforcement frameworks
+- Visualization or tooling layers
 
-The results are theoretical and constraint-based.
-They are not proposals for domain ontologies or protocols.
+Domain projects may claim conformance with these specifications, but are outside this core.
 
-## Core Results
+## How to Use This Organization
 
-- Ontological neutrality requires pre-causal and pre-normative substrates
-- Exactly six identity-and-persistence regimes are necessary and sufficient
-  for neutral accountability under persistent disagreement
-
-## Relationship to Civic Interconnect
-
-Structural Explainability provides theoretical foundations that inform
-the design of the Civic Interconnect ecosystem, including work on
-Accountable Entities (AE), the Civic Exchange Protocol (CEP),
-and Contextual Evidence and Explanations (CEE).
+- **To implement Structural Explainability**, start with the specifications.
+- **To understand the justification**, start with the papers.
+- **To verify coherence**, consult the Lean formalizations.
