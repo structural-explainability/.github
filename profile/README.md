@@ -27,7 +27,7 @@ This organization is structured around roles:
 | [**Formalizations**](#formalizations)           | Demonstrate that specifications are internally consistent |
 | [**Foundations**](#foundations)                 | Establish the underlying theoretical results              |
 | [**Papers**](#papers)                           | Justify why the constraints are necessary and unavoidable |
-| **Boundaries & Overlays** | Define how interpretation may attach without entering the substrate |
+| [**Boundaries & Overlays**](#boundary-and-overlay-specifications) | Define how interpretation may attach without entering the substrate |
 
 
 ## Normative Specifications
@@ -52,7 +52,7 @@ coherent, and composable under formal reasoning.
 | Repository                                                                                        | Purpose                     | CI                                                                                                                          | Description                           |
 | ------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
 | [AccountableEntities](https://github.com/structural-explainability/AccountableEntities)           | Entity-regime instantiation | ![CI](https://github.com/structural-explainability/AccountableEntities/actions/workflows/ci.yml/badge.svg?branch=main)      | Formalization of AE identity regimes  |
-| [ExchangeProtocol](https://github.com/structural-explainability/ExchangeProtocol)                 | Neutral exchange substrate  | ![CI](https://github.com/structural-explainability/ExchangeProtocol/actions/workflows/ci.yml/badge.svg?branch=main)         | Formalization of EP graph evolution   |
+| [EvolutionProtocol](https://github.com/structural-explainability/EvolutionProtocol)                 | Neutral exchange substrate  | ![CI](https://github.com/structural-explainability/EvolutionProtocol/actions/workflows/ci.yml/badge.svg?branch=main)         | Formalization of EP graph evolution   |
 | [StructuralExplainability](https://github.com/structural-explainability/StructuralExplainability) | Cross-cutting constraints   | ![CI](https://github.com/structural-explainability/StructuralExplainability/actions/workflows/ci.yml/badge.svg?branch=main) | Neutrality and conformance predicates |
 
 ## Foundations
@@ -78,10 +78,11 @@ These repositories define **additional structural layers or boundaries**
 that operate relative to the neutral substrate.
 They do not alter identity, structure, or recorded change.
 
-| Repository | Purpose | Status | Description |
+| Repository | Purpose | CI | Description |
 | --- | --- | --- | --- |
-| CEE | Explanation overlay | Draft | Structural forms for contextual explanation and evidence |
-| InterpretationBoundary | Interpretation boundary | Conceptual | Conditions under which external frameworks may interpret substrate records |
+| [CEE](https://github.com/structural-explainability/cee) | Explanation overlay | ![CI](https://github.com/structural-explainability/cee/actions/workflows/ci.yml/badge.svg?branch=main)     | Structural forms for contextual explanation and evidence |
+| [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Interpretation boundary | ![CI](https://github.com/structural-explainability/InterpretationBoundary/actions/workflows/ci.yml/badge.svg?branch=main)     | Conditions under which external frameworks may interpret substrate records |
+| [GovernanceBoundary](https://github.com/structural-explainability/GovernanceBoundary) | Governance boundary | ![CI](https://github.com/structural-explainability/GovernanceBoundary/actions/workflows/ci.yml/badge.svg?branch=main)     | Governance |
 
 ## Template (SE Appendix)
 
@@ -136,7 +137,7 @@ to remain external to the substrate.
 
 - **Accountable Entities** define identity regimes
   that allow entities to persist across time and change.
-- **Exchange Protocol** defines the evolution of structural relationships among those entities,
+- **Evolution Protocol** defines the evolution of structural relationships among those entities,
   recording change without embedding explanation.
 
 Together, they form the structural substrate.

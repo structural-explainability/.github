@@ -234,7 +234,7 @@ select = [
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from cee.core import Exchange
+    from cee.core import Evolution
 
 def validate(record: dict) -> bool:
     # REQ: All records must include source jurisdiction.
