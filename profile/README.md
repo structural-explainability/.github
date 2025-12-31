@@ -1,6 +1,6 @@
 # Structural Explainability
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT)
 ![Build Status](https://github.com/structural-explainability/.github/actions/workflows/ci.yml/badge.svg)
 [![Check Links](https://github.com/structural-explainability/.github/actions/workflows/links.yml/badge.svg)](https://github.com/structural-explainability/.github/actions/workflows/links.yml)
 
@@ -21,14 +21,13 @@ that define, justify, and defend that neutral space.
 
 This organization is structured around roles:
 
-| Role                                            | Purpose                                                   |
-| ----------------------------------------------- | --------------------------------------------------------- |
-| [**Specifications**](#normative-specifications) | Define what must be true for admissibility                |
-| [**Formalizations**](#formalizations)           | Demonstrate that specifications are internally consistent |
-| [**Foundations**](#foundations)                 | Establish the underlying theoretical results              |
-| [**Papers**](#papers)                           | Justify why the constraints are necessary and unavoidable |
+| Role                                                              | Purpose                                                             |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------- |
+| [**Specifications**](#normative-specifications)                   | Define what must be true for admissibility                          |
+| [**Formalizations**](#formalizations)                             | Demonstrate that specifications are internally consistent           |
+| [**Foundations**](#foundations)                                   | Establish the underlying theoretical results                        |
+| [**Papers**](#papers)                                             | Justify why the constraints are necessary and unavoidable           |
 | [**Boundaries & Overlays**](#boundary-and-overlay-specifications) | Define how interpretation may attach without entering the substrate |
-
 
 ## Normative Specifications
 
@@ -36,12 +35,13 @@ These repositories define the admissible representational space
 for structurally explainable systems.
 They are normative only in the sense of defining constraints, not interpretations.
 
-| Repository                                                        | Purpose                                                            | Status    |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------ | --------- |
-| [spec-se](https://github.com/structural-explainability/spec-se)   | Neutrality and boundary constraints of Structural Explainability   | Normative |
-| [spec-ae](https://github.com/structural-explainability/spec-ae)   | Accountable Entities and identity regimes                          | Normative |
-| [spec-ep](https://github.com/structural-explainability/spec-ep)   | Graph evolution over accountable entities                          | Normative |
-| [spec-cee](https://github.com/structural-explainability/spec-cee) | Contextual interfaces for explanation, attestation, and provenance | Normative |
+| Repository                                                                        | Purpose                                                            | Status      |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------- |
+| [spec-se](https://github.com/structural-explainability/spec-se)                   | Neutrality and boundary constraints of Structural Explainability   | Normative   |
+| [spec-ae](https://github.com/structural-explainability/spec-ae)                   | Accountable Entities and identity regimes                          | Normative   |
+| [spec-ep](https://github.com/structural-explainability/spec-ep)                   | Graph evolution over accountable entities                          | Normative   |
+| [spec-cee](https://github.com/structural-explainability/spec-cee)                 | Contextual interfaces for explanation, attestation, and provenance | Normative   |
+| [spec-se-appendix](https://github.com/structural-explainability/spec-se-appendix) | Identifier rules, examples, and cross-spec patterns                | Informative |
 
 ## Formalizations
 
@@ -52,7 +52,7 @@ coherent, and composable under formal reasoning.
 | Repository                                                                                        | Purpose                     | CI                                                                                                                          | Description                           |
 | ------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
 | [AccountableEntities](https://github.com/structural-explainability/AccountableEntities)           | Entity-regime instantiation | ![CI](https://github.com/structural-explainability/AccountableEntities/actions/workflows/ci.yml/badge.svg?branch=main)      | Formalization of AE identity regimes  |
-| [EvolutionProtocol](https://github.com/structural-explainability/EvolutionProtocol)                 | Neutral exchange substrate  | ![CI](https://github.com/structural-explainability/EvolutionProtocol/actions/workflows/ci.yml/badge.svg?branch=main)         | Formalization of EP graph evolution   |
+| [EvolutionProtocol](https://github.com/structural-explainability/EvolutionProtocol)               | Neutral exchange substrate  | ![CI](https://github.com/structural-explainability/EvolutionProtocol/actions/workflows/ci.yml/badge.svg?branch=main)        | Formalization of EP graph evolution   |
 | [StructuralExplainability](https://github.com/structural-explainability/StructuralExplainability) | Cross-cutting constraints   | ![CI](https://github.com/structural-explainability/StructuralExplainability/actions/workflows/ci.yml/badge.svg?branch=main) | Neutrality and conformance predicates |
 
 ## Foundations
@@ -78,17 +78,11 @@ These repositories define **additional structural layers or boundaries**
 that operate relative to the neutral substrate.
 They do not alter identity, structure, or recorded change.
 
-| Repository | Purpose | CI | Description |
-| --- | --- | --- | --- |
-| [CEE](https://github.com/structural-explainability/cee) | Explanation overlay | ![CI](https://github.com/structural-explainability/cee/actions/workflows/ci.yml/badge.svg?branch=main)     | Structural forms for contextual explanation and evidence |
-| [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Interpretation boundary | ![CI](https://github.com/structural-explainability/InterpretationBoundary/actions/workflows/ci.yml/badge.svg?branch=main)     | Conditions under which external frameworks may interpret substrate records |
-| [GovernanceBoundary](https://github.com/structural-explainability/GovernanceBoundary) | Governance boundary | ![CI](https://github.com/structural-explainability/GovernanceBoundary/actions/workflows/ci.yml/badge.svg?branch=main)     | Governance |
-
-## Template (SE Appendix)
-
-| Repository                                                                                | Purpose                                | Status |
-| ----------------------------------------------------------------------------------------- | -------------------------------------- | ------ |
-| [template-se-appendix](https://github.com/structural-explainability/template-se-appendix) | Appendix template and identifier rules | Public |
+| Repository                                                                                    | Purpose                 | CI                                                                                                                        | Description                                                                |
+| --------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| [CEE](https://github.com/structural-explainability/cee)                                       | Explanation overlay     | ![CI](https://github.com/structural-explainability/cee/actions/workflows/ci.yml/badge.svg?branch=main)                    | Structural forms for contextual explanation and evidence                   |
+| [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Interpretation boundary | ![CI](https://github.com/structural-explainability/InterpretationBoundary/actions/workflows/ci.yml/badge.svg?branch=main) | Conditions under which external frameworks may interpret substrate records |
+| [GovernanceBoundary](https://github.com/structural-explainability/GovernanceBoundary)         | Governance boundary     | ![CI](https://github.com/structural-explainability/GovernanceBoundary/actions/workflows/ci.yml/badge.svg?branch=main)     | Governance                                                                 |
 
 ## Design Commitments
 
