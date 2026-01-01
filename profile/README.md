@@ -17,7 +17,7 @@ legal, political, scientific, or normative frameworks.
 This organization contains specifications, formalizations, and papers
 that define, justify, and defend that neutral space.
 
-The [documentation website](https://structural-explainability.github.io/site/) offers a more general overview. 
+The [documentation website](https://structural-explainability.github.io/site/) offers a more general overview.
 
 ## Roles
 
