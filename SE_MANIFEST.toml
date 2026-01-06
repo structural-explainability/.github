@@ -1,0 +1,66 @@
+# ============================================================
+# .github/SE_MANIFEST.toml (Repository Intent, Scope, and Role)
+# ============================================================
+
+schema = "se-manifest-1"
+schema_url = "https://github.com/structural-explainability/spec-se/blob/main/manifests/se-manifest-1.md"
+
+[meta]
+# Non-normative contextual information
+framework = "Structural Explainability"
+framework_url = "https://github.com/structural-explainability"
+framework_note = "Provides definitions and conventions for SE_MANIFEST semantics."
+description = "Declarative claim of repository intent, scope, and role."
+purpose = "To make explicit the boundaries, responsibilities, and expectations of this repository relative to others."
+
+[repo]
+name = ".github"
+org  = "structural-explainability"
+kind = "governance"
+status = "public"
+since = "2025"
+summary = "Organization-wide community health files, contribution workflows, and governance scaffolding for Structural Explainability."
+
+[layer]
+space = "SE"
+role  = "governance"
+
+[depends]
+required = []
+optional = []
+
+[provides]
+artifacts = [
+  "README.md",
+  "CODE_OF_CONDUCT.md",
+  "CONTRIBUTING.md",
+  "SECURITY.md",
+  ".github/",
+  ".github/workflows/",
+  "SE_MANIFEST.toml"
+]
+
+[scope]
+includes = [
+  "organization-level contribution guidance",
+  "issue and pull request templates",
+  "repository and community health defaults",
+  "workflow templates and CI policy scaffolding",
+  "non-normative operational guidance for contributors"
+]
+excludes = [
+  "normative specification definitions",
+  "formal constraints or invariants",
+  "conformance requirements",
+  "implementation logic",
+  "domain semantics",
+  "interpretive or evaluative claims"
+]
+
+[citation]
+cff = "CITATION.cff"
+preferred = "repo"
+bib_hint = "case2025-se-github"
+
+[traceability]
+identifier_map = "none"
