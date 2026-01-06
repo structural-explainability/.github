@@ -1,7 +1,7 @@
 # Structural Explainability
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT)
-![Build Status](https://github.com/structural-explainability/.github/actions/workflows/ci.yml/badge.svg)
+![Build Status](https://github.com/structural-explainability/.github/actions/workflows/ci-hygiene.yml/badge.svg?branch=main)
 [![Check Links](https://github.com/structural-explainability/.github/actions/workflows/links.yml/badge.svg)](https://github.com/structural-explainability/.github/actions/workflows/links.yml)
 
 > Defines neutral constraints under which explainability is possible without embedding interpretation.
@@ -98,9 +98,9 @@ and establishes why those constraints are necessary.
 
 | Repository                                                                                        | Purpose                     | CI                                                                                                                          | Description                           |
 | ------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| [StructuralExplainability](https://github.com/structural-explainability/StructuralExplainability) | Cross-cutting constraints   | ![CI](https://github.com/structural-explainability/StructuralExplainability/actions/workflows/ci.yml/badge.svg?branch=main) | Neutrality and conformance predicates |
-| [NeutralSubstrate](https://github.com/structural-explainability/NeutralSubstrate) | Neutrality theorem | ![CI](https://github.com/structural-explainability/NeutralSubstrate/actions/workflows/ci.yml/badge.svg?branch=main) | Substrates stable under incompatible extensions must be pre-causal and pre-normative                                                  |
-| [IdentityRegimes](https://github.com/structural-explainability/IdentityRegimes)   | Identity regimes   | ![CI](https://github.com/structural-explainability/IdentityRegimes/actions/workflows/ci.yml/badge.svg?branch=main)  | Six identity-and-persistence regimes are necessary and sufficient for accountability-oriented substrates under neutrality assumptions |
+| [StructuralExplainability](https://github.com/structural-explainability/StructuralExplainability) | Cross-cutting constraints   | ![CI](https://github.com/structural-explainability/StructuralExplainability/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Neutrality and conformance predicates |
+| [NeutralSubstrate](https://github.com/structural-explainability/NeutralSubstrate) | Neutrality theorem | ![CI](https://github.com/structural-explainability/NeutralSubstrate/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Substrates stable under incompatible extensions must be pre-causal and pre-normative                                                  |
+| [IdentityRegimes](https://github.com/structural-explainability/IdentityRegimes)   | Identity regimes   | ![CI](https://github.com/structural-explainability/IdentityRegimes/actions/workflows/ci-lean.yml/badge.svg?branch=main)  | Six identity-and-persistence regimes are necessary and sufficient for accountability-oriented substrates under neutrality assumptions |
 
 ### Neutral Substrate (AE / EP)
 
@@ -108,8 +108,8 @@ These repositories formalize the neutral substrate defined by AE and EP.
 
 | Repository                                                                                        | Purpose                     | CI                                                                                                                          | Description                           |
 | ------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| [AccountableEntities](https://github.com/structural-explainability/AccountableEntities)           | Entity-regime instantiation | ![CI](https://github.com/structural-explainability/AccountableEntities/actions/workflows/ci.yml/badge.svg?branch=main)      | Formalization of AE identity regimes  |
-| [EvolutionProtocol](https://github.com/structural-explainability/EvolutionProtocol)               | Neutral exchange substrate  | ![CI](https://github.com/structural-explainability/EvolutionProtocol/actions/workflows/ci.yml/badge.svg?branch=main)        | Formalization of EP graph evolution   |
+| [AccountableEntities](https://github.com/structural-explainability/AccountableEntities)           | Entity-regime instantiation | ![CI](https://github.com/structural-explainability/AccountableEntities/actions/workflows/ci-lean.yml/badge.svg?branch=main)      | Formalization of AE identity regimes  |
+| [EvolutionProtocol](https://github.com/structural-explainability/EvolutionProtocol)               | Neutral exchange substrate  | ![CI](https://github.com/structural-explainability/EvolutionProtocol/actions/workflows/ci-lean.yml/badge.svg?branch=main)        | Formalization of EP graph evolution   |
 
 ### Interface (CEE)
 
@@ -118,7 +118,7 @@ over the neutral substrate.
 
 | Repository                                                                                    | Purpose                 | CI                                                                                                                        | Description                                                                |
 | --------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [CEE](https://github.com/structural-explainability/CEE)                                       | Explanation overlay     | ![CI](https://github.com/structural-explainability/CEE/actions/workflows/ci.yml/badge.svg?branch=main)                    | Structural forms for contextual explanation and evidence                   |
+| [CEE](https://github.com/structural-explainability/CEE)                                       | Explanation overlay     | ![CI](https://github.com/structural-explainability/CEE/actions/workflows/ci-lean.yml/badge.svg?branch=main)                    | Structural forms for contextual explanation and evidence                   |
 
 
 ### Boundaries (GB / IB)
@@ -129,8 +129,8 @@ They keep interpretation from leaking into the neutral substrate.
 
 | Repository                                                                                    | Purpose                 | CI                                                                                                                        | Description                                                                |
 | --------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [GovernanceBoundary](https://github.com/structural-explainability/GovernanceBoundary)         | Governance boundary     | ![CI](https://github.com/structural-explainability/GovernanceBoundary/actions/workflows/ci.yml/badge.svg?branch=main)     | Governance                                                                 |
-| [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Interpretation boundary | ![CI](https://github.com/structural-explainability/InterpretationBoundary/actions/workflows/ci.yml/badge.svg?branch=main) | Conditions under which external frameworks may interpret substrate records |
+| [GovernanceBoundary](https://github.com/structural-explainability/GovernanceBoundary)         | Governance boundary     | ![CI](https://github.com/structural-explainability/GovernanceBoundary/actions/workflows/ci-lean.yml/badge.svg?branch=main)     | Governance                                                                 |
+| [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Interpretation boundary | ![CI](https://github.com/structural-explainability/InterpretationBoundary/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Conditions under which external frameworks may interpret substrate records |
 
 
 ## Papers
