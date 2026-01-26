@@ -149,30 +149,7 @@ Stewardship papers build on the formal core but do not modify or extend it.
 | [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate) | Neutrality theorem | Submitted | Narrative exposition of the neutrality theorem and its formal proof, establishing design constraints for neutral representational substrates |
 | [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)   | Identity regimes   | Submitted | Narrative exposition of the identity-regimes result and its formal justification                                                             |
 
-About:
-
- - [Neutrality](https://arxiv.org/abs/2601.14271): If you want to build an information system for domains
-   where people legitimately disagree (like law or politics),
-   the core of the system must be neutral;
-   if you bake in causes, values, or conclusions,
-   the system cannot represent disagreement accurately.
-
-- [Six Types](https://arxiv.org/abs/2601.16152): To explain events
-  (and represent responsibility, evidence, and meaning) in neutral systems,
-  information must be organized into six distinct kinds of entities;
-  fewer lose essential distinctions, and more add redundancy.
-
-The two formal papers provide theoretical justification for foundational specifications.
-They are explanatory rather than normative (they describe what must be true for such systems to work, not what people should believe or do).
-
-Stewardship papers build on the formal core but do not modify or extend it.
-
-| Repository                                                                                              | Focus              | Status    | Description                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------- | ------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate) | Neutrality theorem | Submitted | Narrative exposition of the neutrality theorem and its formal proof, establishing design constraints for neutral representational substrates |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)   | Identity regimes   | Submitted | Narrative exposition of the identity-regimes result and its formal justification                                                             |
-
-About:
+### General Descriptions
 
  - [Neutrality](https://arxiv.org/abs/2601.14271): If you want to build an information system for domains
    where people legitimately disagree (like law or politics),
