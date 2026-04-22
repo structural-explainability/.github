@@ -19,6 +19,10 @@ that define, justify, and defend that neutral space.
 
 The [documentation website](https://structural-explainability.github.io/site/) offers a more general overview.
 
+## Foundations
+
+-  [se-constitution](https://github.com/structural-explainability/se-constitution)
+
 ## Roles
 
 This organization is structured around roles:
