@@ -24,7 +24,7 @@ The [documentation website](https://structural-explainability.github.io/site/) o
 | Repository | Purpose | Status |
 |------------|--------|--------|
 | [se-constitution](https://github.com/structural-explainability/se-constitution) | Canonical schema, rules, and validation framework | Active |
-| [se-admin](https://github.com/structural-explainability/se-admin) | Shared automation, scaffolding, and enforcement | Planned |
+| [se-admin](https://github.com/structural-explainability/se-admin) | Shared automation, scaffolding, and enforcement | Active |
 | [se-kernel](https://github.com/structural-explainability/se-kernel) | Core structural primitives and invariants | Active |
 | [se-mapspec](https://github.com/structural-explainability/se-mapspec) | Mapping vocabulary and cross-system semantics | Planned |
 
