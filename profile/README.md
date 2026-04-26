@@ -21,12 +21,42 @@ The [documentation website](https://structural-explainability.github.io/site/) o
 
 ## Foundations
 
-| Repository | Purpose | Status |
-|------------|--------|--------|
-| [se-constitution](https://github.com/structural-explainability/se-constitution) | Canonical schema, rules, and validation framework | Active |
-| [se-admin](https://github.com/structural-explainability/se-admin) | Shared automation, scaffolding, and enforcement | Active |
-| [se-kernel](https://github.com/structural-explainability/se-kernel) | Core structural primitives and invariants | Active |
-| [se-mapspec](https://github.com/structural-explainability/se-mapspec) | Mapping vocabulary and cross-system semantics | Planned |
+These repositories define the **neutral structural substrate** of Structural Explainability.
+
+They constrain the admissible use of Structural Explainability identity regimes
+but do not instantiate or apply them.
+
+They establish the minimal, stable constraints under which identity, structure, change,
+and explanation can coexist without embedding interpretation.
+
+They are authoritative and define what must be true for admissibility.
+They do not contain domain semantics, applications, or analytics.
+
+| Repository | Purpose |
+|------------|--------|
+| [se-constitution](https://github.com/structural-explainability/se-constitution) | Canonical schema, rules, and validation framework |
+| [se-admin](https://github.com/structural-explainability/se-admin) | Shared automation, scaffolding, and enforcement |
+| [se-kernel](https://github.com/structural-explainability/se-kernel) | Core structural primitives and invariants |
+| [se-mapspec](https://github.com/structural-explainability/se-mapspec) | Mapping vocabulary and cross-system semantics |
+
+## Mapping Examples
+
+These repositories apply Structural Explainability mapping rules to bounded domain examples.
+
+They are maintained in this organization only as **conformance examples**.
+They are **not part of the neutral core** and do not extend or modify the substrate.
+
+They demonstrate how mappings may be constructed across independent systems
+while preserving neutrality and keeping interpretation external.
+
+Applied source registries, dashboards, analytics, and public participation systems
+belong in downstream organizations.
+
+| Repository | Purpose |
+|------------|---------|
+| [se-mapping-education](https://github.com/structural-explainability/se-mapping-education) | Education standards mapping examples across jurisdictions and reference systems |
+| [se-mapping-education-math](https://github.com/structural-explainability/se-mapping-education-math) | Mathematics standards mapping examples using central atomic competency units |
+| [se-mapping-education-math-g8](https://github.com/structural-explainability/se-mapping-education-math-g8) | Grade 8 mathematics pilot mappings for linear equations and statistics |
 
 ## Roles
 
