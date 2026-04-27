@@ -23,9 +23,8 @@ The [documentation website](https://structural-explainability.github.io/site/) o
 
 These repositories define the **neutral structural substrate** of Structural Explainability.
 
-They constrain the admissible use of Structural Explainability identity regimes
-but do not instantiate or apply them.
-
+They define admissibility constraints under which identity regimes may be applied,
+without encoding identity or persistence behavior themselves.
 They establish the minimal, stable constraints under which identity, structure, change,
 and explanation can coexist without embedding interpretation.
 
@@ -39,13 +38,36 @@ They do not contain domain semantics, applications, or analytics.
 | [se-kernel](https://github.com/structural-explainability/se-kernel) | Core structural primitives and invariants |
 | [se-mapspec](https://github.com/structural-explainability/se-mapspec) | Mapping vocabulary and cross-system semantics |
 
+## Regime Execution
+
+These repositories implement the executable identity and persistence regimes
+over the neutral structural substrate.
+They encode regime profiles, transformation families, and identity responses
+(PRS / BRK / INH) as testable artifacts where:
+
+- PRS = Preserves identity. The transformation does not change identity under the regime.
+- BRK = Breaks identity. The transformation produces a distinct identity under the regime.
+- INH = Inherits identity.
+  The transformation does not act on the identity criteria tracked by the regime;
+  identity is inherited from the prior state without regime-level evaluation.
+
+These executables provide a stress-testing layer used to validate regime behavior
+and to evaluate mappings under controlled transformations without introducing
+causal or normative interpretation at the substrate level.
+They do not introduce domain semantics and do not alter admissibility
+constraints defined in the foundational repositories.
+
+| Repository | Purpose |
+|------------|---------|
+| [se-regimes](https://github.com/structural-explainability/se-regimes) | Executable regime kernel (profiles, transformations, verdicts) |
+| [se-regimes-pilot-education-math-g8](https://github.com/structural-explainability/se-regimes-pilot-education-math-g8) | Grade 8 mathematics regime pilot for linear equations and statistics |
+
 ## Mapping Examples
 
 These repositories apply Structural Explainability mapping rules to bounded domain examples.
 
 They are maintained in this organization only as **conformance examples**.
 They are **not part of the neutral core** and do not extend or modify the substrate.
-
 They demonstrate how mappings may be constructed across independent systems
 while preserving neutrality and keeping interpretation external.
 
