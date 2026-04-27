@@ -93,16 +93,16 @@ interpretation.
 They do not define structure, identity, or behavior.
 They do not introduce semantics beyond what is present in the source.
 
-| Repository | Meaning |
-|------------|--------|
-| se-govsrc-us | All U.S. source materials |
-| se-govsrc-us-missouri | Missouri-specific source materials |
-| se-govsrc-us-education | U.S. education source materials |
-| se-govsrc-us-missouri-education | Missouri education source materials |
-| se-govsrc-finland-education | Finland national curriculum source materials |
-| se-govsrc-norway-education | Norway curriculum (LK20) source materials |
-| se-govsrc-singapore-education | Singapore syllabus source materials |
-| se-govsrc-oecd-pisa | OECD PISA framework and assessment materials |
+| Repository | Purpose |
+|------------|---------|
+| [se-govsrc-us](https://github.com/structural-explainability/se-govsrc-us) | All U.S. source materials |
+| [se-govsrc-us-missouri](https://github.com/structural-explainability/se-govsrc-us-missouri) | Missouri-specific source materials |
+| [se-govsrc-us-education](https://github.com/structural-explainability/se-govsrc-us-education) | U.S. education source materials |
+| [se-govsrc-us-missouri-education](https://github.com/structural-explainability/se-govsrc-us-missouri-education) | Missouri education source materials |
+| [se-govsrc-finland-education](https://github.com/structural-explainability/se-govsrc-finland-education) | Finland national curriculum source materials |
+| [se-govsrc-norway-education](https://github.com/structural-explainability/se-govsrc-norway-education) | Norway curriculum (LK20) source materials |
+| [se-govsrc-singapore-education](https://github.com/structural-explainability/se-govsrc-singapore-education) | Singapore syllabus source materials |
+| [se-govsrc-oecd-pisa](https://github.com/structural-explainability/se-govsrc-oecd-pisa) | OECD PISA framework and assessment materials |
 
 ## Roles
 
