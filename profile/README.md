@@ -81,6 +81,29 @@ belong in downstream organizations.
 | [se-mapping-education-math](https://github.com/structural-explainability/se-mapping-education-math) | Mathematics standards mapping examples using central atomic competency units |
 | [se-mapping-education-math-g8](https://github.com/structural-explainability/se-mapping-education-math-g8) | Grade 8 mathematics pilot mappings for linear equations and statistics |
 
+## Source Materials (govsrc)
+
+These repositories contain **traceable source materials** from governmental
+or official public bodies.
+
+They preserve source artifacts in a stable, inspectable form so that mappings,
+profiles, and rules can reference them without copying, altering, or embedding
+interpretation.
+
+They do not define structure, identity, or behavior.
+They do not introduce semantics beyond what is present in the source.
+
+| Repository | Meaning |
+|------------|--------|
+| se-govsrc-us | All U.S. source materials |
+| se-govsrc-us-missouri | Missouri-specific source materials |
+| se-govsrc-us-education | U.S. education source materials |
+| se-govsrc-us-missouri-education | Missouri education source materials |
+| se-govsrc-finland-education | Finland national curriculum source materials |
+| se-govsrc-norway-education | Norway curriculum (LK20) source materials |
+| se-govsrc-singapore-education | Singapore syllabus source materials |
+| se-govsrc-oecd-pisa | OECD PISA framework and assessment materials |
+
 ## Roles
 
 This organization is structured around roles:
