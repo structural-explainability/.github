@@ -61,6 +61,7 @@ constraints defined in the foundational repositories.
 |------------|---------|
 | [se-regimes](https://github.com/structural-explainability/se-regimes) | Executable regime kernel (profiles, transformations, verdicts) |
 | [se-regimes-pilot-education-math-g8](https://github.com/structural-explainability/se-regimes-pilot-education-math-g8) | Grade 8 mathematics regime pilot for linear equations and statistics |
+| [se-regimes-explorer](https://github.com/structural-explainability/se-regimes-explorer) | SE Regimes Decision Tree |
 
 ## Mapping Examples
 
