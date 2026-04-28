@@ -34,6 +34,8 @@ Operational foundation repositories consume this contract and enforce it.
 They are authoritative and define what must be true for admissibility.
 They do not contain domain semantics, applications, or analytics.
 
+### Formal Contract and Operational Foundations
+
 | Repository | Purpose |
 |------------|--------|
 | [se-formal-contract](https://github.com/structural-explainability/se-formal-contract) | Lean 4–verified formal contract exporting invariants, regimes, and constraints to operational layers |
@@ -41,6 +43,19 @@ They do not contain domain semantics, applications, or analytics.
 | [se-admin](https://github.com/structural-explainability/se-admin) | Shared automation, scaffolding, and enforcement |
 | [se-kernel](https://github.com/structural-explainability/se-kernel) | Core structural primitives and invariants (constrained by constitution and formal contract) |
 | [se-mapspec](https://github.com/structural-explainability/se-mapspec) | Mapping vocabulary and cross-system semantics (constrained by formal contract relations) |
+
+### Theory (Formal Derivation Layer)
+
+These repositories contain evolving Lean 4 theorem development that
+derives and justifies the formal contract.
+
+They are not consumed directly by operational systems.
+
+| Repository | Purpose |
+|------------|--------|
+| [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate) | Neutrality theorem development and substrate constraints |
+| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes) | Requirement structure and regime-profile derivation (necessity/sufficiency) |
+| [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Cross-cutting theorem integration and traceability across theory repos |
 
 ## Regime Execution
 
