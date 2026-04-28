@@ -54,7 +54,7 @@ They are not consumed directly by operational systems.
 | Repository | Purpose |
 |------------|--------|
 | [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate) | Neutrality theorem development and substrate constraints |
-| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes) | Requirement structure and regime-profile derivation (necessity/sufficiency) |
+| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes) | Structural requirements (R1–R6), six-regime lower bound, and refinement to regime profiles (nine-profile model) |
 | [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Cross-cutting theorem integration and traceability across theory repos |
 
 ## Regime Execution
