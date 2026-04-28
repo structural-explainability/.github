@@ -28,15 +28,19 @@ without encoding identity or persistence behavior themselves.
 They establish the minimal, stable constraints under which identity, structure, change,
 and explanation can coexist without embedding interpretation.
 
+The formal contract layer provides machine-checked authorization of these constraints.
+Operational foundation repositories consume this contract and enforce it.
+
 They are authoritative and define what must be true for admissibility.
 They do not contain domain semantics, applications, or analytics.
 
 | Repository | Purpose |
 |------------|--------|
-| [se-constitution](https://github.com/structural-explainability/se-constitution) | Canonical schema, rules, and validation framework |
+| [se-formal-contract](https://github.com/structural-explainability/se-formal-contract) | Lean 4–verified formal contract exporting invariants, regimes, and constraints to operational layers |
+| [se-constitution](https://github.com/structural-explainability/se-constitution) | Canonical schema, rules, and validation framework (consumes formal contract) |
 | [se-admin](https://github.com/structural-explainability/se-admin) | Shared automation, scaffolding, and enforcement |
-| [se-kernel](https://github.com/structural-explainability/se-kernel) | Core structural primitives and invariants |
-| [se-mapspec](https://github.com/structural-explainability/se-mapspec) | Mapping vocabulary and cross-system semantics |
+| [se-kernel](https://github.com/structural-explainability/se-kernel) | Core structural primitives and invariants (constrained by constitution and formal contract) |
+| [se-mapspec](https://github.com/structural-explainability/se-mapspec) | Mapping vocabulary and cross-system semantics (constrained by formal contract relations) |
 
 ## Regime Execution
 
