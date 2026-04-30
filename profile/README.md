@@ -57,6 +57,24 @@ They are not consumed directly by operational systems.
 | [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes) | Structural requirements (R1–R6), six-regime lower bound, and refinement to regime profiles (nine-profile model) |
 | [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Cross-cutting theorem integration and traceability across theory repos |
 
+Note: Each theory repo contains both 1) a TOML encoding and 2) a Lean proof encoding 
+of its core classification structures. 
+Before the theory layer can be considered complete, 
+every cell in every matrix must agree across both encodings, 
+and the theoretical justification for each cell value must be traceable to the SE papers.
+
+The resolution process is: 
+identify a discrepancy between TOML and Lean counts, 
+isolate the cell, 
+formulate the question the discrepancy represents, 
+resolve it by appeal to relevant SE definitions, 
+update the wrong encoding, and confirm counts align.
+See [Issue 1](https://github.com/structural-explainability/se-theory-identity-regimes/issues/1) 
+for a worked example.
+A single disputed cell (REC x PV) where TOML and Lean assigned different verdicts, 
+the question that must be resolved to fix it, 
+and why resolution is part of the theory layer.
+
 ## Regime Execution
 
 These repositories implement the executable identity and persistence regimes
