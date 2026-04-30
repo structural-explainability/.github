@@ -38,7 +38,7 @@ They do not contain domain semantics, applications, or analytics.
 
 | Repository | Purpose |
 |------------|--------|
-| [se-formal-contract](https://github.com/structural-explainability/se-formal-contract) | Lean 4–verified formal contract exporting invariants, regimes, and constraints to operational layers |
+| [se-formal-contract](https://github.com/structural-explainability/se-formal-contract) | Lean 4-verified formal contract exporting invariants, regimes, and constraints to operational layers |
 | [se-constitution](https://github.com/structural-explainability/se-constitution) | Canonical schema, rules, and validation framework (consumes formal contract) |
 | [se-admin](https://github.com/structural-explainability/se-admin) | Shared automation, scaffolding, and enforcement |
 | [se-kernel](https://github.com/structural-explainability/se-kernel) | Core structural primitives and invariants (constrained by constitution and formal contract) |
@@ -122,6 +122,52 @@ They do not introduce semantics beyond what is present in the source.
 | [se-govsrc-norway-education](https://github.com/structural-explainability/se-govsrc-norway-education) | Norway curriculum (LK20) source materials |
 | [se-govsrc-singapore-education](https://github.com/structural-explainability/se-govsrc-singapore-education) | Singapore syllabus source materials |
 | [se-govsrc-oecd-pisa](https://github.com/structural-explainability/se-govsrc-oecd-pisa) | OECD PISA framework and assessment materials |
+
+## Contract Derivation and Enforcement Chain
+
+```mermaid
+flowchart TD
+
+%% --- Theory Layer ---
+subgraph Theory
+    T1[se-theory-neutral-substrate]
+    T2[se-theory-identity-regimes]
+    T3[se-theory-structural-explainability]
+end
+
+%% --- Contract ---
+FC[se-formal-contract]
+
+%% --- Constitution ---
+C[se-constitution]
+
+%% --- Admin ---
+A[se-admin]
+
+%% --- Downstream ---
+subgraph Downstream
+    K[se-kernel]
+    M[se-mapspec]
+    R[se-regimes]
+    MAP[se-mapping-*]
+    GOV[se-govsrc-*]
+end
+
+%% --- Edges with required labels ---
+T1 -->|grounds contract terms| FC
+T2 -->|grounds contract terms| FC
+T3 -->|grounds contract terms| FC
+
+FC -->|specifies verified invariants and regimes| C
+
+C -->|encodes governance contract| A
+
+A -->|validates conformance of| K
+A -->|validates conformance of| M
+A -->|validates conformance of| R
+A -->|validates conformance of| MAP
+A -->|validates conformance of| GOV
+```
 
 ## Roles
 
