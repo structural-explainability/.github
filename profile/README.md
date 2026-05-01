@@ -21,7 +21,7 @@ The [documentation website](https://structural-explainability.github.io/site/) o
 
 ## Manifest Schema
 
-All SE repositories include an SE Manifest describing the repo contents. 
+All SE repositories include an SE Manifest describing the repo contents.
 
 | Repository | Purpose |
 |------------|---------|
