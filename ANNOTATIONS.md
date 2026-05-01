@@ -187,76 +187,25 @@ but do not map directly to CEE's formal structure.
 
 ## Examples
 
-### Configuration file (.editorconfig)
-
-```ini
-# REQ.UNIVERSAL: All professional repositories MUST include .editorconfig.
-# WHY: Establish cross-editor baseline so diffs stay clean.
-# ALT: Omit ONLY if formatting enforced equivalently by CI.
-# CUSTOM: Adjust indent_size if organizational standards differ.
-
-root = true
-
-[*]
-# WHY: Normalize line endings across Windows, macOS, and Linux.
-end_of_line = lf
-charset = utf-8
-
-# WHY: Newline at EOF avoids noisy diffs and tool warnings.
-insert_final_newline = true
-```
-
-### Build configuration (pyproject.toml)
-
-```toml
-# REQ.PYTHON: Python projects MUST include pyproject.toml as single source of truth.
-# WHY: Centralizes metadata and configuration for reproducibility.
-
-[project]
-name = "example"  # CUSTOM: Update to match your package.
-version = "0.1.0" # CUSTOM: Update as needed.
-
-[tool.ruff.lint]
-select = [
-  "E",   # REQ: Basic syntax and structural correctness
-  "F",   # REQ: Undefined names and unused imports
-  # "N", # ALT: Naming conventions (enable if enforcing naming policy)
-]
-```
-
-### Source code (Python)
-
-```python
-# WHY-FILE: Adapter for EU transparency register data.
-# OBS: Schema version 2.3, last updated 2025-01.
-
-# WHY: Deferred import avoids circular dependency.
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from cee.core import Evolution
-
-def validate(record: dict) -> bool:
-    # REQ: All records must include source jurisdiction.
-    # EVIDENCE: See EP Section 4.2 for provenance requirements.
-    return "jurisdiction" in record
-```
+- Configuration files (e.g., .editorconfig)
+- Build configuration files (e.g., pyproject.toml)
+- Source code (e.g., Python files)
 
 ## Adoption
 
 ### When to annotate
 
--   When a decision matters and future readers might ask why
--   When alternatives exist and the choice is non-obvious
--   When constraints are intentional, not accidental
--   When customization is expected
+- When a decision matters and future readers might ask why
+- When alternatives exist and the choice is non-obvious
+- When constraints are intentional, not accidental
+- When customization is expected
 
 ### When not to annotate
 
--   To restate what the code obviously does
--   To replace proper documentation
--   To enforce style (use linters)
--   On every line (annotations are signal; overuse is noise)
+- To restate what the code obviously does
+- To replace proper documentation
+- To enforce style (use linters)
+- On every line (annotations are signal; overuse is noise)
 
 Value lies in **clarity**, not quantity.
 
