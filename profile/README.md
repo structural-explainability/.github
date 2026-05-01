@@ -264,12 +264,10 @@ These repositories **do not define meaning or behavior**.
 They demonstrate that the specifications are internally consistent,
 coherent, and composable under formal reasoning.
 
-### Structural Explainability (Foundation)
+### Original / Outdated Foundations
 
-Structural Explainability formalizes the **minimal, stable constraints**
-under which identity, structure, change, explanation, and persistent disagreement
-can coexist over time without embedding interpretation,
-and establishes why those constraints are necessary.
+> ⚠️ The repositories below are archived. Active development has moved to
+> the `se-theory-*` series.
 
 | Repository                                                                                        | Purpose                     | CI                                                                                                                          | Description                           |
 | ------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
