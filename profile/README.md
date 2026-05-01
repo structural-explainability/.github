@@ -19,42 +19,18 @@ that define, justify, and defend that neutral space.
 
 The [documentation website](https://structural-explainability.github.io/site/) offers a more general overview.
 
-## Foundations
+## Manifest Schema
 
-These repositories define the **neutral structural substrate** of Structural Explainability.
-
-They define admissibility constraints under which identity regimes may be applied,
-without encoding identity or persistence behavior themselves.
-They establish the minimal, stable constraints under which identity, structure, change,
-and explanation can coexist without embedding interpretation.
-
-The formal contract layer provides machine-checked authorization of these constraints.
-Operational foundation repositories consume this contract and enforce it.
-
-They are authoritative and define what must be true for admissibility.
-They do not contain domain semantics, applications, or analytics.
-
-### Manifest Schema
+All SE repositories include an SE Manifest describing the repo contents. 
 
 | Repository | Purpose |
 |------------|---------|
 | [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical `SE_MANIFEST.toml` schema; no upstream SE dependencies, consumed by all repos |
 
-### Formal Contract and Operational Foundations
-
-| Repository | Purpose |
-|------------|--------|
-| [se-formal-contract](https://github.com/structural-explainability/se-formal-contract) | Lean 4-verified formal contract exporting invariants, regimes, and constraints to operational layers |
-| [se-constitution](https://github.com/structural-explainability/se-constitution) | Canonical schema, rules, and validation framework (consumes formal contract) |
-| [se-admin](https://github.com/structural-explainability/se-admin) | Shared automation, scaffolding, and enforcement |
-| [se-kernel](https://github.com/structural-explainability/se-kernel) | Core structural primitives and invariants (constrained by constitution and formal contract) |
-| [se-mapspec](https://github.com/structural-explainability/se-mapspec) | Mapping vocabulary and cross-system semantics (constrained by formal contract relations) |
-
 ### Theory (Formal Derivation Layer)
 
 These repositories contain evolving Lean 4 theorem development that
 derives and justifies the formal contract.
-
 They are not consumed directly by operational systems.
 
 | Repository | Purpose |
@@ -80,6 +56,27 @@ for a worked example.
 A single disputed cell (REC x PV) where TOML and Lean assigned different verdicts,
 the question that must be resolved to fix it,
 and why resolution is part of the theory layer.
+
+## Formal Contract and Operational Foundations
+
+These repositories define the **neutral structural substrate** of Structural Explainability.
+They define admissibility constraints under which identity regimes may be applied,
+without encoding identity or persistence behavior themselves.
+They establish the minimal, stable constraints under which identity, structure, change,
+and explanation can coexist without embedding interpretation.
+
+The formal contract layer provides machine-checked authorization of these constraints.
+Operational foundation repositories consume this contract and enforce it.
+They are authoritative and define what must be true for admissibility.
+They do not contain domain semantics, applications, or analytics.
+
+| Repository | Purpose |
+|------------|--------|
+| [se-formal-contract](https://github.com/structural-explainability/se-formal-contract) | Lean 4-verified formal contract exporting invariants, regimes, and constraints to operational layers |
+| [se-constitution](https://github.com/structural-explainability/se-constitution) | Canonical schema, rules, and validation framework (consumes formal contract) |
+| [se-admin](https://github.com/structural-explainability/se-admin) | Shared automation, scaffolding, and enforcement |
+| [se-kernel](https://github.com/structural-explainability/se-kernel) | Core structural primitives and invariants (constrained by constitution and formal contract) |
+| [se-mapspec](https://github.com/structural-explainability/se-mapspec) | Mapping vocabulary and cross-system semantics (constrained by formal contract relations) |
 
 ## Regime Execution
 
