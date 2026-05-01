@@ -34,6 +34,12 @@ Operational foundation repositories consume this contract and enforce it.
 They are authoritative and define what must be true for admissibility.
 They do not contain domain semantics, applications, or analytics.
 
+### Manifest Schema
+
+| Repository | Purpose |
+|------------|---------|
+| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical `SE_MANIFEST.toml` schema; no upstream SE dependencies, consumed by all repos |
+
 ### Formal Contract and Operational Foundations
 
 | Repository | Purpose |
@@ -186,6 +192,10 @@ A -->|validates conformance of| R
 A -->|validates conformance of| MAP
 A -->|validates conformance of| GOV
 ```
+
+All repositories in this diagram declare an `SE_MANIFEST.toml` conforming to
+[`se-manifest-schema`](https://github.com/structural-explainability/se-manifest-schema),
+which has no upstream SE dependencies.
 
 ## Roles
 
