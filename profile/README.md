@@ -33,8 +33,15 @@ These repositories contain evolving Lean 4 theorem development that
 derives and justifies the formal contract.
 They are not consumed directly by operational systems.
 
+The transformation repository is the upstream vocabulary layer for describing
+kinds of change independently of persistence or regime-specific survival claims.
+The persistence repository defines identity persistence under admissible
+transformation.
+
 | Repository | Purpose |
 |------------|--------|
+| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation) | Foundational transformation operators, families, composition relations, orthogonality relations, and outcome vocabulary |
+| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence) | Foundational persistence theory for identity survival, invariants, equivalence, and breakage under admissible transformation |
 | [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate) | Neutrality theorem development and substrate constraints |
 | [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes) | Structural requirements (R1–R6), six-regime lower bound, and refinement to regime profiles (nine-profile model) |
 | [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Cross-cutting theorem integration and traceability across theory repos |
