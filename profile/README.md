@@ -309,7 +309,7 @@ coherent, and composable under formal reasoning.
 | ------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
 | [StructuralExplainability](https://github.com/structural-explainability/StructuralExplainability) | Cross-cutting constraints   | ![CI](https://github.com/structural-explainability/StructuralExplainability/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Neutrality and conformance predicates |
 | [NeutralSubstrate](https://github.com/structural-explainability/NeutralSubstrate) | Neutrality theorem | ![CI](https://github.com/structural-explainability/NeutralSubstrate/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Substrates stable under incompatible extensions must be pre-causal and pre-normative                                                  |
-| [IdentityRegimes](https://github.com/structural-explainability/IdentityRegimes)   | Identity regimes   | ![CI](https://github.com/structural-explainability/IdentityRegimes/actions/workflows/ci-lean.yml/badge.svg?branch=main)  | Six identity-and-persistence regimes are necessary and sufficient for accountability-oriented substrates under neutrality assumptions |
+| [IdentityRegimes](https://github.com/structural-explainability/IdentityRegimes)   | Identity regimes   | ![CI](https://github.com/structural-explainability/IdentityRegimes/actions/workflows/ci-lean.yml/badge.svg?branch=main)  | Six identity-and-persistence regime (families) are necessary and sufficient for accountability-oriented substrates under neutrality assumptions |
 
 ### Neutral Substrate (AE / EP)
 
@@ -366,88 +366,115 @@ Stewardship papers build on the formal core but do not modify or extend it.
    if you bake in causes, values, or conclusions,
    the system cannot represent disagreement accurately.
 
-- [Six Types](https://arxiv.org/abs/2601.16152): To explain events
-  (and represent responsibility, evidence, and meaning) in neutral systems,
-  information must be organized into six distinct kinds of entities;
-  fewer lose essential distinctions, and more add redundancy.
+- [Identity Regimes](https://arxiv.org/abs/2601.16152): To represent identity
+  and persistence under structural change, information must distinguish between
+  regime-relative ways that entities persist, break, or become irrelevant under
+  transformation. The current framework organizes this through six regime
+  families refined into nine profile kinds.
 
 ## Design Commitments
 
 Across all repositories:
 
-- Identity precedes explanation.
+- Identity and persistence are profile-relative.
 - Structure and change are recorded without interpretation.
+- Transformation does not by itself determine persistence.
+- Graph continuity does not by itself imply identity continuity.
 - Interpretation remains external, attributable, and contestable.
+- Governance records do not imply authority, legitimacy, obligation, or enforcement.
 - Disagreement is representable and not forced to resolve.
 - No domain semantics are embedded in the core.
 
 ## Intentionally Excluded
 
-The following are intentionally excluded from this organization:
+The following are intentionally excluded from this core organization:
 
-- Domain vocabularies (except clearly labeled examples)
-- Application schemas or data models
-- Analytics, inference, or decision systems
-- Governance or enforcement frameworks
-- Visualization or tooling layers
+- domain vocabularies, except clearly labeled examples
+- application schemas or data models
+- analytics, inference, optimization, recommendation, or decision systems
+- governance authority, legitimacy, obligation, or enforcement frameworks
+- interpretation, explanation, evidence, or attestation as substrate facts
+- visualization or presentation layers
 
 Domain projects may claim conformance with these specifications, but are outside this core.
 
 ## How to Use This Organization
 
-- **To implement Structural Explainability**, start with the specifications.
 - **To understand the justification**, start with the papers.
-- **To verify coherence**, consult the Lean formalizations.
+- **To understand the architecture**, start with the specifications.
+- **To verify formal coherence**, consult the Lean formalizations.
+- **To consume stable definitions**, use the formal contract artifacts.
+- **To validate repositories**, use the manifest and conformance tooling.
 
 ## Core Statement
 
-Structural Explainability defines a neutral structural substrate
-that enables explainability by preserving identity, structure, and change
-while allowing disagreement to remain external, attributable, and unresolved.
+Structural Explainability defines a neutral structural substrate for recording
+identity, structure, transformation, and change without embedding interpretation,
+authority, causality, or judgment.
 
-At its core, Structural Explainability is concerned with identity.
-Stable identity is the precondition for explanation, provenance, and disagreement over time.
-Identity must persist independently of interpretation, authority, or consensus.
+At its core, Structural Explainability is concerned with identity and persistence.
+Stable, inspectable identity is a precondition for explanation, provenance,
+mapping, and disagreement over time. Identity and persistence are profile-relative:
+the same structural change may preserve identity under one profile, break identity
+under another, and be irrelevant under another.
 
-Structural Explainability defines the complete admissible space of representation.
-It simultaneously bounds what representation must not do and
-contains all representation that is permitted.
-Within this space, identity, structure, and change may be recorded,
-while interpretation, explanation, and judgment are constrained
-to remain external to the substrate.
+Structural Explainability does not claim to remove interpretation. It separates
+structural commitments from interpretive, causal, epistemic, normative, and
+governance commitments so that disagreement can remain explicit, attributable,
+and contestable.
 
-- **Accountable Entities** define identity regimes
-  that allow entities to persist across time and change.
-- **Evolution Protocol** defines the evolution of structural relationships among those entities,
-  recording change without embedding explanation.
+Within the core substrate, structure, transformation, persistence, and profile
+behavior may be recorded. Interpretation, explanation, evidence, authority,
+legitimacy, obligation, and enforcement remain outside the substrate unless
+attached through explicitly constrained downstream mechanisms.
 
-Together, they form the structural substrate.
+- **Neutral substrate** defines admissible structural description without
+  interpretive commitment.
+- **Transformation theory** defines structural change pressures.
+- **Persistence theory** defines profile-relative preservation, breakage, and
+  irrelevance under transformation.
+- **Identity regimes** define six regime families refined into nine profile kinds.
+- **Structural Explainability** integrates these layers into an explainable
+  structural account without collapsing disagreement.
 
-- **Contextual Evidence & Explanations** provide the structural interface
-  by which external interpretation may be attached to, referenced from, and reasoned about,
-  without entering or contaminating the substrate.
-- Context tags, explanations, attestations, and provenance are not facts about the world;
-  they are structured references to interpretive acts that occur outside the substrate.
+Two boundary specifications protect this separation:
 
-Interpretation does not disappear.
-It is made explicit, attributable, and contestable.
+- **Governance Boundary (GB)** prevents governance records from becoming claims
+  of authority, legitimacy, obligation, or enforcement.
+- **Interpretation Boundary (IB)** prevents interpretive attachments from
+  becoming substrate semantics.
 
-Structural Explainability is not anti-interpretation;
-it is anti-implicit interpretation.
-Elements of interpretation may exist only in forms
-that do not alter identity, structure, or recorded change.
+Downstream specifications then use the core without redefining it:
 
-Structural Explainability is designed for plural systems:
-independent implementations that represent the same phenomena in different ways.
-Uniform naming, shared ontologies, or centralized authority are not required.
-Differences are addressed through explicit, accountable mappings
-rather than forced normalization or consensus.
+- **Accountable Entities (AE)** defines accountability-facing entity kinds as a
+  controlled projection of the nine SE profile kinds.
+- **Evolution Protocol (EP)** defines accountable-entity graph states, deltas,
+  and histories as they move through time, without deriving identity persistence
+  from graph continuity alone.
+- **Contextual Evidence & Explanations (CEE)** defines an interpretation overlay
+  for context tags, explanations, evidence references, attestations, and
+  provenance without modifying substrate records.
 
-Domains such as science, model development, and law do not alter the substrate.
-They specialize explanation by contributing controlled vocabularies for contextual scoping.
-These vocabularies are constrained by Structural Explainability and
-do not assert truth, causality, or normativity.
+Interpretation does not disappear. It is made explicit, attributable, external,
+and contestable.
 
-The result is a system that records reality without deciding its meaning,
-enables explanation without enforcing agreement, and
-supports long-term coordination across disagreement, institutional change, and time.
+Structural Explainability is not anti-interpretation; it is anti-implicit
+interpretation. Interpretive artifacts may exist only in forms that do not alter
+identity, structure, transformation, persistence, or recorded change.
+
+Structural Explainability is designed for plural systems: independent
+implementations that represent related phenomena without requiring one shared
+ontology, uniform naming, or centralized authority. Differences are addressed
+through explicit mappings and boundary-respecting attachments rather than forced
+normalization or consensus.
+
+Domains such as science, model development, education, and law do not alter the
+substrate. They may contribute controlled vocabularies, examples, mappings, and
+contextual explanations, but those additions remain external to the neutral core
+and do not assert truth, causality, authority, legitimacy, obligation, or
+enforcement as substrate facts.
+
+The result is a system that records structural commitments without deciding
+their ultimate meaning, enables explanation without enforcing agreement, and
+supports long-term coordination across disagreement, institutional change, and
+time.
