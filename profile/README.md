@@ -158,9 +158,11 @@ flowchart TD
 
 %% --- Theory Layer ---
 subgraph Theory
-    T1[se-theory-neutral-substrate]
-    T2[se-theory-identity-regimes]
-    T3[se-theory-structural-explainability]
+      T1[se-theory-neutral-substrate]
+      T2[se-theory-transformation]
+      T3[se-theory-persistence]
+      T4[se-theory-identity-regimes]
+      T5[se-theory-structural-explainability]
 end
 
 %% --- Contract ---
@@ -181,20 +183,39 @@ subgraph Downstream
     GOV[se-govsrc-*]
 end
 
-%% --- Edges with required labels ---
-T1 -->|grounds contract terms| FC
-T2 -->|grounds contract terms| FC
-T3 -->|grounds contract terms| FC
+  %% --- Application Layer ---
+  subgraph Applications
+      AE[Accountable Entities]
+      EP[Evolution Protocol]
+      CEE[Civic Explanation Engine]
+  end
 
-FC -->|specifies verified invariants and regimes| C
+  %% --- Theory to Contract ---
+  T1 -->|grounds contract terms| FC
+  T2 -->|grounds contract terms| FC
+  T3 -->|grounds contract terms| FC
+  T4 -->|grounds contract terms| FC
+  T5 -->|grounds contract terms| FC
 
-C -->|encodes governance contract| A
+  %% --- Contract to Governance ---
+  FC -->|specifies verified invariants, regimes, transformations, and persistence outcomes| C
+  C -->|encodes governance contract| A
 
-A -->|validates conformance of| K
-A -->|validates conformance of| M
-A -->|validates conformance of| R
-A -->|validates conformance of| MAP
-A -->|validates conformance of| GOV
+  %% --- Admin to Downstream Core ---
+  A -->|validates conformance of| K
+  A -->|validates conformance of| M
+  A -->|validates conformance of| R
+  A -->|validates conformance of| MAP
+  A -->|validates conformance of| GOV
+
+  %% --- Core to Applications ---
+  K -->|supports structural primitives for| AE
+  M -->|supports mappings for| AE
+  R -->|supports regime behavior for| AE
+
+  AE -->|provides accountable entity graph for| EP
+  EP -->|supports exchangeable explanation records for| CEE
+  CEE -->|renders explanations from| EP
 ```
 
 All repositories in this diagram declare an `SE_MANIFEST.toml` conforming to
