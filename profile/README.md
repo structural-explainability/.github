@@ -6,9 +6,9 @@
 
 > Defines neutral constraints under which explainability is possible without embedding interpretation.
 
-Structural Explainability defines the minimal, stable constraints
-under which identity, structure, change, explanation, and persistent disagreement
-can coexist over time without embedding interpretation.
+Structural Explainability separates structure, transformation, persistence,
+and interpretation so that identity judgments can be inspected without
+forcing agreement about ontology, causality, or normativity.
 
 It characterizes the representational conditions required for explainability
 to remain possible across incompatible
@@ -40,11 +40,11 @@ transformation.
 
 | Repository | Purpose |
 |------------|--------|
-| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation) | Foundational transformation operators, families, composition relations, orthogonality relations, and outcome vocabulary |
-| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence) | Foundational persistence theory for identity survival, invariants, equivalence, and breakage under admissible transformation |
-| [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate) | Neutrality theorem development and substrate constraints |
-| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes) | Structural requirements (R1–R6), six-regime lower bound, and refinement to regime profiles (nine-profile model) |
-| [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Cross-cutting theorem integration and traceability across theory repos |
+| [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate) | Neutrality theorem development and defines admissible structure |
+| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation) | Defines change pressure and foundational transformation operators, families, composition relations, orthogonality relations, and outcome vocabulary |
+| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence) | Defines preservation, breakage, and irrelevance under admissible transformation |
+| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes) | Define regime-specific identity behavior, six-regime lower bound, and refinement to nine-regime profiles |
+| [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Explains the resulting judgment without collapsing disagreements |
 
 Note: Each theory repo contains both 1) a TOML encoding and 2) a Lean proof encoding
 of its core classification structures.
