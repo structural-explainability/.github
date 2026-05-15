@@ -156,59 +156,60 @@ They do not introduce semantics beyond what is present in the source.
 ```mermaid
 flowchart TD
 
-%% --- Theory Layer ---
-subgraph Theory
-      T1[se-theory-neutral-substrate]
-      T2[se-theory-transformation]
-      T3[se-theory-persistence]
-      T4[se-theory-identity-regimes]
-      T5[se-theory-structural-explainability]
-end
+  %% --- Theory Layer ---
+  subgraph Theory
+      NS[se-theory-neutral-substrate]
+      TR[se-theory-transformation]
+      PE[se-theory-persistence]
+      IR[se-theory-identity-regimes]
+      SE[se-theory-structural-explainability]
+  end
 
-%% --- Contract ---
-FC[se-formal-contract]
+  %% --- Boundary Specs ---
+  subgraph Boundaries
+      GB[spec-gb<br/>Governance Boundary]
+      IB[spec-ib<br/>Interpretation Boundary]
+  end
 
-%% --- Constitution ---
-C[se-constitution]
+  %% --- Contract / Governance ---
+  FC[se-formal-contract]
+  C[se-constitution]
+  A[se-admin]
 
-%% --- Admin ---
-A[se-admin]
+  %% --- Downstream Core ---
+  subgraph Downstream_Core
+      K[se-kernel]
+      M[se-mapspec]
+      R[se-regimes]
+      MAP[se-mapping-*]
+      GOV[se-govsrc-*]
+  end
 
-%% --- Downstream ---
-subgraph Downstream
-    K[se-kernel]
-    M[se-mapspec]
-    R[se-regimes]
-    MAP[se-mapping-*]
-    GOV[se-govsrc-*]
-end
-
-  %% --- Application Layer ---
+  %% --- Applications ---
   subgraph Applications
       AE[Accountable Entities]
-      EP[Evolution Protocol]
+      EP[Exchange Protocol]
       CEE[Civic Explanation Engine]
   end
 
-  %% --- Theory to Contract ---
-  T1 -->|grounds contract terms| FC
-  T2 -->|grounds contract terms| FC
-  T3 -->|grounds contract terms| FC
-  T4 -->|grounds contract terms| FC
-  T5 -->|grounds contract terms| FC
+  NS -->|grounds contract terms| FC
+  TR -->|grounds contract terms| FC
+  PE -->|grounds contract terms| FC
+  IR -->|grounds contract terms| FC
+  SE -->|grounds contract terms| FC
 
-  %% --- Contract to Governance ---
-  FC -->|specifies verified invariants, regimes, transformations, and persistence outcomes| C
-  C -->|encodes governance contract| A
+  GB -->|constrains governance of| C
+  IB -->|constrains interpretation of| C
 
-  %% --- Admin to Downstream Core ---
+  FC -->|specifies verified structural contract| C
+  C -->|encodes governance and interpretation boundaries| A
+
   A -->|validates conformance of| K
   A -->|validates conformance of| M
   A -->|validates conformance of| R
   A -->|validates conformance of| MAP
   A -->|validates conformance of| GOV
 
-  %% --- Core to Applications ---
   K -->|supports structural primitives for| AE
   M -->|supports mappings for| AE
   R -->|supports regime behavior for| AE
@@ -216,6 +217,13 @@ end
   AE -->|provides accountable entity graph for| EP
   EP -->|supports exchangeable explanation records for| CEE
   CEE -->|renders explanations from| EP
+
+  IB -->|prevents interpretive leakage from| AE
+  IB -->|prevents interpretive leakage from| EP
+  IB -->|prevents interpretive leakage from| CEE
+  GB -->|governs structural artifact use in| AE
+  GB -->|governs structural artifact use in| EP
+  GB -->|governs structural artifact use in| CEE
 ```
 
 All repositories in this diagram declare an `SE_MANIFEST.toml` conforming to
