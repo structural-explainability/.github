@@ -6,18 +6,36 @@
 
 > Defines neutral constraints under which explainability is possible without embedding interpretation.
 
-Structural Explainability separates structure, transformation, persistence,
-and interpretation so that identity judgments can be inspected without
-forcing agreement about ontology, causality, or normativity.
+## Overview
 
-It characterizes the representational conditions required for explainability
-to remain possible across incompatible
-legal, political, scientific, or normative frameworks.
+Some information systems make decisions that affect people, attribute claims to
+sources, record contested facts, or coordinate across institutions that disagree.
+When those systems collapse what should be distinct layers (what is structurally recorded, 
+what is governed, what is interpreted, what is attested) into a single record,
+they lose the ability to represent the disagreement they exist to handle.
 
-This organization contains specifications, formalizations, and papers
-that define, justify, and defend that neutral space.
+That collapse is often invisible until the system is challenged:
+in court, in audit, in appeal, in public review, or 
+in cross-institutional reconciliation.
+By then, the records may already have committed to interpretations,
+authority claims, or judgments that the system never explicitly declared.
 
-The [documentation website](https://structural-explainability.github.io/site/) offers a more general overview.
+Structural Explainability defines the structural conditions under which this
+collapse can be prevented.
+It identifies what must be kept separate for an information system
+to remain durable, inspectable, and contestable under persistent disagreement:
+
+- identity from graph continuity
+- attribution from authority
+- governance status from correctness
+- evidence from interpretation
+- dependency from validity
+- explanation from proof
+- record from judgment
+
+SE does not replace domain vocabularies, standards, ontologies, or existing data systems.
+It constrains how systems implement them so that disagreement remains
+visible, attributable, and useful over time.
 
 ## Accountable Record Systems
 
