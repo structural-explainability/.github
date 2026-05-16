@@ -64,7 +64,7 @@ built to use ordinary domain vocabularies while satisfying SE verification.
 
 | Repository | Purpose |
 |------------|---------|
-| [accountable-record](https://github.com/structural-explainability/accountable-record) | Shared Accountable Record contract, export format, verification model, and cross-domain failure modes |
+| [accountable-record-spec](https://github.com/structural-explainability/accountable-record-spec) | Shared Accountable Record contract, export format, verification model, and cross-domain failure modes |
 
 ### Domain Systems
 
@@ -72,8 +72,8 @@ Real systems that implement the Accountable Record contract using ordinary domai
 
 | Repository | Purpose |
 |------------|---------|
-| [judicial-record](https://github.com/structural-explainability/judicial-record) | Judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, and source spans |
-| [civic-influence-record](https://github.com/structural-explainability/civic-influence-record) | Civic influence record system for people, organizations, roles, funding, lobbying, affiliations, policy documents, and source-backed influence claims |
+| [judicial-record-spec](https://github.com/structural-explainability/judicial-record-spec) | Judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, and source spans |
+| [civic-influence-record-spec](https://github.com/structural-explainability/civic-influence-record-spec) | Civic influence record system for people, organizations, roles, funding, lobbying, affiliations, policy documents, and source-backed influence claims |
 
 ### Verification Profiles
 
