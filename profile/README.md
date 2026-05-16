@@ -64,7 +64,7 @@ built to use ordinary domain vocabularies while satisfying SE verification.
 
 | Repository | Purpose |
 |------------|---------|
-| [accountable-record](...) | Shared Accountable Record contract, export format, verification model, and cross-domain failure modes |
+| [accountable-record](https://github.com/structural-explainability/accountable-record) | Shared Accountable Record contract, export format, verification model, and cross-domain failure modes |
 
 ### Domain Systems
 
@@ -72,8 +72,8 @@ Real systems that implement the Accountable Record contract using ordinary domai
 
 | Repository | Purpose |
 |------------|---------|
-| [judicial-record](...) | Judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, and source spans |
-| [civic-influence-record](...) | Civic influence record system for people, organizations, roles, funding, lobbying, affiliations, policy documents, and source-backed influence claims |
+| [judicial-record](https://github.com/structural-explainability/judicial-record) | Judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, and source spans |
+| [civic-influence-record](https://github.com/structural-explainability/civic-influence-record) | Civic influence record system for people, organizations, roles, funding, lobbying, affiliations, policy documents, and source-backed influence claims |
 
 ### Verification Profiles
 
@@ -81,8 +81,8 @@ SE verification implementations that check whether each domain system satisfies 
 
 | Repository | Purpose |
 |------------|---------|
-| [se-verification-judicial-record](...) | SE verification profile for judicial record systems |
-| [se-verification-civic-influence-record](...) | SE verification profile for civic influence record systems |
+| [se-verification-judicial-record](https://github.com/structural-explainability/se-verification-judicial-record) | SE verification profile for judicial record systems |
+| [se-verification-civic-influence-record](https://github.com/structural-explainability/se-verification-civic-influence-record) | SE verification profile for civic influence record systems |
 
 SE Verification checks whether an Accountable Record system 
 keeps certain distinctions intact:
