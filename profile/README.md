@@ -298,9 +298,9 @@ This organization is structured around roles:
 
 | Role                                                              | Purpose                                                             |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
+| [**Accountable Record Systems**](#accountable-record-systems)     | User-facing applications that implement and demonstrate the constraints |
 | [**Specifications**](#normative-specifications)                   | Define what must be true for admissibility                          |
 | [**Formalizations**](#formalizations)                             | Demonstrate that specifications are internally consistent           |
-| [**Foundations**](#foundations)                                   | Establish the underlying theoretical results                        |
 | [**Papers**](#papers)                                             | Justify why the constraints are necessary and unavoidable           |
 | [**Boundaries & Overlays**](#boundary-and-overlay-specifications) | Define how interpretation may attach without entering the substrate |
 
@@ -446,13 +446,15 @@ Across all repositories:
 - Governance records do not imply authority, legitimacy, obligation, or enforcement.
 - Disagreement is representable and not forced to resolve.
 - No domain semantics are embedded in the core.
+- Verification is optional; systems may be useful in their domain
+  without being SE-verified, and may seek verification as a quality property.
 
 ## Intentionally Excluded
 
 The following are intentionally excluded from this core organization:
 
-- domain vocabularies, except clearly labeled examples
-- application schemas or data models
+- domain vocabularies (except clearly labeled examples and Accountable Record systems)
+- application schemas or data models (except in Accountable Record systems)
 - analytics, inference, optimization, recommendation, or decision systems
 - governance authority, legitimacy, obligation, or enforcement frameworks
 - interpretation, explanation, evidence, or attestation as substrate facts
