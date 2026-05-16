@@ -19,6 +19,68 @@ that define, justify, and defend that neutral space.
 
 The [documentation website](https://structural-explainability.github.io/site/) offers a more general overview.
 
+## Accountable Record Systems
+
+Structural Explainability defines constraints that information systems 
+must satisfy to handle persistent disagreement without collapsing 
+identity, structure, governance, interpretation, evidence, or explanation. 
+The core SE repositories define those constraints. 
+Accountable Record systems are user-facing applications that implement them.
+
+The Accountable Record system repositories are in **active development**. 
+They track main on their SE dependencies during this phase to allow the 
+contract, implementations, and verification profiles to co-evolve. 
+Pinned versions follow once the contract stabilizes.
+
+The core SE repositories define substrate-level constraints.
+Accountable Record systems are user-facing applications of those constraints:
+they produce durable, inspectable records of decisions, relationships, claims,
+dependencies, sources, interpretations, or processes in ways that support
+inspection, contestation, audit, and continued use under disagreement.
+
+These repositories are application-layer systems.
+They are real systems, not demonstrations, 
+built to use ordinary domain vocabularies while satisfying SE verification.
+
+### Shared Contract
+
+| Repository | Purpose |
+|------------|---------|
+| [accountable-record](...) | Shared Accountable Record contract, export format, verification model, and cross-domain failure modes |
+
+### Domain Systems
+
+Real systems that implement the Accountable Record contract using ordinary domain vocabularies.
+
+| Repository | Purpose |
+|------------|---------|
+| [judicial-record](...) | Judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, and source spans |
+| [civic-influence-record](...) | Civic influence record system for people, organizations, roles, funding, lobbying, affiliations, policy documents, and source-backed influence claims |
+
+### Verification Profiles
+
+SE verification implementations that check whether each domain system satisfies the Accountable Record contract.
+
+| Repository | Purpose |
+|------------|---------|
+| [se-verification-judicial-record](...) | SE verification profile for judicial record systems |
+| [se-verification-civic-influence-record](...) | SE verification profile for civic influence record systems |
+
+SE Verification checks whether an Accountable Record system 
+keeps certain distinctions intact:
+between identity and graph continuity, 
+between attribution and authority, 
+between evidence and interpretation, 
+between record and judgment. 
+Systems that collapse these distinctions make it harder to represent disagreement accurately.
+
+Structural Explainability does not replace domain ontologies or standards.
+Domain systems may use Akoma Ntoso, LegalRuleML, FAIR principles, CIDOC-CRM, 
+schema.org vocabularies, or any other appropriate standard. 
+SE Verification checks whether a system's operational use of its 
+chosen standard preserves the distinctions needed for 
+accountable representation under persistent disagreement.
+
 ## Manifest Schema
 
 All SE repositories include an SE Manifest describing the repo contents.
@@ -188,8 +250,8 @@ flowchart TD
   %% --- Applications ---
   subgraph Applications
       AE[Accountable Entities]
-      EP[Exchange Protocol]
-      CEE[Civic Explanation Engine]
+      EP[Evolution Protocol]
+      CEE[Contextual Evidence & Explanations]
   end
 
   NS -->|grounds contract terms| FC
