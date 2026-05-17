@@ -78,7 +78,8 @@ Use the `-SECTION` suffix to make section scope explicit:
 # WHY-SECTION: All patterns below prevent committing generated artifacts.
 ```
 
-Section markers are visual and semantic. The `=== ... ===` pattern is conventional but not enforced; any consistent delimiter works.
+Section markers are visual and semantic.
+The `=== ... ===` pattern is conventional but not enforced; any consistent delimiter works.
 
 ### File Scope
 
