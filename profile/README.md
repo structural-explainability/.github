@@ -62,11 +62,11 @@ These repositories are application-layer systems.
 They are real systems, not demonstrations,
 built to use ordinary domain vocabularies while satisfying SE verification.
 
-### Shared Contract
+### Accountable Record Contract
 
 | Repository                                                                                      | Purpose                                                                                               |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| [accountable-record-spec](https://github.com/structural-explainability/accountable-record-spec) | Shared Accountable Record contract, export format, verification model, and cross-domain failure modes |
+| [accountable-record](https://github.com/structural-explainability/accountable-record) | Language-neutral, data-first Accountable Record contract for bundles, profiles, reports, conformance, packages, and verification semantics |
 
 ### Domain Systems
 
