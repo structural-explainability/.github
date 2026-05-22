@@ -134,17 +134,21 @@ institutional legitimacy, or final domain meaning.
 
 ## Repository Manifests
 
-SE repositories use repository manifests to describe repo identity, scope,
-dependencies, provided artifacts, validation, governance, citation, and
-traceability metadata.
-The SE ecosystem manifest schema is defined here:
+SE repositories use manifests to describe the repository's role, scope, dependencies,
+provided artifacts, validation expectations, governance, and traceability.
 
 | Repository | Purpose |
 | --- | --- |
-| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical manifest schema for SE repositories, including repository identity, scope, dependencies, provided artifacts, validation, governance, citation, and traceability metadata. |
+| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical manifest schema for SE repositories. |
 
-Some public-facing application-layer repositories may use `MANIFEST.toml` as
-their repository-level declaration while still following SE manifest semantics.
+Public-facing application-layer repositories may use `MANIFEST.toml` as
+their repository-level declaration while following SE manifest semantics.
+
+The SE manifest complements external metadata standards.
+Citation metadata belongs in `CITATION.cff`; 
+software supply-chain metadata may use SPDX;
+software discovery metadata may use CodeMeta;
+research-object packaging may use RO-Crate.
 
 ### Theory (Formal Derivation Layer)
 
