@@ -100,14 +100,7 @@ They do not redefine either one.
 
 Verification implementations consume the Accountable Record contract, domain
 record systems, packages, locks, bundles, profiles, reports, and expected reports.
-
 They are implementation repositories, not the source of contract semantics.
-
-| Repository | Purpose |
-| --- | --- |
-| [accountable-record-py](https://github.com/structural-explainability/accountable-record-py) | Python reference implementation for validating Accountable Record bundles, profiles, packages, locks, and conformance semantics, and for producing verifier reports. |
-| [judicial-record-py](https://github.com/structural-explainability/judicial-record-py) | Python tooling and verification implementation for Judicial Record packages, profiles, fixtures, and expected reports. |
-| [civic-record-py](https://github.com/structural-explainability/civic-record-py) | Python tooling and verification implementation for Civic Record packages, profiles, fixtures, and expected reports. |
 
 Verification checks whether an Accountable Record system preserves the
 structural distinctions required by the contract and selected domain profile,
@@ -132,15 +125,16 @@ the distinctions needed for accountable representation under persistent
 disagreement. It does not decide truth, legal correctness, civic authority,
 institutional legitimacy, or final domain meaning.
 
+| Repository | Purpose |
+| --- | --- |
+| [accountable-record-py](https://github.com/structural-explainability/accountable-record-py) | Python reference implementation for validating Accountable Record bundles, profiles, packages, locks, and conformance semantics, and for producing verifier reports. |
+| [judicial-record-py](https://github.com/structural-explainability/judicial-record-py) | Python tooling and verification implementation for Judicial Record packages, profiles, fixtures, and expected reports. |
+| [civic-record-py](https://github.com/structural-explainability/civic-record-py) | Python tooling and verification implementation for Civic Record packages, profiles, fixtures, and expected reports. |
+
 ## Repository Manifests
 
 SE repositories use manifests to describe the repository's role, scope, dependencies,
 provided artifacts, validation expectations, governance, and traceability.
-
-| Repository | Purpose |
-| --- | --- |
-| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical manifest schema for SE repositories. |
-
 Public-facing application-layer repositories may use `MANIFEST.toml` as
 their repository-level declaration while following SE manifest semantics.
 
@@ -149,6 +143,10 @@ Citation metadata belongs in `CITATION.cff`;
 software supply-chain metadata may use SPDX;
 software discovery metadata may use CodeMeta;
 research-object packaging may use RO-Crate.
+
+| Repository | Purpose |
+| --- | --- |
+| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical manifest schema for SE repositories. |
 
 ### Theory (Formal Derivation Layer)
 
