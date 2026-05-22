@@ -39,76 +39,112 @@ SE does not replace domain vocabularies, standards, ontologies, or existing data
 It constrains how systems implement them so that disagreement remains
 visible, attributable, and useful over time.
 
+SE does not replace domain vocabularies, standards, ontologies, or existing data systems.
+It constrains how systems implement them so that disagreement remains
+visible, attributable, and useful over time.
+
 ## Accountable Record Systems
 
-Structural Explainability defines constraints that information systems
-must satisfy to handle persistent disagreement without collapsing
-identity, structure, governance, interpretation, evidence, or explanation.
-The core SE repositories define those constraints.
-Accountable Record systems are user-facing applications that implement them.
+Accountable Record repositories apply SE constraints to durable record
+structures.
 
 The Accountable Record system repositories are in **active development**.
 They track main on their SE dependencies during this phase to allow the
-contract, implementations, and verification profiles to co-evolve.
+contract, domain systems, and verification implementations to co-evolve.
 Pinned versions follow once the contract stabilizes.
 
-The core SE repositories define substrate-level constraints.
-Accountable Record systems are user-facing applications of those constraints:
-they produce durable, inspectable records of decisions, relationships, claims,
-dependencies, sources, interpretations, or processes in ways that support
-inspection, contestation, audit, and continued use under disagreement.
+Accountable Record systems produce durable, inspectable records of decisions,
+relationships, claims, dependencies, sources, interpretations, or processes in
+ways that support inspection, contestation, audit, and continued use under
+disagreement.
 
-These repositories are application-layer systems.
-They are real systems, not demonstrations,
-built to use ordinary domain vocabularies while satisfying SE verification.
+These are application-layer repositories.
+They are real systems, not demonstrations, built to use ordinary domain
+vocabularies while preserving the structural distinctions required for
+accountable verification.
 
 ### Accountable Record Contract
 
-| Repository                                                                                      | Purpose                                                                                               |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| [accountable-record](https://github.com/structural-explainability/accountable-record) | Language-neutral, data-first Accountable Record contract for bundles, profiles, reports, conformance, packages, and verification semantics |
+| Repository | Purpose |
+| --- | --- |
+| [accountable-record](https://github.com/structural-explainability/accountable-record) | Language-neutral, data-first Accountable Record contract for bundles, profiles, reports, conformance, packages, and verification semantics. |
 
-### Domain Systems
+### Domain Record Systems
 
-Real systems that implement the Accountable Record contract using ordinary domain vocabularies.
+Domain record systems implement the Accountable Record contract using ordinary
+domain vocabularies.
 
-| Repository                                                                                              | Purpose                                                                                                                                               |
-| ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [judicial-record-spec](https://github.com/structural-explainability/judicial-record-spec)               | Judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, and source spans                          |
-| [civic-influence-record-spec](https://github.com/structural-explainability/civic-influence-record-spec) | Civic influence record system for people, organizations, roles, funding, lobbying, affiliations, policy documents, and source-backed influence claims |
+These repositories define general domain profiles, packages, mappings, record
+types, fixtures, and expected reports.
+They are not limited to one jurisdiction, institution, dataset, or source system.
 
-### Verification Profiles
+| Repository | Purpose |
+| --- | --- |
+| [judicial-record](https://github.com/structural-explainability/judicial-record) | General judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, procedural history, source spans, and judicial record reports. |
+| [civic-record](https://github.com/structural-explainability/civic-record) | General civic record system for people, organizations, roles, meetings, documents, relationships, funding, actions, sources, decisions, and civic records. |
 
-SE verification implementations that check whether each domain system satisfies
-the Accountable Record contract.
+### Jurisdiction-Specific Record Systems
 
-| Repository                                                                                                                    | Purpose                                                    |
-| ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| [se-verification-judicial-record](https://github.com/structural-explainability/se-verification-judicial-record)               | SE verification profile for judicial record systems        |
-| [se-verification-civic-influence-record](https://github.com/structural-explainability/se-verification-civic-influence-record) | SE verification profile for civic influence record systems |
+Jurisdiction-specific systems specialize a general domain record system for a
+particular court, jurisdiction, source system, institutional setting, or public
+record context.
 
-SE Verification checks whether an Accountable Record system
-keeps certain distinctions intact:
-between identity and graph continuity,
-between attribution and authority,
-between evidence and interpretation,
-between record and judgment.
-Systems that collapse these distinctions make it harder to represent disagreement accurately.
+They consume the general domain record system and the Accountable Record contract.
+They do not redefine either one.
+
+| Repository | Purpose |
+| --- | --- |
+| [judicial-record-us-federal-supreme](https://github.com/structural-explainability/judicial-record-us-federal-supreme) | U.S. Supreme Court specialization and fixture set for Judicial Record, including source, citation, opinion, docket, court, and jurisdiction-specific conventions. |
+
+### Verification Implementations
+
+Verification implementations consume the Accountable Record contract, domain
+record systems, packages, locks, bundles, profiles, reports, and expected reports.
+
+They are implementation repositories, not the source of contract semantics.
+
+| Repository | Purpose |
+| --- | --- |
+| [accountable-record-py](https://github.com/structural-explainability/accountable-record-py) | Python reference implementation for validating Accountable Record bundles, profiles, packages, locks, and conformance semantics, and for producing verifier reports. |
+| [judicial-record-py](https://github.com/structural-explainability/judicial-record-py) | Python tooling and verification implementation for Judicial Record packages, profiles, fixtures, and expected reports. |
+| [civic-record-py](https://github.com/structural-explainability/civic-record-py) | Python tooling and verification implementation for Civic Record packages, profiles, fixtures, and expected reports. |
+
+Verification checks whether an Accountable Record system preserves the
+structural distinctions required by the contract and selected domain profile,
+including distinctions such as:
+
+- identity from graph continuity;
+- attribution from authority;
+- evidence from interpretation;
+- dependency from validity;
+- record from judgment;
+- later treatment from historical rewrite.
+
+Systems that collapse these distinctions make it harder to represent
+disagreement accurately.
 
 Structural Explainability does not replace domain ontologies or standards.
 Domain systems may use Akoma Ntoso, LegalRuleML, FAIR principles, CIDOC-CRM,
-schema.org vocabularies, or any other appropriate standard.
-SE Verification checks whether a system's operational use of its
-chosen standard preserves the distinctions needed for
-accountable representation under persistent disagreement.
+schema.org vocabularies, or other appropriate standards.
 
-## Manifest Schema
+Verification checks whether a system's use of its chosen standards preserves
+the distinctions needed for accountable representation under persistent
+disagreement. It does not decide truth, legal correctness, civic authority,
+institutional legitimacy, or final domain meaning.
 
-All SE repositories include an SE Manifest describing the repo contents.
+## Repository Manifests
 
-| Repository                                                                            | Purpose                                                                                 |
-| ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical `SE_MANIFEST.toml` schema; no upstream SE dependencies, consumed by all repos |
+SE repositories use repository manifests to describe repo identity, scope,
+dependencies, provided artifacts, validation, governance, citation, and
+traceability metadata.
+The SE ecosystem manifest schema is defined here:
+
+| Repository | Purpose |
+| --- | --- |
+| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical manifest schema for SE repositories, including repository identity, scope, dependencies, provided artifacts, validation, governance, citation, and traceability metadata. |
+
+Some public-facing application-layer repositories may use `MANIFEST.toml` as
+their repository-level declaration while still following SE manifest semantics.
 
 ### Theory (Formal Derivation Layer)
 
