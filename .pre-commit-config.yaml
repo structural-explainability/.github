@@ -1,26 +1,22 @@
 # ============================================================
 # .pre-commit-config.yaml (Markdown Hygiene)
 # ============================================================
-# VARIANT: markdown-hygiene
-# SOURCE: https://github.com/denisecase/templates
+# Updated: 2026-05-23
+
+# Fast, consistent repo hygiene before commit.
 #
-# REQ: Documentation-only repos MAY include a .pre-commit-config.yaml for repo hygiene (optional).
-# WHY: Keep Markdown diffs clean across OSes and prevent common documentation commit errors.
+# These hooks complement and do not replace:
+# - .editorconfig
+# - .gitattributes
+# - pyproject.toml
 #
-# OBS: These hooks use and do NOT override:
-#   - .editorconfig (whitespace / indentation)
-#   - .gitattributes (EOL normalization)
-#
-# OPTIONAL LOCAL USAGE (no repo venv required):
-#   Install uv (once, user-level).
+# Local usage:
 #   uv self update
 #   uvx pre-commit install
-#   uvx pre-commit run --all-files (just once, to check all files)
-# Subsequent commits will AUTOMATICALLY run pre-commit hooks after git add
-# and before git commit.
+#   uvx pre-commit run --all-files
 #
-# NOTE: pre-commit is optional.
-#   Repositories do NOT require Python, uv, or pre-commit to clone or commit.
+# Ruff lint runs before Ruff format in pre-commit so autofixes
+# are formatted in the same pass.
 
 exclude: |
   (?x)^(
@@ -34,7 +30,6 @@ exclude: |
     \.tox/|
     \.venv/|
     .*\.(egg-info)/|
-    .*\.log|
     __pycache__/|
     _minted.*/|
     build/|
@@ -44,7 +39,8 @@ exclude: |
     lake-packages/|
     node_modules/|
     out/|
-    site/
+    site/ |
+    LICENSE
   )
 
 repos:
@@ -73,7 +69,9 @@ repos:
       #  === PRE-COMMIT: CHECK DATA FILE FORMATS ===
 
       - id: check-json
-        name: B1) Validate JSON syntax
+        name: B1) Validate JSON syntax (except .vscode/)
+        # WHY: VSCode settings may include comments, which are non-standard JSON.
+        exclude: ^\.vscode/.*\.json$
 
       - id: check-toml
         name: B2) Validate TOML syntax
@@ -81,7 +79,8 @@ repos:
       - id: check-yaml
         name: B3) Validate YAML syntax
         files: \.(yml|yaml)$
-        exclude: ^mkdocs\.ya?ml$ # OBS: mkdocs.yaml may include non-standard tags.
+        # WHY: VS Code config files are editor-specific
+        exclude: ^(\.vscode/)
 
       # === PRE-COMMIT:CHECK FOR COMMON PROBLEMS ===
 
