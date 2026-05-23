@@ -39,9 +39,31 @@ SE does not replace domain vocabularies, standards, ontologies, or existing data
 It constrains how systems implement them so that disagreement remains
 visible, attributable, and useful over time.
 
-SE does not replace domain vocabularies, standards, ontologies, or existing data systems.
-It constrains how systems implement them so that disagreement remains
-visible, attributable, and useful over time.
+## Repository Manifests
+
+SE repositories use manifests to describe the repository's role, scope, dependencies,
+provided artifacts, validation expectations, governance, and traceability.
+Public-facing application-layer repositories may use `MANIFEST.toml` as
+their repository-level declaration while following SE manifest semantics.
+
+The SE manifest complements external metadata standards.
+Citation metadata belongs in `CITATION.cff`;
+software supply-chain metadata may use SPDX;
+software discovery metadata may use CodeMeta;
+research-object packaging may use RO-Crate.
+
+| Repository                                                                            | Purpose                                        |
+| ------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical manifest schema for SE repositories. |
+
+## Shared Contract Tooling
+
+Shared contract tooling supports packaging, validation, and distribution of
+machine-readable contract artifacts across SE repositories.
+
+| Repository                                                                      | Purpose                                                                                  |
+| ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [se-contract-kit](https://github.com/structural-explainability/se-contract-kit) | Shared Python tooling for packaging, validating, and distributing SE contract artifacts. |
 
 ## Accountable Record Systems
 
@@ -65,8 +87,8 @@ accountable verification.
 
 ### Accountable Record Contract
 
-| Repository | Purpose |
-| --- | --- |
+| Repository                                                                            | Purpose                                                                                                                                     |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | [accountable-record](https://github.com/structural-explainability/accountable-record) | Language-neutral, data-first Accountable Record contract for bundles, profiles, reports, conformance, packages, and verification semantics. |
 
 ### Domain Record Systems
@@ -78,10 +100,10 @@ These repositories define general domain profiles, packages, mappings, record
 types, fixtures, and expected reports.
 They are not limited to one jurisdiction, institution, dataset, or source system.
 
-| Repository | Purpose |
-| --- | --- |
+| Repository                                                                      | Purpose                                                                                                                                                                            |
+| ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [judicial-record](https://github.com/structural-explainability/judicial-record) | General judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, procedural history, source spans, and judicial record reports. |
-| [civic-record](https://github.com/structural-explainability/civic-record) | General civic record system for people, organizations, roles, meetings, documents, relationships, funding, actions, sources, decisions, and civic records. |
+| [civic-record](https://github.com/structural-explainability/civic-record)       | General civic record system for people, organizations, roles, meetings, documents, relationships, funding, actions, sources, decisions, and civic records.                         |
 
 ### Jurisdiction-Specific Record Systems
 
@@ -92,8 +114,8 @@ record context.
 They consume the general domain record system and the Accountable Record contract.
 They do not redefine either one.
 
-| Repository | Purpose |
-| --- | --- |
+| Repository                                                                                                            | Purpose                                                                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [judicial-record-us-federal-supreme](https://github.com/structural-explainability/judicial-record-us-federal-supreme) | U.S. Supreme Court specialization and fixture set for Judicial Record, including source, citation, opinion, docket, court, and jurisdiction-specific conventions. |
 
 ### Verification Implementations
@@ -125,30 +147,13 @@ the distinctions needed for accountable representation under persistent
 disagreement. It does not decide truth, legal correctness, civic authority,
 institutional legitimacy, or final domain meaning.
 
-| Repository | Purpose |
-| --- | --- |
+| Repository                                                                                  | Purpose                                                                                                                                                              |
+| ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [accountable-record-py](https://github.com/structural-explainability/accountable-record-py) | Python reference implementation for validating Accountable Record bundles, profiles, packages, locks, and conformance semantics, and for producing verifier reports. |
-| [judicial-record-py](https://github.com/structural-explainability/judicial-record-py) | Python tooling and verification implementation for Judicial Record packages, profiles, fixtures, and expected reports. |
-| [civic-record-py](https://github.com/structural-explainability/civic-record-py) | Python tooling and verification implementation for Civic Record packages, profiles, fixtures, and expected reports. |
+| [judicial-record-py](https://github.com/structural-explainability/judicial-record-py)       | Python tooling and verification implementation for Judicial Record packages, profiles, fixtures, and expected reports.                                               |
+| [civic-record-py](https://github.com/structural-explainability/civic-record-py)             | Python tooling and verification implementation for Civic Record packages, profiles, fixtures, and expected reports.                                                  |
 
-## Repository Manifests
-
-SE repositories use manifests to describe the repository's role, scope, dependencies,
-provided artifacts, validation expectations, governance, and traceability.
-Public-facing application-layer repositories may use `MANIFEST.toml` as
-their repository-level declaration while following SE manifest semantics.
-
-The SE manifest complements external metadata standards.
-Citation metadata belongs in `CITATION.cff`;
-software supply-chain metadata may use SPDX;
-software discovery metadata may use CodeMeta;
-research-object packaging may use RO-Crate.
-
-| Repository | Purpose |
-| --- | --- |
-| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical manifest schema for SE repositories. |
-
-### Theory (Formal Derivation Layer)
+## Theory (Formal Derivation Layer)
 
 These repositories contain evolving Lean 4 theorem development that
 derives and justifies the formal contract.

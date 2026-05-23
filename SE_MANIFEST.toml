@@ -1,66 +1,66 @@
 # ============================================================
-# .github/SE_MANIFEST.toml (Repository Intent, Scope, and Role)
+# .github/SE_MANIFEST.toml
 # ============================================================
 
-schema = "se-manifest-1"
-schema_url = "https://github.com/structural-explainability/spec-se/blob/main/manifests/se-manifest-1.md"
+schema = "se-manifest-schema"
+schema_url = "https://github.com/structural-explainability/se-manifest-schema/blob/main/manifest-schema.toml"
+
+# === Identity ===
 
 [meta]
-# Non-normative contextual information
-framework = "Structural Explainability"
-framework_url = "https://github.com/structural-explainability"
-framework_note = "Provides definitions and conventions for SE_MANIFEST semantics."
-description = "Declarative claim of repository intent, scope, and role."
-purpose = "To make explicit the boundaries, responsibilities, and expectations of this repository relative to others."
+purpose = "Declares the organization-level GitHub health and governance repository for Structural Explainability."
 
 [repo]
 name = ".github"
-org  = "structural-explainability"
+org = "structural-explainability"
+class = "admin"
 kind = "governance"
-status = "public"
+status = "active"
 since = "2025"
-summary = "Organization-wide community health files, contribution workflows, and governance scaffolding for Structural Explainability."
+summary = "Organization-wide profile for Structural Explainability."
 
 [layer]
 space = "SE"
-role  = "governance"
+role = "administration"
+
+# === Dependencies ===
 
 [depends]
 required = []
 optional = []
 
+# === Provided artifacts ===
+
 [provides]
-artifacts = [
-  "README.md",
-  "CODE_OF_CONDUCT.md",
-  "CONTRIBUTING.md",
-  "SECURITY.md",
-  ".github/",
-  ".github/workflows/",
-  "SE_MANIFEST.toml"
-]
+artifacts = ["README.md", "profile/README.md"]
+
+# === Scope ===
 
 [scope]
 includes = [
-  "organization-level contribution guidance",
-  "issue and pull request templates",
-  "repository and community health defaults",
-  "workflow templates and CI policy scaffolding",
-  "non-normative operational guidance for contributors"
+    "organization-level GitHub profile content",
+    "repository health defaults when present",
 ]
+
 excludes = [
-  "normative specification definitions",
-  "formal constraints or invariants",
-  "conformance requirements",
-  "implementation logic",
-  "domain semantics",
-  "interpretive or evaluative claims"
+    "normative specification definitions",
+    "formal constraints or invariants",
+    "conformance requirements",
+    "implementation logic",
+    "domain semantics",
+    "interpretive or evaluative claims",
 ]
+
+# === Compatibility ===
+
+[compatibility]
+constitution = "none"
+
+# === External references ===
 
 [citation]
 cff = "CITATION.cff"
 preferred = "repo"
-bib_hint = "case2025-se-github"
 
 [traceability]
 identifier_map = "none"
