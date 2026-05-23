@@ -139,7 +139,7 @@ Public-facing application-layer repositories may use `MANIFEST.toml` as
 their repository-level declaration while following SE manifest semantics.
 
 The SE manifest complements external metadata standards.
-Citation metadata belongs in `CITATION.cff`; 
+Citation metadata belongs in `CITATION.cff`;
 software supply-chain metadata may use SPDX;
 software discovery metadata may use CodeMeta;
 research-object packaging may use RO-Crate.

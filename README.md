@@ -14,6 +14,7 @@ Initialize once:
 
 ```shell
 uv self update
+uv python pin 3.14
 uvx pre-commit install
 uvx pre-commit run --all-files
 ```
