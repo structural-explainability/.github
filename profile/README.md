@@ -63,9 +63,15 @@ machine-readable contract artifacts across SE repositories.
 | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | [se-contract-kit](https://github.com/structural-explainability/se-contract-kit) | Shared Python tooling for packaging, validating, and distributing SE contract artifacts. |
 
+## Accountable Record Contract
+
+| Repository                                                                            | Purpose                                                                                                                                     |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| [accountable-record](https://github.com/structural-explainability/accountable-record) | Language-neutral, data-first Accountable Record contract for bundles, profiles, reports, conformance, packages, and verification semantics. |
+
 ## Accountable Record Systems
 
-Accountable Record repositories apply SE constraints to durable record
+Accountable Record systems apply SE constraints to durable record
 structures.
 
 The Accountable Record system repositories are in **active development**.
@@ -83,12 +89,6 @@ They are real systems, not demonstrations, built to use ordinary domain
 vocabularies while preserving the structural distinctions required for
 accountable verification.
 
-### Accountable Record Contract
-
-| Repository                                                                            | Purpose                                                                                                                                     |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [accountable-record](https://github.com/structural-explainability/accountable-record) | Language-neutral, data-first Accountable Record contract for bundles, profiles, reports, conformance, packages, and verification semantics. |
-
 ### Domain Record Systems
 
 Domain record systems implement the Accountable Record contract using ordinary
@@ -103,7 +103,7 @@ They are not limited to one jurisdiction, institution, dataset, or source system
 | [judicial-record](https://github.com/structural-explainability/judicial-record) | General judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, procedural history, source spans, and judicial record reports. |
 | [civic-record](https://github.com/structural-explainability/civic-record)       | General civic record system for people, organizations, roles, meetings, documents, relationships, funding, actions, sources, decisions, and civic records.                         |
 
-### Jurisdiction-Specific Record Systems
+### Judicial Record Systems
 
 Jurisdiction-specific systems specialize a general domain record system for a
 particular court, jurisdiction, source system, institutional setting, or public
@@ -115,6 +115,54 @@ They do not redefine either one.
 | Repository                                                                                                            | Purpose                                                                                                                                                           |
 | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [judicial-record-us-federal-supreme](https://github.com/structural-explainability/judicial-record-us-federal-supreme) | U.S. Supreme Court specialization and fixture set for Judicial Record, including source, citation, opinion, docket, court, and jurisdiction-specific conventions. |
+
+### Civic Record Systems
+
+Civic record systems cover public institutions, organizations, roles, meetings,
+documents, relationships, funding, actions, sources, decisions, obligations, and
+governance records.
+
+Civic specializations may focus on particular institutional functions or public
+record contexts while consuming `civic-record` and `accountable-record` rather
+than redefining either one.
+
+Potential civic specializations include:
+
+- `municipal-record` for city departments, ordinances, meetings, budgets,
+  permits, public works, public actions, and governance records.
+- `municipal-contract-record` for solicitations, bids, awards, vendors,
+  agencies, contract terms, amendments, obligations, payments, performance
+  records, dependencies, and public-source traceability.
+- `public-meeting-record` for agendas, minutes, participants, motions, votes,
+  documents, decisions, public comments, and source records.
+- `public-budget-record` for appropriations, funds, programs, amendments,
+  expenditures, obligations, and public financial traceability.
+
+These specializations would link to existing municipal, procurement, financial,
+records-management, legal, transparency, and open-data standards. The goal is to
+use existing standards in a way that makes their application inspectable by
+preserving distinctions among source, authority, obligation, dependency,
+interpretation, governance status, and recorded change.
+
+### Education Record Systems
+
+Education systems are candidate Accountable Record domains because they depend
+on standards, agencies, jurisdictions, programs, assessments, alignments,
+adoptions, revisions, and source authorities that must remain distinguishable
+over time.
+
+Potential domains include:
+
+- `education-record` for standards, competencies, learning objectives,
+  alignments, assessments, jurisdictions, agencies, adoptions, revisions, and
+  source authority records.
+
+These domains would consume `accountable-record` and link to existing education,
+assessment, standards-alignment, curriculum, records-management, and transparency
+standards.
+The goal is to use existing standards in a way that makes their
+application inspectable by preserving distinctions among source, authority,
+alignment, interpretation, governance status, and recorded change.
 
 ### Infrastructure and Energy Record Systems
 
@@ -157,7 +205,7 @@ The goal is to use existing standards in a way that makes their application
 inspectable by preserving distinctions among source, measurement, model,
 interpretation, dependency, governance status, and recorded change.
 
-### Verification Implementations
+## Accountable Record Verification Implementations
 
 Verification implementations consume the Accountable Record contract, domain
 record systems, packages, locks, bundles, profiles, reports, and expected reports.
