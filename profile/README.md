@@ -390,86 +390,88 @@ They do not introduce semantics beyond what is present in the source.
 flowchart TD
 
   %% --- Theory Layer ---
-  subgraph Theory
-      NS[se-theory-neutral-substrate]
-      TR[se-theory-transformation]
-      PE[se-theory-persistence]
-      IR[se-theory-identity-regimes]
-      SE[se-theory-structural-explainability]
+  subgraph T[Theory Layer]
+    NS[neutral substrate]
+    TR[transformation]
+    PE[persistence]
+    IR[identity regimes]
+    SET[structural explainability]
   end
 
   %% --- Boundary Specs ---
-  subgraph Boundaries
-      GB[spec-gb<br/>Governance Boundary]
-      IB[spec-ib<br/>Interpretation Boundary]
+  subgraph B[Boundary Specs]
+    GB[governance boundary]
+    IB[interpretation boundary]
   end
 
   %% --- Contract / Governance ---
-  FC[se-formal-contract]
-  C[se-constitution]
-  A[se-admin]
+  subgraph G[Contract and Governance]
+    FC[se-formal-contract]
+    C[se-constitution]
+    A[se-admin]
+  end
 
-  %% --- Downstream Core ---
-  subgraph Downstream_Core
-      K[se-kernel]
-      M[se-mapspec]
-      R[se-regimes]
-      MAP[se-mapping-*]
-      GOV[se-govsrc-*]
+  %% --- Operational Core ---
+  subgraph O[Operational Core]
+    K[se-kernel]
+    M[se-mapspec]
+    R[se-regimes]
+    MAP[se-mapping-*]
+    GOV[se-govsrc-*]
   end
 
   %% --- Accountable Record Systems ---
-  subgraph Accountable_Record_Systems
-      AR[accountable-record]
-      JR[judicial-record]
-      CR[civic-record]
-      JRS[judicial-record-us-federal-supreme]
+  subgraph ARS[Accountable Record Systems]
+    AR[accountable-record]
+    JR[judicial-record]
+    CR[civic-record]
+    JRS[Supreme Court specialization]
   end
 
   %% --- Verification Implementations ---
-  subgraph Verification_Implementations
-      ARPY[accountable-record-py]
-      JRPY[judicial-record-py]
-      CRPY[civic-record-py]
+  subgraph V[Verification Implementations]
+    ARPY[accountable-record-py]
+    JRPY[judicial-record-py]
+    CRPY[civic-record-py]
   end
 
-  NS -->|grounds contract terms| FC
-  TR -->|grounds contract terms| FC
-  PE -->|grounds contract terms| FC
-  IR -->|grounds contract terms| FC
-  SE -->|grounds contract terms| FC
+  NS --> FC
+  TR --> FC
+  PE --> FC
+  IR --> FC
+  SET --> FC
 
-  GB -->|constrains governance of| C
-  IB -->|constrains interpretation of| C
+  GB --> C
+  IB --> C
 
-  FC -->|specifies verified structural contract| C
-  C -->|encodes governance and interpretation boundaries| A
+  FC --> C
+  C --> A
 
-  A -->|validates conformance of| K
-  A -->|validates conformance of| M
-  A -->|validates conformance of| R
-  A -->|validates conformance of| MAP
-  A -->|validates conformance of| GOV
+  A --> K
+  A --> M
+  A --> R
+  A --> MAP
+  A --> GOV
 
-  K -->|supports structural primitives for| AR
-  M -->|supports mappings for| AR
-  R -->|supports regime behavior for| AR
+  K --> AR
+  M --> AR
+  R --> AR
 
-  AR -->|provides language-neutral contract for| JR
-  AR -->|provides language-neutral contract for| CR
-  JR -->|is specialized by| JRS
+  AR --> JR
+  AR --> CR
+  JR --> JRS
 
-  ARPY -->|verifies| AR
-  JRPY -->|verifies| JR
-  CRPY -->|verifies| CR
+  ARPY --> AR
+  JRPY --> JR
+  CRPY --> CR
 
-  IB -->|prevents interpretive leakage in| AR
-  IB -->|prevents interpretive leakage in| JR
-  IB -->|prevents interpretive leakage in| CR
+  IB -.-> AR
+  IB -.-> JR
+  IB -.-> CR
 
-  GB -->|governs structural artifact use in| AR
-  GB -->|governs structural artifact use in| JR
-  GB -->|governs structural artifact use in| CR
+  GB -.-> AR
+  GB -.-> JR
+  GB -.-> CR
 ```
 
 All repositories in this diagram declare an `SE_MANIFEST.toml` conforming to
@@ -483,7 +485,7 @@ This organization is structured around roles:
 | Role                                                          | Purpose                                                                 |
 | ------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | [**Accountable Record Systems**](#accountable-record-systems) | User-facing applications that implement and demonstrate the constraints |
-| [**Specifications**](#specifications)                         | Define what must be true for admissibility                              |
+| [**Specifications**](#early-specifications)                         | Define what must be true for admissibility                              |
 | [**Formalizations**](#formalizations)                         | Demonstrate that specifications are internally consistent               |
 | [**Papers**](#papers)                                         | Justify why the constraints are necessary and unavoidable               |
 
@@ -535,8 +537,6 @@ They serve as guardrails that prevent interpretation from leaking into the neutr
 | --------------------------------------------------------------- | -------------------------------------------------------- | --------- |
 | [spec-gb](https://github.com/structural-explainability/spec-gb) | Governance boundary for structural artifacts and actions | Normative |
 | [spec-ib](https://github.com/structural-explainability/spec-ib) | Interpretation boundary for external frameworks          | Normative |
-
-
 
 ### Informative
 
