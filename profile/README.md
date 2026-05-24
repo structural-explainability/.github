@@ -43,8 +43,6 @@ visible, attributable, and useful over time.
 
 SE repositories use manifests to describe the repository's role, scope, dependencies,
 provided artifacts, validation expectations, governance, and traceability.
-Public-facing application-layer repositories may use `MANIFEST.toml` as
-their repository-level declaration while following SE manifest semantics.
 
 The SE manifest complements external metadata standards.
 Citation metadata belongs in `CITATION.cff`;
@@ -117,6 +115,47 @@ They do not redefine either one.
 | Repository                                                                                                            | Purpose                                                                                                                                                           |
 | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [judicial-record-us-federal-supreme](https://github.com/structural-explainability/judicial-record-us-federal-supreme) | U.S. Supreme Court specialization and fixture set for Judicial Record, including source, citation, opinion, docket, court, and jurisdiction-specific conventions. |
+
+### Infrastructure and Energy Record Systems
+
+Infrastructure and energy systems are candidate Accountable Record domains
+because they depend on long-lived assets, operational events, sensor streams,
+model outputs, inspections, permits, dependencies, and governance decisions that
+must remain distinguishable over time.
+
+These domains would form an extensible hierarchy.
+**General infrastructure records** would define shared accountable-record
+structures for assets, networks, facilities, observations, maintenance,
+incidents, dependencies, and operational state.
+**Sector-specific records** would specialize those structures without
+redefining the accountable-record contract.
+**Digital-twin records** would provide a cross-domain specialization for
+linking physical assets to sensor streams, model assumptions, simulations,
+calibration events, and operational decisions.
+
+Potential domains include:
+
+- `infrastructure-record` for asset, facility, network, inspection, dependency,
+  maintenance, incident, and operational-state records.
+- `energy-record` for generation, storage, hydrogen, transmission,
+  distribution, interconnection, outage, reliability, and emissions records.
+- `water-record` for water source, treatment, distribution, wastewater,
+  sampling, quality, permit, and incident records.
+- `telecommunications-record` for network assets, service areas,
+  interconnections, routing dependencies, outages, capacity, reliability,
+  security, and service-level records.
+- `transportation-record` for corridors, routes, assets, signals, inspections,
+  incidents, maintenance, safety, accessibility, and operational-state records.
+- `waste-record` for collection routes, facilities, materials, incidents,
+  service areas, diversion, disposal, recycling, emissions, and compliance
+  records.
+
+These domains would consume `accountable-record` and link to existing
+infrastructure, utility, geospatial, sensor, safety, reliability, digital-twin,
+and reporting standards.
+The goal is to use existing standards in a way that makes their application
+inspectable by preserving distinctions among source, measurement, model,
+interpretation, dependency, governance status, and recorded change.
 
 ### Verification Implementations
 
@@ -311,11 +350,19 @@ flowchart TD
       GOV[se-govsrc-*]
   end
 
-  %% --- Applications ---
-  subgraph Applications
-      AE[Accountable Entities]
-      EP[Evolution Protocol]
-      CEE[Contextual Evidence & Explanations]
+  %% --- Accountable Record Systems ---
+  subgraph Accountable_Record_Systems
+      AR[accountable-record]
+      JR[judicial-record]
+      CR[civic-record]
+      JRS[judicial-record-us-federal-supreme]
+  end
+
+  %% --- Verification Implementations ---
+  subgraph Verification_Implementations
+      ARPY[accountable-record-py]
+      JRPY[judicial-record-py]
+      CRPY[civic-record-py]
   end
 
   NS -->|grounds contract terms| FC
@@ -336,20 +383,25 @@ flowchart TD
   A -->|validates conformance of| MAP
   A -->|validates conformance of| GOV
 
-  K -->|supports structural primitives for| AE
-  M -->|supports mappings for| AE
-  R -->|supports regime behavior for| AE
+  K -->|supports structural primitives for| AR
+  M -->|supports mappings for| AR
+  R -->|supports regime behavior for| AR
 
-  AE -->|provides accountable entity graph for| EP
-  EP -->|supports exchangeable explanation records for| CEE
-  CEE -->|renders explanations from| EP
+  AR -->|provides language-neutral contract for| JR
+  AR -->|provides language-neutral contract for| CR
+  JR -->|is specialized by| JRS
 
-  IB -->|prevents interpretive leakage from| AE
-  IB -->|prevents interpretive leakage from| EP
-  IB -->|prevents interpretive leakage from| CEE
-  GB -->|governs structural artifact use in| AE
-  GB -->|governs structural artifact use in| EP
-  GB -->|governs structural artifact use in| CEE
+  ARPY -->|verifies| AR
+  JRPY -->|verifies| JR
+  CRPY -->|verifies| CR
+
+  IB -->|prevents interpretive leakage in| AR
+  IB -->|prevents interpretive leakage in| JR
+  IB -->|prevents interpretive leakage in| CR
+
+  GB -->|governs structural artifact use in| AR
+  GB -->|governs structural artifact use in| JR
+  GB -->|governs structural artifact use in| CR
 ```
 
 All repositories in this diagram declare an `SE_MANIFEST.toml` conforming to
@@ -571,19 +623,14 @@ Two boundary specifications protect this separation:
 - **Interpretation Boundary (IB)** prevents interpretive attachments from
   becoming substrate semantics.
 
-Downstream specifications then use the core without redefining it:
+Downstream specifications and implementations use the core without redefining it.
+They may define accountable entities, record systems, evolution histories,
+verification reports, contextual evidence, explanations, attestations, or
+provenance overlays, but they must not collapse those artifacts back into
+substrate identity, structure, transformation, persistence, or recorded change.
 
-- **Accountable Entities (AE)** defines accountability-facing entity kinds as a
-  controlled projection of the nine SE profile kinds.
-- **Evolution Protocol (EP)** defines accountable-entity graph states, deltas,
-  and histories as they move through time, without deriving identity persistence
-  from graph continuity alone.
-- **Contextual Evidence & Explanations (CEE)** defines an interpretation overlay
-  for context tags, explanations, evidence references, attestations, and
-  provenance without modifying substrate records.
-
-Interpretation does not disappear. It is made explicit, attributable, external,
-and contestable.
+Interpretation does not disappear.
+It is made explicit, attributable, external, and contestable.
 
 Structural Explainability is not anti-interpretation; it is anti-implicit
 interpretation. Interpretive artifacts may exist only in forms that do not alter
