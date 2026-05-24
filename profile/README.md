@@ -246,6 +246,9 @@ These repositories contain evolving Lean 4 theorem development that
 derives and justifies the formal contract.
 They are not consumed directly by operational systems.
 
+<details>
+<summary>See more</summary>
+
 The transformation repository is the upstream vocabulary layer for describing
 kinds of change independently of persistence or regime-specific survival claims.
 The persistence repository defines identity persistence under admissible
@@ -277,6 +280,8 @@ A single disputed cell (REC x PV) where TOML and Lean assigned different verdict
 the question that must be resolved to fix it,
 and why resolution is part of the theory layer.
 
+</details>
+
 ## Formal Contract and Operational Foundations
 
 These repositories define the **neutral structural substrate** of Structural Explainability.
@@ -284,6 +289,9 @@ They define admissibility constraints under which identity regimes may be applie
 without encoding identity or persistence behavior themselves.
 They establish the minimal, stable constraints under which identity, structure, change,
 and explanation can coexist without embedding interpretation.
+
+<details>
+<summary>See more</summary>
 
 The formal contract layer provides machine-checked authorization of these constraints.
 Operational foundation repositories consume this contract and enforce it.
@@ -297,6 +305,8 @@ They do not contain domain semantics, applications, or analytics.
 | [se-admin](https://github.com/structural-explainability/se-admin)                     | Shared automation, scaffolding, and enforcement                                                      |
 | [se-kernel](https://github.com/structural-explainability/se-kernel)                   | Core structural primitives and invariants (constrained by constitution and formal contract)          |
 | [se-mapspec](https://github.com/structural-explainability/se-mapspec)                 | Mapping vocabulary and cross-system semantics (constrained by formal contract relations)             |
+
+</details>
 
 ## Regime Execution
 
@@ -327,6 +337,9 @@ constraints defined in the foundational repositories.
 
 These repositories apply Structural Explainability mapping rules to bounded domain examples.
 
+<details>
+<summary>See more</summary>
+
 They are maintained in this organization only as **conformance examples**.
 They are **not part of the neutral core** and do not extend or modify the substrate.
 They demonstrate how mappings may be constructed across independent systems
@@ -341,10 +354,15 @@ belong in downstream organizations.
 | [se-mapping-education-math](https://github.com/structural-explainability/se-mapping-education-math)       | Mathematics standards mapping examples using central atomic competency units    |
 | [se-mapping-education-math-g8](https://github.com/structural-explainability/se-mapping-education-math-g8) | Grade 8 mathematics pilot mappings for linear equations and statistics          |
 
+</details>
+
 ## Source Materials (govsrc)
 
 These repositories contain **traceable source materials** from governmental
 or official public bodies.
+
+<details>
+<summary>See more</summary>
 
 They preserve source artifacts in a stable, inspectable form so that mappings,
 profiles, and rules can reference them without copying, altering, or embedding
@@ -363,6 +381,8 @@ They do not introduce semantics beyond what is present in the source.
 | [se-govsrc-norway-education](https://github.com/structural-explainability/se-govsrc-norway-education)           | Norway curriculum (LK20) source materials    |
 | [se-govsrc-singapore-education](https://github.com/structural-explainability/se-govsrc-singapore-education)     | Singapore syllabus source materials          |
 | [se-govsrc-oecd-pisa](https://github.com/structural-explainability/se-govsrc-oecd-pisa)                         | OECD PISA framework and assessment materials |
+
+</details>
 
 ## Contract Derivation and Enforcement Chain
 
@@ -467,11 +487,14 @@ This organization is structured around roles:
 | [**Formalizations**](#formalizations)                         | Demonstrate that specifications are internally consistent               |
 | [**Papers**](#papers)                                         | Justify why the constraints are necessary and unavoidable               |
 
-## Specifications
+## Early Specifications
 
-These repositories define the admissible representational space
+These repositories defined the admissible representational space
 for structurally explainable systems.
 They are normative only in the sense of **defining structural constraints**, not interpretations.
+
+<details>
+<summary>See more</summary>
 
 ### Structural Explainability (Foundation)
 
@@ -513,17 +536,24 @@ They serve as guardrails that prevent interpretation from leaking into the neutr
 | [spec-gb](https://github.com/structural-explainability/spec-gb) | Governance boundary for structural artifacts and actions | Normative |
 | [spec-ib](https://github.com/structural-explainability/spec-ib) | Interpretation boundary for external frameworks          | Normative |
 
+
+
 ### Informative
 
 | Repository                                                                        | Purpose                                             | Status      |
 | --------------------------------------------------------------------------------- | --------------------------------------------------- | ----------- |
 | [spec-se-appendix](https://github.com/structural-explainability/spec-se-appendix) | Identifier rules, examples, and cross-spec patterns | Informative |
 
+</details>
+
 ## Formalizations
 
 These repositories **do not define meaning or behavior**.
 They demonstrate that the specifications are internally consistent,
 coherent, and composable under formal reasoning.
+
+<details>
+<summary>See more</summary>
 
 ### Original / Outdated Foundations
 
@@ -564,6 +594,8 @@ They keep interpretation from leaking into the neutral substrate.
 | --------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
 | [GovernanceBoundary](https://github.com/structural-explainability/GovernanceBoundary)         | Governance boundary     | ![CI](https://github.com/structural-explainability/GovernanceBoundary/actions/workflows/ci-lean.yml/badge.svg?branch=main)     | Governance                                                                 |
 | [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Interpretation boundary | ![CI](https://github.com/structural-explainability/InterpretationBoundary/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Conditions under which external frameworks may interpret substrate records |
+
+</details>
 
 ## Papers
 
