@@ -98,10 +98,53 @@ These repositories define general domain profiles, packages, mappings, record
 types, fixtures, and expected reports.
 They are not limited to one jurisdiction, institution, dataset, or source system.
 
-| Repository                                                                      | Purpose                                                                                                                                                                            |
-| ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [judicial-record](https://github.com/structural-explainability/judicial-record) | General judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, procedural history, source spans, and judicial record reports. |
-| [civic-record](https://github.com/structural-explainability/civic-record)       | General civic record system for people, organizations, roles, meetings, documents, relationships, funding, actions, sources, decisions, and civic records.                         |
+| Repository                                                                                  | Purpose                                                                                                                                                                                              |
+| ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [infrastructure-record](https://github.com/structural-explainability/infrastructure-record) | General infrastructure record system for assets, facilities, networks, inspections, dependencies, maintenance, incidents, operational state, source observations, and infrastructure record reports. |
+| [energy-record](https://github.com/structural-explainability/energy-record)                 | General energy record system for generation, storage, hydrogen, transmission, distribution, interconnection, outage, reliability, emissions, dependencies, model outputs, and energy record reports. |
+| [judicial-record](https://github.com/structural-explainability/judicial-record)             | General judicial record system for decisions, opinions, claims, holdings, citations, dependencies, later treatment, procedural history, source spans, and judicial record reports.                   |
+| [civic-record](https://github.com/structural-explainability/civic-record)                   | General civic record system for people, organizations, roles, meetings, documents, relationships, funding, actions, sources, decisions, and civic records.                                           |
+
+### Infrastructure and Energy Record Systems
+
+Infrastructure and energy systems are priority Accountable Record domains
+because they depend on long-lived assets, operational events, sensor streams,
+model outputs, inspections, permits, dependencies, and governance decisions that
+must remain distinguishable over time.
+
+These domains would form an extensible hierarchy.
+**General infrastructure records** would define shared accountable-record
+structures for assets, networks, facilities, observations, maintenance,
+incidents, dependencies, and operational state.
+**Sector-specific records** would specialize those structures without
+redefining the accountable-record contract.
+**Digital-twin records** would provide a cross-domain specialization for
+linking physical assets to sensor streams, model assumptions, simulations,
+calibration events, and operational decisions.
+
+Potential domains include:
+
+- `infrastructure-record` for asset, facility, network, inspection, dependency,
+  maintenance, incident, and operational-state records.
+- `energy-record` for generation, storage, hydrogen, transmission,
+  distribution, interconnection, outage, reliability, and emissions records.
+- `water-record` for water source, treatment, distribution, wastewater,
+  sampling, quality, permit, and incident records.
+- `telecommunications-record` for network assets, service areas,
+  interconnections, routing dependencies, outages, capacity, reliability,
+  security, and service-level records.
+- `transportation-record` for corridors, routes, assets, signals, inspections,
+  incidents, maintenance, safety, accessibility, and operational-state records.
+- `waste-record` for collection routes, facilities, materials, incidents,
+  service areas, diversion, disposal, recycling, emissions, and compliance
+  records.
+
+These domains would consume `accountable-record` and link to existing
+infrastructure, utility, geospatial, sensor, safety, reliability, digital-twin,
+and reporting standards.
+The goal is to use existing standards in a way that makes their application
+inspectable by preserving distinctions among source, measurement, model,
+interpretation, dependency, governance status, and recorded change.
 
 ### Judicial Record Systems
 
@@ -163,47 +206,6 @@ standards.
 The goal is to use existing standards in a way that makes their
 application inspectable by preserving distinctions among source, authority,
 alignment, interpretation, governance status, and recorded change.
-
-### Infrastructure and Energy Record Systems
-
-Infrastructure and energy systems are candidate Accountable Record domains
-because they depend on long-lived assets, operational events, sensor streams,
-model outputs, inspections, permits, dependencies, and governance decisions that
-must remain distinguishable over time.
-
-These domains would form an extensible hierarchy.
-**General infrastructure records** would define shared accountable-record
-structures for assets, networks, facilities, observations, maintenance,
-incidents, dependencies, and operational state.
-**Sector-specific records** would specialize those structures without
-redefining the accountable-record contract.
-**Digital-twin records** would provide a cross-domain specialization for
-linking physical assets to sensor streams, model assumptions, simulations,
-calibration events, and operational decisions.
-
-Potential domains include:
-
-- `infrastructure-record` for asset, facility, network, inspection, dependency,
-  maintenance, incident, and operational-state records.
-- `energy-record` for generation, storage, hydrogen, transmission,
-  distribution, interconnection, outage, reliability, and emissions records.
-- `water-record` for water source, treatment, distribution, wastewater,
-  sampling, quality, permit, and incident records.
-- `telecommunications-record` for network assets, service areas,
-  interconnections, routing dependencies, outages, capacity, reliability,
-  security, and service-level records.
-- `transportation-record` for corridors, routes, assets, signals, inspections,
-  incidents, maintenance, safety, accessibility, and operational-state records.
-- `waste-record` for collection routes, facilities, materials, incidents,
-  service areas, diversion, disposal, recycling, emissions, and compliance
-  records.
-
-These domains would consume `accountable-record` and link to existing
-infrastructure, utility, geospatial, sensor, safety, reliability, digital-twin,
-and reporting standards.
-The goal is to use existing standards in a way that makes their application
-inspectable by preserving distinctions among source, measurement, model,
-interpretation, dependency, governance status, and recorded change.
 
 ## Accountable Record Verification Implementations
 
@@ -485,7 +487,7 @@ This organization is structured around roles:
 | Role                                                          | Purpose                                                                 |
 | ------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | [**Accountable Record Systems**](#accountable-record-systems) | User-facing applications that implement and demonstrate the constraints |
-| [**Specifications**](#early-specifications)                         | Define what must be true for admissibility                              |
+| [**Specifications**](#early-specifications)                   | Define what must be true for admissibility                              |
 | [**Formalizations**](#formalizations)                         | Demonstrate that specifications are internally consistent               |
 | [**Papers**](#papers)                                         | Justify why the constraints are necessary and unavoidable               |
 
