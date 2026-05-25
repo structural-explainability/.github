@@ -88,6 +88,9 @@ These are application-layer repositories.
 They are real systems, not demonstrations, built to use ordinary domain
 vocabularies while preserving the structural distinctions required for
 accountable verification.
+These systems are organized as domain record systems,
+jurisdiction-specific specializations, and
+verification implementations.
 
 ### Domain Record Systems
 
@@ -113,16 +116,16 @@ model outputs, inspections, permits, dependencies, and governance decisions that
 must remain distinguishable over time.
 
 These domains would form an extensible hierarchy.
-**General infrastructure records** would define shared accountable-record
+**general infrastructure records** define shared accountable-record
 structures for assets, networks, facilities, observations, maintenance,
-incidents, dependencies, and operational state.
-**Sector-specific records** would specialize those structures without
-redefining the accountable-record contract.
-**Digital-twin records** would provide a cross-domain specialization for
+incidents, dependencies, and operational state;
+**sector-specific records** specialize those structures without
+redefining the accountable-record contract; and
+**digital-twin records** provide a cross-domain specialization for
 linking physical assets to sensor streams, model assumptions, simulations,
 calibration events, and operational decisions.
 
-Potential domains include:
+Potential specializations include:
 
 - `infrastructure-record` for asset, facility, network, inspection, dependency,
   maintenance, incident, and operational-state records.
@@ -143,8 +146,9 @@ These domains would consume `accountable-record` and link to existing
 infrastructure, utility, geospatial, sensor, safety, reliability, digital-twin,
 and reporting standards.
 The goal is to use existing standards in a way that makes their application
-inspectable by preserving distinctions among source, measurement, model,
-interpretation, dependency, governance status, and recorded change.
+inspectable by preserving distinctions among
+source, measurement, model, interpretation, dependency,
+governance status, and recorded change.
 
 ### Judicial Record Systems
 
@@ -169,7 +173,7 @@ Civic specializations may focus on particular institutional functions or public
 record contexts while consuming `civic-record` and `accountable-record` rather
 than redefining either one.
 
-Potential civic specializations include:
+Potential specializations include:
 
 - `municipal-record` for city departments, ordinances, meetings, budgets,
   permits, public works, public actions, and governance records.
@@ -182,9 +186,10 @@ Potential civic specializations include:
   expenditures, obligations, and public financial traceability.
 
 These specializations would link to existing municipal, procurement, financial,
-records-management, legal, transparency, and open-data standards. The goal is to
-use existing standards in a way that makes their application inspectable by
-preserving distinctions among source, authority, obligation, dependency,
+records-management, legal, transparency, and open-data standards.
+The goal is to use existing standards in a way that makes their application
+inspectable by preserving distinctions among
+source, authority, obligation, dependency,
 interpretation, governance status, and recorded change.
 
 ### Education Record Systems
@@ -194,7 +199,7 @@ on standards, agencies, jurisdictions, programs, assessments, alignments,
 adoptions, revisions, and source authorities that must remain distinguishable
 over time.
 
-Potential domains include:
+Potential specializations include:
 
 - `education-record` for standards, competencies, learning objectives,
   alignments, assessments, jurisdictions, agencies, adoptions, revisions, and
@@ -203,9 +208,10 @@ Potential domains include:
 These domains would consume `accountable-record` and link to existing education,
 assessment, standards-alignment, curriculum, records-management, and transparency
 standards.
-The goal is to use existing standards in a way that makes their
-application inspectable by preserving distinctions among source, authority,
-alignment, interpretation, governance status, and recorded change.
+The goal is to use existing standards in a way that makes their application
+inspectable by preserving distinctions among
+source, authority, alignment, interpretation,
+governance status, and recorded change.
 
 ## Accountable Record Verification Implementations
 
@@ -236,11 +242,11 @@ the distinctions needed for accountable representation under persistent
 disagreement. It does not decide truth, legal correctness, civic authority,
 institutional legitimacy, or final domain meaning.
 
-| Repository                                                                                  | Purpose                                                                                                                                                              |
-| ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [accountable-record-py](https://github.com/structural-explainability/accountable-record-py) | Python reference implementation for validating Accountable Record bundles, profiles, packages, locks, and conformance semantics, and for producing verifier reports. |
-| [judicial-record-py](https://github.com/structural-explainability/judicial-record-py)       | Python tooling and verification implementation for Judicial Record packages, profiles, fixtures, and expected reports.                                               |
-| [civic-record-py](https://github.com/structural-explainability/civic-record-py)             | Python tooling and verification implementation for Civic Record packages, profiles, fixtures, and expected reports.                                                  |
+| Repository                                                                                  | Purpose                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [accountable-record-py](https://github.com/structural-explainability/accountable-record-py) | Python tooling and verification implementation for Accountable Record bundles, profiles, packages, locks, and conformance semantics, and for producing verifier reports. |
+| [judicial-record-py](https://github.com/structural-explainability/judicial-record-py)       | Python tooling and verification implementation for Judicial Record packages, profiles, fixtures, and expected reports.                                                   |
+| [civic-record-py](https://github.com/structural-explainability/civic-record-py)             | Python tooling and verification implementation for Civic Record packages, profiles, fixtures, and expected reports.                                                      |
 
 ## Theory (Formal Derivation Layer)
 
