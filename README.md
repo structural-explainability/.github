@@ -16,6 +16,7 @@ Initialize once:
 uv self update
 uv python pin 3.15
 uvx pre-commit install
+
 uvx pre-commit run --all-files
 npx markdownlint-cli2 --fix
 ```
