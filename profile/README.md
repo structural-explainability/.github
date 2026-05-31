@@ -283,10 +283,10 @@ formulate the question the discrepancy represents,
 resolve it by appeal to relevant SE definitions,
 update the wrong encoding, and confirm counts align.
 See [Issue 1](https://github.com/structural-explainability/se-theory-identity-regimes/issues/1)
-for a worked example.
-A single disputed cell (REC x PV) where TOML and Lean assigned different verdicts,
-the question that must be resolved to fix it,
-and why resolution is part of the theory layer.
+for a worked example:
+a single disputed cell (REC x PV) where TOML and Lean
+assigned different verdicts, the question that must be resolved to fix it,
+and why that resolution is part of the theory layer.
 
 </details>
 
@@ -321,13 +321,11 @@ They do not contain domain semantics, applications, or analytics.
 These repositories implement the executable identity and persistence regimes
 over the neutral structural substrate.
 They encode regime profiles, transformation families, and identity responses
-(PRS / BRK / INH) as testable artifacts where:
+(PRS / BRK / IGN) as testable artifacts where:
 
 - PRS = Preserves identity. The transformation does not change identity under the regime.
 - BRK = Breaks identity. The transformation produces a distinct identity under the regime.
-- INH = Inherits identity.
-  The transformation does not act on the identity criteria tracked by the regime;
-  identity is inherited from the prior state without regime-level evaluation.
+- IGN = Ignore. The transformation does not act on the identity criteria tracked by the regime.
 
 These executables provide a stress-testing layer used to validate regime behavior
 and to evaluate mappings under controlled transformations without introducing
@@ -492,10 +490,14 @@ This organization is structured around roles:
 
 | Role                                                                                              | Purpose                                                                                                                  |
 | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| [**Manifests and Schema**](#repository-manifests)                                                 | Define the manifest format every SE repository declares against.                                                         |
 | [**Theory Derivation**](#theory-formal-derivation-layer)                                          | Derive and justify the formal contract.                                                                                  |
 | [**Formal Contract and Operational Foundations**](#formal-contract-and-operational-foundations)   | Export and enforce the neutral structural constraints used by operational layers.                                        |
+| [**Regime Execution**](#regime-execution)                                                         | Provide executable identity and persistence regimes for stress-testing and mapping evaluation.                           |
 | [**Reference Implementations and Formal Anchors**](#reference-implementations-and-formal-anchors) | Provide optional foundation, interface, and boundary implementations for systems that need shared implementation layers. |
 | [**Specifications**](#normative-and-informative-specifications)                                   | Define structural constraints for admissible representation.                                                             |
+| [**Shared Contract Tooling**](#shared-contract-tooling)                                           | Package, validate, and distribute machine-readable contract artifacts across repositories.                               |
+| [**Accountable Record Contract**](#accountable-record-contract)                                   | Define the language-neutral contract that Accountable Record systems consume.                                            |
 | [**Accountable Record Systems**](#accountable-record-systems)                                     | Implement durable record systems that preserve SE structural distinctions.                                               |
 | [**Verification Implementations**](#accountable-record-verification-implementations)              | Check record systems, packages, profiles, locks, bundles, and reports against selected contracts.                        |
 | [**Mapping Examples**](#mapping-examples)                                                         | Show bounded conformance examples without extending the neutral core.                                                    |
