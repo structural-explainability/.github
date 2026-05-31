@@ -25,7 +25,7 @@ permissions: # WHY: Use least privileges required.
 env:
   PYTHONUNBUFFERED: "1" # WHY: Real-time logging.
   PYTHONIOENCODING: "utf-8" # WHY: Ensure UTF-8 encoding for international characters.
-  PYTHON_VERSION: "3.14"
+  PYTHON_VERSION: "3.15"
 
 jobs:
   ci:
