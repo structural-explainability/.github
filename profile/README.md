@@ -506,7 +506,8 @@ This organization is structured around roles:
 
 These repositories define the admissible representational space
 for structurally explainable systems.
-They are normative only in the sense of **defining structural constraints**, not interpretations.
+They are normative only in the sense of defining structural constraints,
+not interpretations.
 
 <details>
 <summary>See more</summary>
@@ -521,15 +522,22 @@ Defines neutrality and boundary constraints that apply to all downstream systems
 
 ### Accountable Entity and Evolution Specifications
 
-These repositories define the accountable-entity and evolution layers
-used by downstream structurally explainable information systems.
+Accountable Entities defines the entity-kind layer used by downstream
+information systems:
+Actor, Locus, Instrument, Event, Scope, and Observation.
+It references canonical identity-regime profiles defined in
+`se-theory-identity-regimes`; it does not define those profiles.
 
-| Repository                                                      | Purpose                                   | Status    |
-| --------------------------------------------------------------- | ----------------------------------------- | --------- |
-| [spec-ae](https://github.com/structural-explainability/spec-ae) | Accountable Entities and identity regimes | Normative |
-| [spec-ep](https://github.com/structural-explainability/spec-ep) | Graph evolution over accountable entities | Normative |
+Evolution Protocol defines graph evolution over accountable entities.
+Together, these specifications define reusable structural vocabularies for
+systems that need accountable-entity and evolution layers.
 
-### Interface (CEE)
+| Repository                                                      | Purpose                                                                 | Status    |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------- | --------- |
+| [spec-ae](https://github.com/structural-explainability/spec-ae) | Accountable entity kinds; references canonical identity-regime profiles | Normative |
+| [spec-ep](https://github.com/structural-explainability/spec-ep) | Graph evolution over accountable entities                               | Normative |
+
+### Interface Specification (CEE)
 
 The Contextual Evidence and Explanation (CEE) layer defines
 a structural interface to the neutral substrate.
@@ -539,19 +547,20 @@ It does not alter identity, structure, or recorded change.
 | ----------------------------------------------------------------- | ------------------------------------------------------------- | --------- |
 | [spec-cee](https://github.com/structural-explainability/spec-cee) | Contextual evidence, explanation, attestation, and provenance | Normative |
 
-### Boundaries (GB / IB)
+### Boundary Specifications (GB / IB)
 
 These repositories define additional structural boundaries
 that operate relative to the neutral substrate.
 They do not alter identity, structure, or recorded change.
-They serve as guardrails that prevent interpretation from leaking into the neutral substrate.
+They prevent interpretation, governance status, or external authority claims
+from leaking into the neutral substrate.
 
 | Repository                                                      | Purpose                                                  | Status    |
 | --------------------------------------------------------------- | -------------------------------------------------------- | --------- |
 | [spec-gb](https://github.com/structural-explainability/spec-gb) | Governance boundary for structural artifacts and actions | Normative |
 | [spec-ib](https://github.com/structural-explainability/spec-ib) | Interpretation boundary for external frameworks          | Normative |
 
-### Informative
+### Informative Specification Materials
 
 | Repository                                                                        | Purpose                                             | Status      |
 | --------------------------------------------------------------------------------- | --------------------------------------------------- | ----------- |
@@ -582,10 +591,10 @@ These repositories provide reusable accountable-entity and evolution foundations
 for downstream systems that need them.
 They are reference implementation layers, not universal dependencies.
 
-| Repository                                                                              | Purpose                     | CI                                                                                                                          | Description                          |
-| --------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| [AccountableEntities](https://github.com/structural-explainability/AccountableEntities) | Entity-regime instantiation | ![CI](https://github.com/structural-explainability/AccountableEntities/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Formalization of AE identity regimes |
-| [EvolutionProtocol](https://github.com/structural-explainability/EvolutionProtocol)     | Neutral exchange substrate  | ![CI](https://github.com/structural-explainability/EvolutionProtocol/actions/workflows/ci-lean.yml/badge.svg?branch=main)   | Formalization of EP graph evolution  |
+| Repository                                                                              | Purpose                       | CI                                                                                                                          | Description                                                                                       |
+| --------------------------------------------------------------------------------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| [AccountableEntities](https://github.com/structural-explainability/AccountableEntities) | Accountable entity kinds      | ![CI](https://github.com/structural-explainability/AccountableEntities/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Lean formalization of six AE entity kinds and their mapping to canonical identity-regime profiles |
+| [EvolutionProtocol](https://github.com/structural-explainability/EvolutionProtocol)     | Graph evolution over entities | ![CI](https://github.com/structural-explainability/EvolutionProtocol/actions/workflows/ci-lean.yml/badge.svg?branch=main)   | Formalization of EP graph evolution                                                               |
 
 ### Optional Interface Implementation (CEE)
 
@@ -594,9 +603,9 @@ explanation, attestation, and provenance.
 Systems may implement equivalent boundary-respecting structures without depending
 on this repository directly.
 
-| Repository                                              | Purpose             | CI                                                                                                          | Description                                              |
-| ------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| [CEE](https://github.com/structural-explainability/CEE) | Explanation overlay | ![CI](https://github.com/structural-explainability/CEE/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Structural forms for contextual explanation and evidence |
+| Repository                                              | Purpose                                       | CI                                                                                                          | Description                                                                        |
+| ------------------------------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| [CEE](https://github.com/structural-explainability/CEE) | Contextual evidence and explanation interface | ![CI](https://github.com/structural-explainability/CEE/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Structural forms for contextual explanation, evidence, attestation, and provenance |
 
 ### Optional Boundary Implementations (GB / IB)
 
@@ -607,7 +616,7 @@ for systems that already enforce these constraints internally.
 
 | Repository                                                                                    | Purpose                 | CI                                                                                                                             | Description                                                                |
 | --------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
-| [GovernanceBoundary](https://github.com/structural-explainability/GovernanceBoundary)         | Governance boundary     | ![CI](https://github.com/structural-explainability/GovernanceBoundary/actions/workflows/ci-lean.yml/badge.svg?branch=main)     | Governance                                                                 |
+| [GovernanceBoundary](https://github.com/structural-explainability/GovernanceBoundary)         | Governance boundary     | ![CI](https://github.com/structural-explainability/GovernanceBoundary/actions/workflows/ci-lean.yml/badge.svg?branch=main)     | Structural boundary for governance artifacts and actions                   |
 | [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Interpretation boundary | ![CI](https://github.com/structural-explainability/InterpretationBoundary/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Conditions under which external frameworks may interpret substrate records |
 
 ### Archived / Superseded Theory Repositories
@@ -615,11 +624,11 @@ for systems that already enforce these constraints internally.
 > ⚠️ The repositories below are archived. Active development has moved to
 > the `se-theory-*` series.
 
-| Repository                                                                                        | Purpose                   | CI                                                                                                                               | Description                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| [StructuralExplainability](https://github.com/structural-explainability/StructuralExplainability) | Cross-cutting constraints | ![CI](https://github.com/structural-explainability/StructuralExplainability/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Neutrality and conformance predicates                                                                                                           |
-| [NeutralSubstrate](https://github.com/structural-explainability/NeutralSubstrate)                 | Neutrality theorem        | ![CI](https://github.com/structural-explainability/NeutralSubstrate/actions/workflows/ci-lean.yml/badge.svg?branch=main)         | Substrates stable under incompatible extensions must be pre-causal and pre-normative                                                            |
-| [IdentityRegimes](https://github.com/structural-explainability/IdentityRegimes)                   | Identity regimes          | ![CI](https://github.com/structural-explainability/IdentityRegimes/actions/workflows/ci-lean.yml/badge.svg?branch=main)          | Six identity-and-persistence regime (families) are necessary and sufficient for accountability-oriented substrates under neutrality assumptions |
+| Repository                                                                                        | Purpose                   | CI                                                                                                                               | Description                                                                                                                   |
+| ------------------------------------------------------------------------------------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| [StructuralExplainability](https://github.com/structural-explainability/StructuralExplainability) | Cross-cutting constraints | ![CI](https://github.com/structural-explainability/StructuralExplainability/actions/workflows/ci-lean.yml/badge.svg?branch=main) | Neutrality and conformance predicates                                                                                         |
+| [NeutralSubstrate](https://github.com/structural-explainability/NeutralSubstrate)                 | Neutrality theorem        | ![CI](https://github.com/structural-explainability/NeutralSubstrate/actions/workflows/ci-lean.yml/badge.svg?branch=main)         | Substrates stable under incompatible extensions must be pre-causal and pre-normative                                          |
+| [IdentityRegimes](https://github.com/structural-explainability/IdentityRegimes)                   | Identity regimes          | ![CI](https://github.com/structural-explainability/IdentityRegimes/actions/workflows/ci-lean.yml/badge.svg?branch=main)          | Earlier formalization of six identity-and-persistence regime families as a necessary lower bound under neutrality assumptions |
 
 </details>
 
