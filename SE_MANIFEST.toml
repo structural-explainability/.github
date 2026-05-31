@@ -1,14 +1,18 @@
 # ============================================================
-# .github/SE_MANIFEST.toml
+# SE_MANIFEST.toml (Repository Declaration)
 # ============================================================
 
 schema = "se-manifest-schema"
-schema_url = "https://github.com/structural-explainability/se-manifest-schema/blob/main/manifest-schema.toml"
+schema_url = "https://raw.githubusercontent.com/structural-explainability/se-manifest-schema/main/manifest-schema.toml"
 
-# === Identity ===
+# === Framework Context ===
 
 [meta]
-purpose = "Declares the organization-level GitHub health and governance repository for Structural Explainability."
+framework = "Structural Explainability"
+framework_url = "https://github.com/structural-explainability"
+purpose = "Declares this repository's role in the Structural Explainability ecosystem."
+
+# === Repository Identity ===
 
 [repo]
 name = ".github"
@@ -19,17 +23,19 @@ status = "active"
 since = "2025"
 summary = "Organization-wide profile for Structural Explainability."
 
+# === Layer Position ===
+
 [layer]
-space = "SE"
+space = "structural-explainability"
 role = "administration"
 
-# === Dependencies ===
+# === Dependency Declarations ===
 
 [depends]
 required = []
 optional = []
 
-# === Provided artifacts ===
+# === Provided Artifacts ===
 
 [provides]
 artifacts = ["README.md", "profile/README.md"]
