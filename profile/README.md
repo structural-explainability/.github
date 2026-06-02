@@ -56,8 +56,8 @@ research-object packaging may use RO-Crate.
 
 ## Capability Is Not Authority
 
-> **A protected surface is one where the technical capability to change it**
-> **is not the authority to change it.**
+> A protected surface is one where the technical capability to change it
+> is not the authority to change it.
 
 Access control can grant the capability to perform an operation.
 It does not by itself establish that the capability is sufficient authority
@@ -83,7 +83,7 @@ not legitimately authorized to change without review.
 
 This layer is operational, not substrate.
 It records declared review and evidence requirements for repository surfaces.
-It does not confer authority, legitimacy, obligation or enforcement as substrate facts,
+It does not confer authority, legitimacy, obligation, or enforcement as substrate facts,
 and it respects the Governance Boundary.
 Enforcement is external and lives with `se-admin` tooling.
 
@@ -94,7 +94,7 @@ AI systems may assist review but may not satisfy human review authority.
 
 The authority manifest is itself a protected surface.
 It requires human review and evidence of review,
-and AI authority over it is none or prohibited.
+and AI authority over it is prohibited.
 
 | Repository                                                                                                        | Purpose                                                       |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -420,7 +420,7 @@ belong in downstream organizations.
 
 ## Source Materials (govsrc)
 
-These repositories contain *traceable source materials* - from governmental
+These repositories contain *traceable source materials* from governmental
 or official public bodies.
 
 <details>
