@@ -54,6 +54,56 @@ research-object packaging may use RO-Crate.
 | ------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical manifest schema for SE repositories. |
 
+## Capability Is Not Authority
+
+> **A protected surface is one where the technical capability to change it**
+> **is not the authority to change it.**
+
+Access control can grant the capability to perform an operation.
+It does not by itself establish that the capability is sufficient authority
+to modify a protected repository or lifecycle surface.
+
+Accountable Surfaces records where capability is insufficient authority,
+and binds each crossing of that gap to required human review, supporting evidence,
+and permitted AI participation.
+
+The authority manifest is self-protecting because the alternative is the
+collapse it exists to prevent: if an actor with technical capability can rewrite
+the authority declaration, capability has silently become authority.
+
+## Repository Authority Surfaces
+
+SE repositories may additionally declare an authority manifest at
+`.accountability/surfaces.toml`, a sibling to `SE_MANIFEST.toml`.
+
+Where `SE_MANIFEST.toml` declares structural role, scope, and dependencies,
+the authority manifest declares which repository and lifecycle surfaces are
+authority-bearing: surfaces a tool may be technically able to change but is
+not legitimately authorized to change without review.
+
+This layer is operational, not substrate.
+It records declared review and evidence requirements for repository surfaces.
+It does not confer authority, legitimacy, obligation or enforcement as substrate facts,
+and it respects the Governance Boundary.
+Enforcement is external and lives with `se-admin` tooling.
+
+It applies SE's non-collapse discipline to the authority layer:
+technical capability is separated from legitimate authority,
+as record is separated from judgment.
+AI systems may assist review but may not satisfy human review authority.
+
+The authority manifest is itself a protected surface.
+It requires human review and evidence of review,
+and AI authority over it is none or prohibited.
+
+| Repository                                                                                                        | Purpose                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [accountable-surface-spec](https://github.com/structural-explainability/accountable-surface-spec)                 | Source of truth for `.accountability/surfaces.toml` structure |
+| [accountable-authority-vocabulary](https://github.com/structural-explainability/accountable-authority-vocabulary) | Permission, AI authority level, and revocation terms          |
+| [accountable-surface-vocabulary](https://github.com/structural-explainability/accountable-surface-vocabulary)     | Surface object, role, lifecycle gate, downstream effect       |
+| [accountable-evidence-vocabulary](https://github.com/structural-explainability/accountable-evidence-vocabulary)   | Evidence and verification terms                               |
+| [accountable-review-vocabulary](https://github.com/structural-explainability/accountable-review-vocabulary)       | Review, review scope, and reviewer authority terms            |
+
 ## Shared Contract Tooling
 
 Shared contract tooling supports packaging, validation, and distribution of
@@ -116,12 +166,12 @@ model outputs, inspections, permits, dependencies, and governance decisions that
 must remain distinguishable over time.
 
 These domains would form an extensible hierarchy.
-**general infrastructure records** define shared accountable-record
+**general infrastructure records\*- define shared accountable-record
 structures for assets, networks, facilities, observations, maintenance,
 incidents, dependencies, and operational state;
-**sector-specific records** specialize those structures without
+**sector-specific records*- specialize those structures without
 redefining the accountable-record contract; and
-**digital-twin records** provide a cross-domain specialization for
+\*\*digital-twin records*- provide a cross-domain specialization for
 linking physical assets to sensor streams, model assumptions, simulations,
 calibration events, and operational decisions.
 
@@ -234,8 +284,13 @@ Systems that collapse these distinctions make it harder to represent
 disagreement accurately.
 
 Structural Explainability does not replace domain ontologies or standards.
-Domain systems may use Akoma Ntoso, LegalRuleML, FAIR principles, CIDOC-CRM,
-schema.org vocabularies, or other appropriate standards.
+Domain systems may use
+[Akoma Ntoso](https://www.oasis-open.org/standard/akn-v1-0/),
+[LegalRuleML](https://docs.oasis-open.org/legalruleml/legalruleml-core-spec/v1.0/legalruleml-core-spec-v1.0.html),
+[other OASIS open standards](https://www.oasis-open.org/standards/),
+[FAIR principles](https://www.go-fair.org/fair-principles/),
+[CIDOC-CRM](https://cidoc-crm.org/),
+[schema.org](https://schema.org/) vocabularies, or other domain standards.
 
 Verification checks whether a system's use of its chosen standards preserves
 the distinctions needed for accountable representation under persistent
@@ -293,7 +348,7 @@ and why that resolution is part of the theory layer.
 
 ## Formal Contract and Operational Foundations
 
-These repositories define the **neutral structural substrate** of Structural Explainability.
+These repositories define the *neutral structural substrate* - of Structural Explainability.
 They define admissibility constraints under which identity regimes may be applied,
 without encoding identity or persistence behavior themselves.
 They establish the minimal, stable constraints under which identity, structure, change,
@@ -348,7 +403,7 @@ These repositories apply Structural Explainability mapping rules to bounded doma
 <summary>See more</summary>
 
 They are maintained in this organization only as **conformance examples**.
-They are **not part of the neutral core** and do not extend or modify the substrate.
+They are *not part of the neutral core* - and do not extend or modify the substrate.
 They demonstrate how mappings may be constructed across independent systems
 while preserving neutrality and keeping interpretation external.
 
@@ -365,7 +420,7 @@ belong in downstream organizations.
 
 ## Source Materials (govsrc)
 
-These repositories contain **traceable source materials** from governmental
+These repositories contain *traceable source materials* - from governmental
 or official public bodies.
 
 <details>
@@ -681,6 +736,9 @@ Across all repositories:
 - No domain semantics are embedded in the core.
 - Verification is optional; systems may be useful in their domain
   without being SE-verified, and may seek verification as a quality property.
+- Authority over repository surfaces is recorded, not conferred;
+  crossing a declared authority boundary requires human review
+  and supporting evidence, enforced externally.
 
 ## Intentionally Excluded
 
@@ -689,7 +747,9 @@ The following are intentionally excluded from this core organization:
 - domain vocabularies (except clearly labeled examples and Accountable Record systems)
 - application schemas or data models (except in Accountable Record systems)
 - analytics, inference, optimization, recommendation, or decision systems
-- governance authority, legitimacy, obligation, or enforcement frameworks
+- governance authority, legitimacy, obligation, or enforcement as substrate facts
+  (repository authority surfaces are operational and non-substrate, and are
+  not part of the neutral core)
 - interpretation, explanation, evidence, or attestation as substrate facts
 - visualization or presentation layers
 
@@ -725,20 +785,20 @@ behavior may be recorded. Interpretation, explanation, evidence, authority,
 legitimacy, obligation, and enforcement remain outside the substrate unless
 attached through explicitly constrained downstream mechanisms.
 
-- **Neutral substrate** defines admissible structural description without
+- *Neutral substrate* - defines admissible structural description without
   interpretive commitment.
-- **Transformation theory** defines structural change pressures.
-- **Persistence theory** defines profile-relative preservation, breakage, and
+- *Transformation theory* - defines structural change pressures.
+- *Persistence theory* - defines profile-relative preservation, breakage, and
   irrelevance under transformation.
-- **Identity regimes** define six regime families refined into nine profile kinds.
-- **Structural Explainability** integrates these layers into an explainable
+- *Identity regimes* - define six regime families refined into nine profile kinds.
+- *Structural Explainability* - integrates these layers into an explainable
   structural account without collapsing disagreement.
 
 Two boundary specifications protect this separation:
 
-- **Governance Boundary (GB)** prevents governance records from becoming claims
+- *Governance Boundary (GB)* - prevents governance records from becoming claims
   of authority, legitimacy, obligation, or enforcement.
-- **Interpretation Boundary (IB)** prevents interpretive attachments from
+- *Interpretation Boundary (IB)* - prevents interpretive attachments from
   becoming substrate semantics.
 
 Downstream specifications and implementations use the core without redefining it.
