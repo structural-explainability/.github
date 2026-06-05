@@ -1,10 +1,12 @@
 # ============================================================
 # .markdownlint-cli2.yaml (Markdownlint CLI2 configuration)
 # ============================================================
-# Updated: 2026-05-31
+# Updated: 2026-06-04
 # WHY: Generated and dependency directories are not source content.
 # REQ: Markdown lint should check authored Markdown, not virtual
 #      environments, dependency trees, build output, or generated docs.
+# Run with:
+# npx markdownlint-cli2 --fix
 
 globs:
   - "**/*.md"
@@ -39,6 +41,7 @@ ignores:
   - "htmlcov/**"
   - "**/htmlcov/**"
   - "LICENSE"
+  - "CODEOWNERS"
 
 config:
   default: true # WHY: This enables all default rules, which is a good starting point for linting Markdown files.

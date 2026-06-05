@@ -1,0 +1,39 @@
+# ============================================================
+# CITATION.cff (How to cite this project)
+# ============================================================
+
+# REQ.UNIVERSAL: Professional open projects SHOULD include this file.
+# USAGE: See https://citation-file-format.github.io/ for details.
+
+cff-version: "1.2.0"
+type: software
+
+title: "Structural Explainability Organization Profile"
+version: "0.1.0"
+date-released: "2026-06-04"
+
+authors:
+  - family-names: Case
+    given-names: Denise M.
+    orcid: "https://orcid.org/0000-0001-6165-7389"
+    affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
+
+year: 2026
+repository-code: "https://github.com/structural-explainability/se-codeowners"
+url: "https://github.com/structural-explainability/se-codeowners"
+
+license: MIT
+
+abstract: >
+  Organization-wide GitHub profile and ecosystem overview
+  for the Structural Explainability repositories.
+
+keywords:
+  - structural-explainability
+  - repository-governance
+  - accountable-surfaces
+  - accountable-agents
+  - accountable-records
+  - public-profile
+
+message: "If you use this work, please cite it using the metadata in this file."

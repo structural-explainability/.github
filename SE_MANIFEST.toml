@@ -22,7 +22,7 @@ class = "admin"
 kind = "governance"
 status = "active"
 since = "2025"
-summary = "Organization-wide profile for Structural Explainability."
+summary = "Organization-wide profile and ecosystem overview for Structural Explainability."
 
 # === Layer Position ===
 
@@ -46,6 +46,7 @@ artifacts = ["README.md", "profile/README.md"]
 [scope]
 includes = [
     "organization-level GitHub profile content",
+    "ecosystem overview and repository navigation",
     "repository health defaults when present",
 ]
 
