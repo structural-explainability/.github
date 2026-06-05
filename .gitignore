@@ -1,3 +1,7 @@
+# ============================================================
+# .gitignore (Keep unnecessary files out of the repository)
+# ============================================================
+
 # REQ.UNIVERSAL: Spec repositories MUST ignore editor, OS, and transient artifacts.
 # WHY: Prevent accidental commits of local or generated noise.
 # ALT: Expand only if the repository adds tooling that generates artifacts.

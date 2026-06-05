@@ -1,9 +1,8 @@
 # ============================================================
 # .pre-commit-config.yaml (Markdown Hygiene)
 # ============================================================
-# Updated: 2026-05-23
-
-# Fast, consistent repo hygiene before commit.
+# Updated: 2026-06-04
+# WHY: Fast, consistent repo hygiene before commit.
 #
 # These hooks complement and do not replace:
 # - .editorconfig
@@ -20,8 +19,8 @@
 
 exclude: |
   (?x)^(
-    \.DS_Store|
     \.coverage|
+    \.DS_Store|
     \.ipynb_checkpoints/|
     \.mypy_cache/|
     \.nox/|
@@ -30,6 +29,7 @@ exclude: |
     \.tox/|
     \.venv/|
     .*\.(egg-info)/|
+    .*\.log|
     __pycache__/|
     _minted.*/|
     build/|
@@ -39,8 +39,9 @@ exclude: |
     lake-packages/|
     node_modules/|
     out/|
-    site/ |
-    LICENSE
+    site/|
+    LICENSE|
+    CODEOWNERS
   )
 
 repos:

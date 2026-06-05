@@ -47,7 +47,7 @@ uvx pre-commit install
 npx markdownlint-cli2 --fix
 uvx pre-commit run --all-files
 
-# generate CODEOWNERS and check
+# generate and check CODEOWNERS
 uvx se-codeowners generate --strict --output .github/CODEOWNERS
 uvx se-codeowners check
 
@@ -71,3 +71,19 @@ git push -u origin main
 git tag vX.Y.Z -m "X.Y.Z"
 git push origin vX.Y.Z
 ```
+
+## Authority Manifest
+
+[.accountability/surfaces.toml](./.accountability/surfaces.toml)
+
+## Citation
+
+[CITATION.cff](./CITATION.cff)
+
+## License
+
+[MIT](./LICENSE)
+
+## Repository Manifest
+
+[SE_MANIFEST.toml](./SE_MANIFEST.toml)
