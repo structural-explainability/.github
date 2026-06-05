@@ -1,7 +1,7 @@
 # ============================================================
 # .github/workflows/ci-hygiene.yml (Continuous Integration)
 # ============================================================
-# Updated: 2026-05-23
+# Updated: 2026-06-04
 #
 # WHY-FILE: Minimal checks for repositories where hygiene is the primary gate.
 # REQ: Any check that can be run locally MUST be available locally via pre-commit.
@@ -26,11 +26,12 @@ env:
   PYTHONUNBUFFERED: "1" # WHY: Real-time logging.
   PYTHONIOENCODING: "utf-8" # WHY: Ensure UTF-8 encoding for international characters.
   PYTHON_VERSION: "3.15"
+  NODE_VERSION: "24"
 
 jobs:
   ci:
     name: Repository checks (pre-commit)
-    runs-on: ubuntu-latest # WHY: Linux environment matches most production deployments
+    runs-on: ubuntu-latest # WHY: Linux environment matches most production deployments.
     timeout-minutes: 10 # WHY: Prevent hanging jobs. If over, it is likely stuck.
 
     steps:
@@ -42,16 +43,37 @@ jobs:
         # WHY: Needed to access files for checks.
         uses: actions/checkout@v6
 
-      - name: A2) Run pre-commit (all files)
+      - name: A2) Set up Python
+        # WHY: pre-commit and uvx-based hooks require Python tooling.
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: A3) Set up uv
+        # WHY: Local hooks invoke uvx, so CI must provide uvx on PATH.
+        uses: astral-sh/setup-uv@v7
+
+      - name: A4) Set up Node.js
+        # WHY: markdownlint hook uses npx markdownlint-cli2.
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: A5) Run pre-commit (all files)
         # WHY: Single source of truth for locally runnable quality gates.
         # OBS: Fails if hooks would modify files; does not commit changes.
-        id: precommit # WHY: Identify step for conditional follow-up.
-        uses: pre-commit/action@v3.0.1
-        with:
-          extra_args: --all-files
+        id: precommit
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pre-commit
+          pre-commit run --show-diff-on-failure --color=always --all-files
 
-      - name: A2f) If pre-commit failed, run it locally
+      - name: A5f) If pre-commit failed, explain local fix
         if: failure()
         run: |
           echo "## Pre-commit failed" >> "$GITHUB_STEP_SUMMARY"
-          echo "Please run pre-commit locally and commit the resulting changes." >> "$GITHUB_STEP_SUMMARY"
+          echo "Please run the following locally and commit the resulting changes:" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo '```shell' >> "$GITHUB_STEP_SUMMARY"
+          echo "uvx pre-commit run --all-files" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"

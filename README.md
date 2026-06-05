@@ -6,26 +6,68 @@
 
 > GitHub profile repo for the structural-explainability organization on GitHub.
 
-## Developer (running pre-commit)
+## Developer Command Reference
 
-Steps to run pre-commit locally. Install `uv`.
+<details>
+<summary>Show command reference</summary>
 
-Initialize once:
+### Install Tools
+
+This repository is not a Python package and does not require a local virtual
+environment.
+It does use Python-based command-line tools through `uvx`,
+and it uses Node.js for Markdown linting through `npx`.
+Install these tools once on your machine:
+
+- `uv`
+- Node.js / npm
+- Git
+
+### In a machine terminal
+
+Open a machine terminal where you want the project:
+
+```shell
+git clone https://github.com/structural-explainability/se-codeowners
+
+cd se-codeowners
+code .
+```
+
+### In a VS Code terminal
+
+Use VS Code Menu:
+View / Command Palette / `Developer: Reload Window` to refresh.
 
 ```shell
 uv self update
-uv python pin 3.15
 uvx pre-commit install
 
-uvx pre-commit run --all-files
+# run checks
 npx markdownlint-cli2 --fix
-```
+uvx pre-commit run --all-files
 
-Save progress as needed:
+# generate CODEOWNERS and check
+uvx se-codeowners generate --strict --output .github/CODEOWNERS
+uvx se-codeowners check
 
-```shell
+# validate SE manifest file
+uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml --strict
+
 git add -A
-# If pre-commit makes changes, re-run `git add -A` before committing.
+uvx pre-commit run --all-files
+# repeat if changes were made
+uvx pre-commit run --all-files
+
+git commit -m "your message here"
+git push -u origin main
+
+# save progress
+git add -A
 git commit -m "update"
 git push -u origin main
+
+# tag as needed (to match CITATION.cff)
+git tag vX.Y.Z -m "X.Y.Z"
+git push origin vX.Y.Z
 ```

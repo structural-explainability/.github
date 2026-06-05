@@ -5,7 +5,16 @@
 #
 # Source:     .accountability/surfaces.toml
 # Generator:  se-codeowners
+# Repository: .github
 # Regenerate: se-codeowners generate --output .github/CODEOWNERS
+#
+# [codeowners].informs = true means this surfaces manifest intentionally
+# informs the generated GitHub CODEOWNERS projection.
+#
+# [codeowners].requires_code_owner_review = false
+# records whether repository governance expects GitHub branch protection or
+# rulesets to require CODEOWNER review before protected changes merge.
+# Actual enforcement is configured in GitHub, not in this generated file.
 #
 # Each entry reflects the oversight_role assigned to an accountability
 # surface, resolved to a handle via [codeowners.role_handles]. GitHub
