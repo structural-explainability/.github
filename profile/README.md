@@ -6,7 +6,8 @@
 ![Build Status](https://github.com/structural-explainability/.github/actions/workflows/ci-hygiene.yml/badge.svg?branch=main)
 [![Check Links](https://github.com/structural-explainability/.github/actions/workflows/links.yml/badge.svg)](https://github.com/structural-explainability/.github/actions/workflows/links.yml)
 
-> Defines neutral constraints under which explainability is possible without embedding interpretation.
+> Defines the neutral constraints under which systems remain explainable,
+> inspectable, and contestable without embedding interpretation.
 
 ## Overview
 
@@ -96,13 +97,51 @@ The authority manifest is itself a protected surface.
 It requires human review and evidence of review,
 and AI authority over it is prohibited.
 
-| Repository                                                                                                        | Purpose                                                       |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| [accountable-surface-spec](https://github.com/structural-explainability/accountable-surface-spec)                 | Source of truth for `.accountability/surfaces.toml` structure |
-| [accountable-authority-vocabulary](https://github.com/structural-explainability/accountable-authority-vocabulary) | Permission, AI authority level, and revocation terms          |
-| [accountable-surface-vocabulary](https://github.com/structural-explainability/accountable-surface-vocabulary)     | Surface object, role, lifecycle gate, downstream effect       |
-| [accountable-evidence-vocabulary](https://github.com/structural-explainability/accountable-evidence-vocabulary)   | Evidence and verification terms                               |
-| [accountable-review-vocabulary](https://github.com/structural-explainability/accountable-review-vocabulary)       | Review, review scope, and reviewer authority terms            |
+| Repository                                                                                                        | Purpose                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [accountable-surface-spec](https://github.com/structural-explainability/accountable-surface-spec)                 | Source of truth for `.accountability/surfaces.toml` structure                                          |
+| [accountable-authority-vocabulary](https://github.com/structural-explainability/accountable-authority-vocabulary) | Permission, AI authority level, and revocation terms                                                   |
+| [accountable-surface-vocabulary](https://github.com/structural-explainability/accountable-surface-vocabulary)     | Surface object, role, lifecycle gate, downstream effect                                                |
+| [accountable-evidence-vocabulary](https://github.com/structural-explainability/accountable-evidence-vocabulary)   | Evidence and verification terms                                                                        |
+| [accountable-review-vocabulary](https://github.com/structural-explainability/accountable-review-vocabulary)       | Review, review scope, and reviewer authority terms                                                     |
+| [se-codeowners](https://github.com/structural-explainability/se-codeowners)                                       | CLI utility that projects accountable surface declarations into GitHub CODEOWNERS and checks for drift |
+
+The project `se-codeowners` is an enforcement projection,
+not the source of authority.
+The authority declaration remains `.accountability/surfaces.toml`;
+`se-codeowners` renders one GitHub-specific expression of that declaration
+by mapping oversight roles to CODEOWNERS entries.
+This supports ordinary repository governance without collapsing
+technical write capability into legitimate review authority.
+
+## Accountable Agents
+
+Accountable Agents extends the same non-collapse discipline to agentic AI systems.
+
+An agent system may have technical capability:
+it may observe, interpret, propose, modify, execute, transmit,
+or self-alter depending on its product wrapper, execution environment,
+tools, and permissions.
+Some systems may also be configured near approval surfaces,
+such as merge, release, deployment, certification, or risk acceptance.
+
+That capability is not authority.
+Responsibility cannot rest with an agent system; agent systems are tools.
+Authority and accountability remain with the people and institutions
+that build, release, deploy, authorize, operate, and review the systems.
+
+This work is data-focused.
+It works alongside existing standards, security guidance,
+provenance models, model cards, product documentation, and research.
+It links them through claim-level records so that agent capabilities,
+affected surfaces, evidence sources, risk mappings, and
+accountability requirements can be inspected together.
+
+| Repository                                                                                          | Purpose                                                                                                                                                                             |
+| --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [accountable-agents](https://github.com/structural-explainability/accountable-agents)               | Conceptual model for accountable agent systems, capabilities, execution environments, authority grants, evidence, review gates, protected surfaces, and accountable entities.       |
+| [agent-capability-registry](https://github.com/structural-explainability/agent-capability-registry) | Reusable vocabulary for capability kinds, observable resources, effectable resources, capability levels, evidence statuses, mapping kinds, risks, mitigations, and standards links. |
+| [agent-capability-mappings](https://github.com/structural-explainability/agent-capability-mappings) | Source-linked claims mapping specific products, models, versions, modes, execution environments, tools, and permissions to documented or inferred capabilities.                     |
 
 ## Shared Contract Tooling
 
@@ -358,7 +397,9 @@ and explanation can coexist without embedding interpretation.
 <summary>See more</summary>
 
 The formal contract layer provides machine-checked authorization of these constraints.
-Operational foundation repositories consume this contract and enforce it.
+Enforcement is external and may be expressed through repository tooling
+such as se-codeowners, administrative tooling such as se-admin,
+branch protection, CI checks, or other platform-specific controls.
 They are authoritative and define what must be true for admissibility.
 They do not contain domain semantics, applications, or analytics.
 

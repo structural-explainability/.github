@@ -1,0 +1,361 @@
+# ============================================================
+# .accountability/surfaces.toml (Authority-gated surfaces)
+# ============================================================
+
+schema = "accountable-surface-spec"
+schema_version = "0.1.0"
+schema_url = "https://raw.githubusercontent.com/structural-explainability/accountable-surface-spec/main/data/schema/accountability-surfaces.schema.json"
+
+# === Framework Context ===
+
+[meta]
+framework = "Structural Explainability"
+framework_url = "https://github.com/structural-explainability"
+purpose = "Declares authority-bearing repository surfaces, review requirements, evidence requirements, and permitted AI authority."
+
+# === Repository Identity ===
+
+[repository]
+organization = "structural-explainability"
+name = ".github"
+profile = "organization-profile-protected-surface"
+description = "Organization-wide GitHub profile and ecosystem overview for Structural Explainability."
+
+# === REQUIRED CODEOWNERS Projection Fields ===
+
+# `[codeowners].informs` declares that the authority manifest intentionally
+# informs the generated GitHub `CODEOWNERS` projection. `se-codeowners generate`
+# refuses to generate from a manifest that has not opted in.
+
+# `[codeowners].requires_code_owner_review` records whether the repository expects
+# GitHub branch protection or rulesets to require CODEOWNER review before protected
+# changes merge. This field records the governance expectation; actual enforcement
+# is configured in GitHub.
+
+[codeowners]
+informs = true                           # REQ: An entry must be provided.
+requires_code_owner_review = false       # REQ: An entry must be provided.
+
+# === Local CODEOWNERS Role Resolution ===
+
+# These role identities are used only for CODEOWNERS owner resolution.
+# Reusable accountable-surface meanings remain expressed through surface.role.kind.
+
+# owner                   overall authority boundary
+# organization_profile    organization-facing profile and ecosystem overview
+# repository_governance   repository-local governance, manifest, citation, and navigation surfaces
+# security                security posture and disclosure surfaces
+
+[codeowners.role_handles]
+owner = "@structural-explainability/owners"
+organization_profile = "@structural-explainability/owners"
+repository_governance = "@structural-explainability/maintainers"
+security = "@structural-explainability/security"
+
+# === Required Oversight Role ===
+
+# Local oversight roles assign review ownership for this repository.
+# Each role maps local responsibility back to reusable accountable-surface roles.
+# Every repository MUST provide a local role responsible
+# for the authority manifest itself.
+# By convention this role is named "owner".
+
+[oversight_roles.owner]
+label = "Owner"
+description = "Reviews changes to the repository's own accountability declaration and authority boundary."
+maps_to = ["authority_boundary", "authority_manifest_surface"]
+requires_review = ["human_review"]
+requires_evidence = ["decision_note", "human_review_record"]
+ai_max_authority = "prohibited"
+
+# === Additional Local Oversight Roles ===
+
+# Local oversight roles assign review ownership for this repository.
+# Each role maps local responsibility back to reusable accountable-surface roles.
+
+[oversight_roles.organization_profile]
+label = "Organization Profile"
+description = "Reviews organization-facing profile content, ecosystem overview, repository navigation, and public identity surfaces."
+maps_to = [
+    "documentation_contract",
+    "public_identity_surface",
+    "repository_navigation_surface",
+]
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+[oversight_roles.repository_governance]
+label = "Repository Governance"
+description = "Reviews repository-local governance, citation, contribution, manifest, and repository navigation surfaces."
+maps_to = [
+    "documentation_contract",
+    "project_identity_surface",
+    "repository_manifest_surface",
+    "repository_navigation_surface",
+]
+requires_review = ["human_review"]
+requires_evidence = ["decision_note", "verification_command_result"]
+ai_max_authority = "drafting"
+
+[oversight_roles.security]
+label = "Security"
+description = "Reviews repository surfaces that affect security posture, disclosure process, or security-facing documentation."
+maps_to = ["security_boundary"]
+requires_review = ["human_review", "security_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "advisory"
+
+# === Declared Repository Surfaces ===
+
+# Surfaces below are organized by CODEOWNERS processing order.
+# CODEOWNERS applies the LAST matching pattern for a path, so broad surfaces
+# must emit before narrower override surfaces.
+#
+# codeowners_order controls projection order.
+# Lower values emit earlier; later matching patterns take precedence.
+# Ties are emitted alphabetically by surface id.
+#
+# Surface descriptions are repo-specific; reusable role meanings belong in the
+# upstream accountable vocabulary/spec repositories.
+
+# === Level 100: Organization profile and public overview ===
+
+# --- Organization Profile ---
+
+[[surface]]
+id = "organization-profile"
+object_kind = "file"
+paths = ["profile/README.md"]
+description = "Public organization profile and ecosystem overview shown on the Structural Explainability GitHub organization page."
+oversight_role = "organization_profile"
+codeowners_order = 100
+
+[[surface.role]]
+kind = "documentation_contract"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+[[surface.role]]
+kind = "public_identity_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+[[surface.role]]
+kind = "repository_navigation_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+
+# === Level 200: Repository declaration and identity metadata ===
+
+# --- Repository Manifest ---
+
+[[surface]]
+id = "repository-manifest"
+object_kind = "file"
+paths = ["SE_MANIFEST.toml"]
+description = "Repository declaration describing the .github repository role, scope, provided artifacts, and traceability."
+oversight_role = "repository_governance"
+codeowners_order = 200
+
+[[surface.role]]
+kind = "project_identity_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+[[surface.role]]
+kind = "repository_manifest_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note", "verification_command_result"]
+ai_max_authority = "drafting"
+
+# --- Citation Identity ---
+
+[[surface]]
+id = "citation-identity"
+object_kind = "file"
+paths = ["CITATION.cff"]
+description = "Citation metadata for the organization profile repository."
+oversight_role = "repository_governance"
+codeowners_order = 210
+
+[[surface.role]]
+kind = "project_identity_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+[[surface.role]]
+kind = "documentation_contract"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+
+# === Level 300: Repository-local navigation and governance ===
+
+# --- Repository README ---
+
+[[surface]]
+id = "repository-readme"
+object_kind = "file"
+paths = ["README.md"]
+description = "Repository-local README for the organization profile repository."
+oversight_role = "repository_governance"
+codeowners_order = 300
+
+[[surface.role]]
+kind = "documentation_contract"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+[[surface.role]]
+kind = "repository_navigation_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+# --- Contribution and Governance Documentation ---
+
+[[surface]]
+id = "repository-governance"
+object_kind = "directory"
+paths = [
+    "AGENTS.md",
+    "AI_USE.md",
+    "CONTRIBUTING.md",
+    "DECISIONS.md",
+]
+description = "Repository-local governance, contribution, AI-use, accountability, and decision records."
+oversight_role = "repository_governance"
+codeowners_order = 310
+
+[[surface.role]]
+kind = "documentation_contract"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+
+# === Level 400: Repository security documentation ===
+
+# --- Repository Security ---
+
+[[surface]]
+id = "repository-security"
+object_kind = "file"
+paths = ["SECURITY.md"]
+description = "Repository security policy and disclosure surface."
+oversight_role = "security"
+codeowners_order = 400
+
+[[surface.role]]
+kind = "security_boundary"
+requires_review = ["human_review", "security_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "advisory"
+
+
+# === Level 500: Repository health and platform defaults ===
+
+# --- GitHub Repository Health Defaults ---
+
+[[surface]]
+id = "repository-health-defaults"
+object_kind = "directory"
+paths = [
+    ".github/ISSUE_TEMPLATE/**",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/CODEOWNERS",
+]
+description = "Repository health defaults and GitHub platform governance files, when present."
+oversight_role = "repository_governance"
+codeowners_order = 500
+
+[[surface.role]]
+kind = "documentation_contract"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+[[surface.role]]
+kind = "repository_navigation_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+
+# === Level 600: Public license and organization-level identity files ===
+
+# --- License Surface ---
+
+[[surface]]
+id = "license-surface"
+object_kind = "file"
+paths = ["LICENSE"]
+description = "Repository license declaration for the organization profile repository."
+oversight_role = "repository_governance"
+codeowners_order = 600
+
+[[surface.role]]
+kind = "project_identity_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+[[surface.role]]
+kind = "documentation_contract"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note"]
+ai_max_authority = "drafting"
+
+
+# === Level 700: Required Self-Protection ===
+#
+# Every accountable-surface manifest MUST declare itself as a protected surface.
+# This surface SHOULD be emitted after ordinary repository surfaces so that
+# CODEOWNERS projection gives the authority manifest the strongest applicable
+# ownership rule.
+#
+# The self-protection surface MUST:
+#
+# - use id = "authority-manifest"
+# - include paths = [".accountability/surfaces.toml"]
+# - declare oversight_role = "owner" or another local role mapped to
+#   authority_boundary and authority_manifest_surface
+# - declare codeowners_order at the final/highest local projection level
+# - prohibit AI authority over the manifest
+# - require human review
+# - require evidence of review
+#
+# Rationale:
+# If an actor with technical capability can rewrite the authority declaration
+# without review, technical capability has silently become authority.
+
+# --- Authority Manifest Self-Protection ---
+
+[[surface]]
+id = "authority-manifest"
+object_kind = "file"
+paths = [".accountability/surfaces.toml"]
+description = "Self-protecting authority manifest for this repository."
+oversight_role = "owner"
+codeowners_order = 700
+
+[[surface.role]]
+kind = "authority_boundary"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note", "human_review_record"]
+ai_max_authority = "prohibited"
+
+[[surface.role]]
+kind = "authority_manifest_surface"
+requires_review = ["human_review"]
+requires_evidence = ["decision_note", "human_review_record"]
+ai_max_authority = "prohibited"

@@ -1,0 +1,45 @@
+# ============================================================
+# .github/CODEOWNERS
+# ============================================================
+# GENERATED FILE -- do not edit by hand.
+#
+# Source:     .accountability/surfaces.toml
+# Generator:  se-codeowners
+# Regenerate: se-codeowners generate --output .github/CODEOWNERS
+#
+# Each entry reflects the oversight_role assigned to an accountability
+# surface, resolved to a handle via [codeowners.role_handles]. GitHub
+# applies the LAST matching pattern for a given path, so order matters.
+# Surfaces are emitted by codeowners_order, then surface id.
+
+# Surface: organization-profile (role: organization_profile)
+/profile/README.md                 @structural-explainability/owners
+
+# Surface: repository-manifest (role: repository_governance)
+/SE_MANIFEST.toml                  @structural-explainability/maintainers
+
+# Surface: citation-identity (role: repository_governance)
+/CITATION.cff                      @structural-explainability/maintainers
+
+# Surface: repository-readme (role: repository_governance)
+/README.md                         @structural-explainability/maintainers
+
+# Surface: repository-governance (role: repository_governance)
+/AGENTS.md                         @structural-explainability/maintainers
+/AI_USE.md                         @structural-explainability/maintainers
+/CONTRIBUTING.md                   @structural-explainability/maintainers
+/DECISIONS.md                      @structural-explainability/maintainers
+
+# Surface: repository-security (role: security)
+/SECURITY.md                       @structural-explainability/security
+
+# Surface: repository-health-defaults (role: repository_governance)
+/.github/ISSUE_TEMPLATE/**         @structural-explainability/maintainers
+/.github/PULL_REQUEST_TEMPLATE.md  @structural-explainability/maintainers
+/.github/CODEOWNERS                @structural-explainability/maintainers
+
+# Surface: license-surface (role: repository_governance)
+/LICENSE                           @structural-explainability/maintainers
+
+# Surface: authority-manifest (role: owner)
+/.accountability/surfaces.toml     @structural-explainability/owners
