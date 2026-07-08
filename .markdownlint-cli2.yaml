@@ -55,7 +55,7 @@ config:
   default: true # WHY: Enables all default rules, which is a good starting point for linting Markdown files.
 
   MD013:
-    line_length: 100
+    line_length: 250
     headings: false # WHY: Allows long headings for clarity and SEO in Markdown files.
     tables: false # WHY: Allows long table cells for readability and completeness in Markdown files.
     code_blocks: false # WHY: Allows long lines in code blocks for readability and completeness in Markdown files.

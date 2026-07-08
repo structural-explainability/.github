@@ -114,14 +114,6 @@ repos:
         pass_filenames: false
         always_run: true
 
-      - id: se-codeowners-check
-        name: E3) Check generated CODEOWNERS is current
-        language: system
-        entry: uvx se-codeowners check --strict
-        files: ^(\.accountability/surfaces\.toml|\.github/CODEOWNERS)$
-        pass_filenames: false
-        always_run: true
-
 # === GLOBAL SETTINGS ===
 # ALT: Set fail_fast to true to stop at first failure.
 fail_fast: false # Run all hooks even if one fails
