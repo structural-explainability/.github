@@ -328,13 +328,9 @@ accountability requirements can be inspected together.
 Shared contract tooling supports packaging, validation, and distribution of
 machine-readable contract artifacts across SE repositories.
 
-| Repository                                                                              | Purpose                                                                                                                                                 |
-| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [se-contract-kit](https://github.com/structural-explainability/se-contract-kit)         | Shared Python tooling for packaging, validating, and distributing SE contract artifacts.                                                                |
-| [se-repo-conformance](https://github.com/structural-explainability/se-repo-conformance) | Validates SE repositories against their manifests: identity, contract, sources, elements, catalog, exports, resolution, reports, and lock verification. |
-
-`se-repo-conformance` checks repository packaging.
-It does not evaluate NS-conformance checks and is unrelated to accountable records in the SE-300 sense.
+| Repository                                                                      | Purpose                                                                                  |
+| ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [se-contract-kit](https://github.com/structural-explainability/se-contract-kit) | Shared Python tooling for packaging, validating, and distributing SE contract artifacts. |
 
 ### Domain Record Systems
 
