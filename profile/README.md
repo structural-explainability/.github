@@ -19,27 +19,40 @@ Structural Explainability is not anti-interpretation; it is anti-implicit interp
 It separates structural facts from downstream claims so interpretation and
 disagreement can remain explicit, attributable, and contestable over time.
 
+Every record system commits to identity semantics.
+When a rule is refined, an agent redeployed, a jurisdiction subdivided,
+or two records merged, the system decides whether the thing is still the same thing.
+That decision is load-bearing for citation, liability, and audit.
+It not always declared.
+
+SE makes the commitment declarable, and makes the failure detectable.
+
 ### The Foundational Core
 
 - **Identity & Persistence:** A stable, inspectable identity is the prerequisite
-  for all tracking and provenance. Identity is _profile-relative_:
-  a single structural change might preserve identity under one profile,
-  break it under another, or be entirely irrelevant under a third.
+  for all tracking and provenance. Identity is _regime-relative_:
+  a single structural change might preserve identity under one regime,
+  break it under another, or be identity-neutral under a third.
+- **Declared Identity Semantics:** A system that branches on an undeclared field to
+  decide sameness is running a _hidden regime_.
+  SE exists to detect hidden regimes.
 - **Plural Systems:** SE is built for independent architectures
   that share data without requiring a centralized authority,
   uniform naming, or a single forced ontology.
 
 ### The Architecture Stack
 
-| Layer                         | Function                                                                                           |
-| :---------------------------- | :------------------------------------------------------------------------------------------------- |
-| **Neutral Substrate**         | Defines admissible structural description without interpretive commitment.                         |
-| **Transformation Theory**     | Identifies and defines structural change pressures.                                                |
-| **Persistence Theory**        | Determines profile-relative preservation (PRS), breakage (BRK), or irrelevance (IGN) under change. |
-| **Identity Regimes**          | Organizes identity and persistence behavior into nine referential profile kinds.                   |
-| **Structural Explainability** | Integrates these layers into an explicit, explainable account without forcing consensus.           |
+| Layer                         | Function                                                                                                                                                             |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Neutral Substrate**         | Defines admissible structural description without interpretive commitment.                                                                                           |
+| **Transformation Theory**     | Identifies and defines structural change pressures.                                                                                                                  |
+| **Persistence Theory**        | Classifies each transformation, relative to an identity regime, as identity-preserving (PRS), identity-breaking (BRK), identity-neutral (NEU), or inapplicable (NA). |
+| **Identity Regimes**          | Organizes identity and persistence behavior into nine core identity regimes.                                                                                         |
+| **Structural Explainability** | Integrates these layers into an explicit, explainable account without forcing consensus.                                                                             |
+| **Structural Explainability** | Integrates these layers into an explicit, explainable account without forcing consensus.                                                                             |
+| **NS-Conformance**            | Decides, over a declared artifact, whether a deployed record system satisfies the substrate constraint.                                                              |
 
-Within the core substrate, structure, transformation, persistence, and profile
+Within the core substrate, structure, transformation, persistence, and regime
 behavior may be recorded.
 Causal explanation, normative evaluation, authority,
 legitimacy, obligation, and enforcement are not asserted as substrate-level commitments;
@@ -54,6 +67,9 @@ from leaking or collapsing into downstream application layers:
   transforming into claims of absolute authority, legitimacy, obligation, or enforcement.
 - _Interpretation Boundary (IB):_ Ensures that external frameworks, explanations, and model interpretations
   remain attached as dynamic overlays rather than becoming hardcoded substrate semantics.
+- _Attribution Boundary (REF / ATTR / EXT):_ Classifies exposed paths of a deployed
+  record by the foundational commitment it carries: referential, attributive, or extension.
+  This boundary is decidable and checked.
 
 Downstream domains (e.g., law, infrastructure, agentic AI systems)
 consume the core substrate without redefining it.
@@ -64,28 +80,37 @@ enabling continuous cross-institutional coordination through persistent disagree
 
 Some information systems make decisions that affect people, attribute claims to
 sources, record contested facts, or coordinate across institutions that disagree.
-When those systems collapse what should be distinct layers (what is structurally recorded,
-what is governed, what is interpreted, what is attested) into a single record,
-they lose the ability to represent the disagreement they exist to handle.
+Those systems can hold a compliance conclusion, a legal holding, or a causal claim
+while every party continues to refer to the same underlying artifacts.
 
-That collapse is often invisible until the system is challenged:
+They fail in a specific way.
+Under change, the system must decide what stays the same:
+whether a refined rule is the same rule,
+whether a redeployed agent is the same agent,
+whether a subdivided scope is the same scope.
+The system decides. It decides by branching on some field,
+such as a version column, status flag,
+or display attribute not necessarily declared as identity-relevant.
+
+That is a _hidden regime_:
+identity semantics implemented but not declared,
+which may remain invisible until the system is challenged
 in court, in audit, in appeal, in public review, or
 in cross-institutional reconciliation.
-By then, the records may already have committed to interpretations,
-authority claims, or judgments that the system never explicitly declared.
+By then, the records may already have committed to an identity model
+not explicitly declared.
+
+Existing infrastructure may not catch it.
+Provenance models, content credentials, software bills of materials,
+version control, and audit logs record what happened.
+None answer what the system takes sameness to be, and cannot detect a
+system that answers it differently in undeclared fields.
 
 Structural Explainability defines the structural conditions under which this
-collapse can be prevented.
-It identifies what must be kept separate for an information system
-to remain durable, inspectable, and contestable under persistent disagreement:
-
-- identity from graph continuity
-- attribution from authority
-- governance status from correctness
-- evidence from interpretation
-- dependency from validity
-- explanation from proof
-- record from judgment
+can be prevented, and gives a decision procedure for checking.
+A conforming system declares its carrier kinds, identity bases, identity regimes,
+transformation histories, attribution boundaries, and discriminator surfaces.
+A checker decides conformance over those declarations and returns finite witnesses when it fails.
 
 SE does not replace domain vocabularies, standards, ontologies, or existing data systems.
 It constrains how systems implement them so that disagreement remains
@@ -101,7 +126,7 @@ data schema, ontology, or knowledge graph that intentionally avoids
 embedding specific subjective, cultural, or institutional norms into its core structure.
 
 Traditional schemas often reflect the worldview of their creators.
-This makes them rigid and biases the data collection against different paradigms.
+This can make them rigid and bias data collection against different paradigms.
 
 This research field aims to separate data syntax and structure from data semantics and interpretation.
 The goal is to build highly flexible, semantic architectures,
@@ -115,6 +140,78 @@ from the interpretation boundary (claims made),
 SE addresses a significant challenge in information ecosystems.
 
 </details>
+
+## Papers
+
+The formal core of Structural Explainability is developed in three papers.
+The papers are the normative specification.
+
+| Paper      | Title                                                                                                 | arXiv                                          |
+| ---------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| **SE-100** | Neutral Substrates: A Design Constraint for Shared Records Under Persistent Interpretive Disagreement | [2601.14271](https://arxiv.org/abs/2601.14271) |
+| **SE-200** | Referential Regimes: Transformation-Invariant Identity for Neutral Substrates                         | [2601.16152](https://arxiv.org/abs/2601.16152) |
+| **SE-300** | Accountable Records: NS-Conformance Checking for Transformation-Invariant Identity                    | _in preparation_                               |
+
+**SE-100** establishes the neutrality-by-design constraint:
+a substrate is neutral when its foundational layer is restricted
+to referential commitments and permitted attribution propositions.
+
+**SE-200** derives the referential-regime structure that neutral substrates require,
+yielding six coarse families and nine core identity regimes:
+OBL, OCC, REC, LOC, OBJ, SCOPE-E, SCOPE-S, RULE-C, RULE-S.
+
+**SE-300** defines the _accountable record_,
+the deployed artifact that declares its carrier, basis, regime,
+transformation history, attribution boundary, and discriminator surfaces,
+and provides checks that decide NS-conformance over it.
+
+Conformance is three-valued:
+PASS, FAIL, or INDETERMINATE.
+An indeterminate result does not count as conformance.
+Failures return finite witnesses, not scores.
+
+Full conformance is disclosure-relative:
+the checker decides over the declared artifact,
+and a later undeclared-surface witness refutes the claim.
+
+A parallel stewardship track addresses governance over time covering how neutral systems are
+defined, audited, stressed, and repaired in real institutional contexts.
+
+| Repository                                                                                                  | Focus               |
+| ----------------------------------------------------------------------------------------------------------- | ------------------- |
+| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)     | Neutral substrates  |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)       | Referential regimes |
+| [paper-300-accountable-records](https://github.com/structural-explainability/paper-300-accountable-records) | Accountable records |
+
+## NS-Conformance
+
+NS-conformance is the checkable relation defined by SE-300. This is the layer at which
+the theory meets a deployed system.
+
+| Repository                                                                    | Purpose                                                                                                                                     |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ns-conformance](https://github.com/structural-explainability/ns-conformance) | Machine-readable schemas for the accountable-record bundle, the reference checker for the NS-conformance checks, and the conformance suite. |
+
+An **accountable-record bundle** supplies the following artifacts:
+
+1. a carrier-basis-regime profile;
+2. record identifiers and payload references;
+3. typed transformation histories;
+4. attribution-boundary declarations;
+5. a discriminator-surface registry; and
+6. a disclosure attestation identifying the implementation boundary.
+
+The **checker** consumes a bundle and returns a conformance report:
+per-record and per-store results, the effective declarations used by each check,
+normalized histories, and every failure and indeterminate witness.
+
+The **conformance suite** is a set of bundles with known verdicts
+sufficient to validate an independent implementation of the checks.
+It allows checkers to be tested and falsified.
+
+Bundles may be produced directly, or emitted by adapters over existing provenance graphs,
+version-control systems, schema registries, workflow engines, and audit logs.
+Adapters are not part of the specification.
 
 ## Repository Manifests
 
@@ -231,47 +328,30 @@ accountability requirements can be inspected together.
 Shared contract tooling supports packaging, validation, and distribution of
 machine-readable contract artifacts across SE repositories.
 
-| Repository                                                                      | Purpose                                                                                  |
-| ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [se-contract-kit](https://github.com/structural-explainability/se-contract-kit) | Shared Python tooling for packaging, validating, and distributing SE contract artifacts. |
+| Repository                                                                              | Purpose                                                                                                                                                 |
+| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [se-contract-kit](https://github.com/structural-explainability/se-contract-kit)         | Shared Python tooling for packaging, validating, and distributing SE contract artifacts.                                                                |
+| [se-repo-conformance](https://github.com/structural-explainability/se-repo-conformance) | Validates SE repositories against their manifests: identity, contract, sources, elements, catalog, exports, resolution, reports, and lock verification. |
 
-## Accountable Record Contract
-
-| Repository                                                                            | Purpose                                                                                                                                     |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [accountable-record](https://github.com/structural-explainability/accountable-record) | Language-neutral, data-first Accountable Record contract for bundles, profiles, reports, conformance, packages, and verification semantics. |
-
-## Accountable Record Systems
-
-Accountable Record systems apply SE constraints to durable record
-structures.
-
-The Accountable Record system repositories are in **active development**.
-They track main on their SE dependencies during this phase to allow the
-contract, domain systems, and verification implementations to co-evolve.
-Pinned versions follow once the contract stabilizes.
-
-Accountable Record systems produce durable, inspectable records of decisions,
-relationships, claims, dependencies, sources, interpretations, or processes in
-ways that support inspection, contestation, audit, and continued use under
-disagreement.
-
-These are application-layer repositories.
-They are real systems, not demonstrations, built to use ordinary domain
-vocabularies while preserving the structural distinctions required for
-accountable verification.
-These systems are organized as domain record systems,
-jurisdiction-specific specializations, and
-verification implementations.
+`se-repo-conformance` checks repository packaging.
+It does not evaluate NS-conformance checks and is unrelated to accountable records in the SE-300 sense.
 
 ### Domain Record Systems
 
-Domain record systems implement the Accountable Record contract using ordinary
-domain vocabularies.
+Domain record systems apply SE constraints to durable records in a specific domain,
+using ordinary domain vocabularies. A domain record system is a candidate producer of
+accountable-record bundles; whether it produces conformant ones is decided by the checker.
 
-These repositories define general domain profiles, packages, mappings, record
-types, fixtures, and expected reports.
-They are not limited to one jurisdiction, institution, dataset, or source system.
+SE does not replace domain ontologies or standards. Domain systems may use
+[Akoma Ntoso](https://www.oasis-open.org/standard/akn-v1-0/),
+[LegalRuleML](https://docs.oasis-open.org/legalruleml/legalruleml-core-spec/v1.0/legalruleml-core-spec-v1.0.html),
+[other OASIS open standards](https://www.oasis-open.org/standards/),
+[FAIR principles](https://www.nature.com/articles/sdata201618),
+[CIDOC-CRM](https://cidoc-crm.org/),
+[schema.org](https://schema.org/) vocabularies, or other domain standards.
+NS-conformance checks whether a system's use of its chosen standards declares its identity
+semantics and keeps them consistent. It does not decide truth, legal correctness, civic
+authority, institutional legitimacy, or final domain meaning.
 
 | Repository                                                                                  | Purpose                                                                                                                                                                                              |
 | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -313,31 +393,6 @@ They are not limited to one jurisdiction, institution, dataset, or source system
 
 </details>
 
-## Accountable Record Verification Implementations
-
-Verification tools consume contracts, layouts, and conformance metrics
-to guarantee boundaries remain cleanly separated under load.
-
-Structural Explainability does not replace domain ontologies or standards.
-Domain systems may use
-[Akoma Ntoso](https://www.oasis-open.org/standard/akn-v1-0/),
-[LegalRuleML](https://docs.oasis-open.org/legalruleml/legalruleml-core-spec/v1.0/legalruleml-core-spec-v1.0.html),
-[other OASIS open standards](https://www.oasis-open.org/standards/),
-[FAIR principles](https://www.nature.com/articles/sdata201618),
-[CIDOC-CRM](https://cidoc-crm.org/),
-[schema.org](https://schema.org/) vocabularies, or other domain standards.
-
-Verification checks whether a system's use of its chosen standards preserves
-the distinctions needed for accountable representation under persistent
-disagreement. It does not decide truth, legal correctness, civic authority,
-institutional legitimacy, or final domain meaning.
-
-| Repository                                                                                  | Purpose                                                                                                                                  |
-| ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| [accountable-record-py](https://github.com/structural-explainability/accountable-record-py) | Core Python test engine driving contract assertions, lock packaging, profiles tracking, and automated verification validation reporting. |
-| [judicial-record-py](https://github.com/structural-explainability/judicial-record-py)       | Custom Python verifier tooling checking judicial-record conformance metrics, text fixtures, and tracking validation sheets.              |
-| [civic-record-py](https://github.com/structural-explainability/civic-record-py)             | Target verification architecture generating compliance matrix checks for active public institution profiles.                             |     |
-
 ## Mathematical Foundations & Proof Chains
 
 <details>
@@ -355,7 +410,7 @@ They are not consumed directly by operational systems.
 | [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate)                 | Formal development of the neutral-substrate constraint and admissible structure                                                                     |
 | [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation)                       | Defines change pressure and foundational transformation operators, families, composition relations, orthogonality relations, and outcome vocabulary |
 | [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence)                             | Defines preservation, breakage, and irrelevance under admissible transformation                                                                     |
-| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                   | Defines regime-specific identity and persistence behavior using nine refined referential profile kinds                                              |
+| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                   | Defines regime-specific identity and persistence behavior using nine core identity regimes                                                          |
 | [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Explains the resulting judgment without collapsing disagreements                                                                                    |
 
 ### Formal Contract and Operational Foundations
@@ -372,7 +427,7 @@ They are not consumed directly by operational systems.
 
 | Repository                                                                                                            | Purpose                                                              |
 | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| [se-regimes](https://github.com/structural-explainability/se-regimes)                                                 | Executable regime kernel (profiles, transformations, verdicts)       |
+| [se-regimes](https://github.com/structural-explainability/se-regimes)                                                 | Executable regime kernel (regimes, transformations, verdicts)        |
 | [se-regimes-pilot-education-math-g8](https://github.com/structural-explainability/se-regimes-pilot-education-math-g8) | Grade 8 mathematics regime pilot for linear equations and statistics |
 | [se-regimes-explorer](https://github.com/structural-explainability/se-regimes-explorer)                               | SE Regimes Decision Tree                                             |
 
@@ -399,25 +454,25 @@ They are not consumed directly by operational systems.
 
 ### Normative and Informative Specifications
 
-| Repository                                                                        | Purpose                                                                 | Status      |
-| --------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------- |
-| [spec-se](https://github.com/structural-explainability/spec-se)                   | Neutrality and boundary constraints for all downstream systems          | Normative   |
-| [spec-ae](https://github.com/structural-explainability/spec-ae)                   | Accountable entity kinds; references canonical identity-regime profiles | Normative   |
-| [spec-ep](https://github.com/structural-explainability/spec-ep)                   | Graph evolution over accountable entities                               | Normative   |
-| [spec-cee](https://github.com/structural-explainability/spec-cee)                 | Contextual evidence, explanation, attestation, and provenance           | Normative   |
-| [spec-gb](https://github.com/structural-explainability/spec-gb)                   | Governance boundary for structural artifacts and actions                | Normative   |
-| [spec-ib](https://github.com/structural-explainability/spec-ib)                   | Interpretation boundary for external frameworks                         | Normative   |
-| [spec-se-appendix](https://github.com/structural-explainability/spec-se-appendix) | Identifier rules, examples, and cross-spec patterns                     | Informative |
+| Repository                                                                        | Purpose                                                         | Status      |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------- | ----------- |
+| [spec-se](https://github.com/structural-explainability/spec-se)                   | Neutrality and boundary constraints for all downstream systems  | Normative   |
+| [spec-ae](https://github.com/structural-explainability/spec-ae)                   | Accountable entity kinds; references canonical identity regimes | Normative   |
+| [spec-ep](https://github.com/structural-explainability/spec-ep)                   | Graph evolution over accountable entities                       | Normative   |
+| [spec-cee](https://github.com/structural-explainability/spec-cee)                 | Contextual evidence, explanation, attestation, and provenance   | Normative   |
+| [spec-gb](https://github.com/structural-explainability/spec-gb)                   | Governance boundary for structural artifacts and actions        | Normative   |
+| [spec-ib](https://github.com/structural-explainability/spec-ib)                   | Interpretation boundary for external frameworks                 | Normative   |
+| [spec-se-appendix](https://github.com/structural-explainability/spec-se-appendix) | Identifier rules, examples, and cross-spec patterns             | Informative |
 
 ### Optional Reference Implementations and Formal Anchors
 
-| Repository                                                                                    | Purpose                       | Description                                                                                       |
-| --------------------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------- |
-| [AccountableEntities](https://github.com/structural-explainability/AccountableEntities)       | Accountable entity kinds      | Lean formalization of six AE entity kinds and their mapping to canonical identity-regime profiles |
-| [EvolutionProtocol](https://github.com/structural-explainability/EvolutionProtocol)           | Graph evolution over entities | Formalization of EP graph evolution                                                               |
-| [CEE](https://github.com/structural-explainability/CEE)                                       | Evidence interface            | Structural forms for contextual explanation, evidence, attestation, and provenance                |
-| [GovernanceBoundary](https://github.com/structural-explainability/GovernanceBoundary)         | Governance boundary           | Structural boundary for governance artifacts and actions                                          |
-| [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Interpretation boundary       | Conditions under which external frameworks may interpret substrate records                        |
+| Repository                                                                                    | Purpose                       | Description                                                                               |
+| --------------------------------------------------------------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------- |
+| [AccountableEntities](https://github.com/structural-explainability/AccountableEntities)       | Accountable entity kinds      | Lean formalization of six AE entity kinds and their mapping to canonical identity regimes |
+| [EvolutionProtocol](https://github.com/structural-explainability/EvolutionProtocol)           | Graph evolution over entities | Formalization of EP graph evolution                                                       |
+| [CEE](https://github.com/structural-explainability/CEE)                                       | Evidence interface            | Structural forms for contextual explanation, evidence, attestation, and provenance        |
+| [GovernanceBoundary](https://github.com/structural-explainability/GovernanceBoundary)         | Governance boundary           | Structural boundary for governance artifacts and actions                                  |
+| [InterpretationBoundary](https://github.com/structural-explainability/InterpretationBoundary) | Interpretation boundary       | Conditions under which external frameworks may interpret substrate records                |
 
 ### Archived / Superseded Theory Repositories
 
@@ -425,17 +480,26 @@ They are not consumed directly by operational systems.
 | ------------------------------------------------------------------------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | [StructuralExplainability](https://github.com/structural-explainability/StructuralExplainability) | Cross-cutting constraints    | Neutrality and conformance predicates                                                                                           |
 | [NeutralSubstrate](https://github.com/structural-explainability/NeutralSubstrate)                 | Neutral-substrate constraint | Earlier formalization of the constraint that substrate-level commitments exclude object-level causal and normative propositions |
-| [IdentityRegimes](https://github.com/structural-explainability/IdentityRegimes)                   | Referential regimes          | Earlier formalization of identity-and-persistence regime families prior to the current nine-profile refinement                  |
+| [IdentityRegimes](https://github.com/structural-explainability/IdentityRegimes)                   | Referential regimes          | Earlier formalization of identity-and-persistence regime families prior to the current nine-regime refinement                   |
 
 </details>
 
-## Contract Derivation and Enforcement Chain
+## Derivation Chain
+
+The papers define the theory. The Lean development mechanizes it. The checker decides it.
 
 ```mermaid
 flowchart TD
 
-  %% --- Theory Layer ---
-  subgraph T[Theory Layer]
+  %% --- Papers (normative) ---
+  subgraph P[Papers: normative]
+    SE100[SE-100 neutral substrates]
+    SE200[SE-200 referential regimes]
+    SE300[SE-300 accountable records]
+  end
+
+  %% --- Theory Layer (mechanization) ---
+  subgraph T[Lean Theory: mechanization]
     NS[neutral substrate]
     TR[transformation]
     PE[persistence]
@@ -443,10 +507,19 @@ flowchart TD
     SET[structural explainability]
   end
 
-  %% --- Boundary Specs ---
-  subgraph B[Boundary Specs]
-    GB[governance boundary]
-    IB[interpretation boundary]
+  %% --- Conformance ---
+  subgraph NC[NS-Conformance]
+    SCH[bundle schemas]
+    CHK[reference checker]
+    SUITE[conformance suite]
+  end
+
+  %% --- Domain Record Systems ---
+  subgraph D[Domain Record Systems]
+    IRC[infrastructure-record]
+    ERC[energy-record]
+    JR[judicial-record]
+    CR[civic-record]
   end
 
   %% --- Contract / Governance ---
@@ -456,29 +529,17 @@ flowchart TD
     A[se-admin]
   end
 
-  %% --- Operational Core ---
-  subgraph O[Operational Core]
-    K[se-kernel]
-    M[se-mapspec]
-    R[se-regimes]
-    MAP[se-mapping-*]
-    GOV[se-govsrc-*]
-  end
+  SE100 --> SE200
+  SE200 --> SE300
 
-  %% --- Accountable Record Systems ---
-  subgraph ARS[Accountable Record Systems]
-    AR[accountable-record]
-    JR[judicial-record]
-    CR[civic-record]
-    JRS[Supreme Court specialization]
-  end
+  SE100 --> NS
+  SE200 --> IR
+  SE200 --> TR
+  SE200 --> PE
 
-  %% --- Verification Implementations ---
-  subgraph V[Verification Implementations]
-    ARPY[accountable-record-py]
-    JRPY[judicial-record-py]
-    CRPY[civic-record-py]
-  end
+  SE300 --> SCH
+  SCH --> CHK
+  CHK --> SUITE
 
   NS --> FC
   TR --> FC
@@ -486,65 +547,25 @@ flowchart TD
   IR --> FC
   SET --> FC
 
-  GB --> C
-  IB --> C
-
   FC --> C
   C --> A
 
-  A --> K
-  A --> M
-  A --> R
-  A --> MAP
-  A --> GOV
-
-  K --> AR
-  M --> AR
-  R --> AR
-
-  AR --> JR
-  AR --> CR
-  JR --> JRS
-
-  ARPY --> AR
-  JRPY --> JR
-  CRPY --> CR
-
-  IB -.-> AR
-  IB -.-> JR
-  IB -.-> CR
-
-  GB -.-> AR
-  GB -.-> JR
-  GB -.-> CR
+  IRC -.emits bundle.-> CHK
+  ERC -.emits bundle.-> CHK
+  JR  -.emits bundle.-> CHK
+  CR  -.emits bundle.-> CHK
 ```
 
 All repositories in this diagram declare an `SE_MANIFEST.toml` conforming to
 [`se-manifest-schema`](https://github.com/structural-explainability/se-manifest-schema),
 which has no upstream SE dependencies.
 
-## Papers
-
-Structural Explainability consists of a small formal core (SE-100: Neutral Substrates; SE-200: Referential Regimes)
-and a parallel stewardship track addressing governance over time.
-The stewardship track examines how neutral systems are defined, audited, stressed, and
-repaired in real institutional contexts.
-
-The two formal papers provide theoretical justification for foundational specifications.
-They are explanatory rather than normative (they describe what must be true for such systems to work,
-not what people should believe or do).
-
-| Repository                                                                                              | Focus               | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate) | Neutral substrates  | Neutral-substrate design constraint for shared records under persistent interpretive disagreement                   |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)   | Referential regimes | Referential-regime structure required by neutral substrates, deriving six coarse families and nine refined profiles |
-
 ## How to Use This Organization
 
-- **To understand the justification**, start with the papers.
-- **To understand the architecture**, start with the specifications.
+- **To understand the theory**, read the papers. They are the specification.
+- **To check a record system**, use `ns-conformance`: schemas, checker, conformance suite.
 - **To verify formal coherence**, consult the Lean formalizations.
-- **To consume stable definitions**, use the formal contract artifacts.
-- **To validate repositories**, use the manifest and conformance tooling.
+- **To see the theory applied**, read the domain record systems.
+- **To validate repositories**, use the manifest tooling.
 
 <!-- markdownlint-enable MD024 -->
