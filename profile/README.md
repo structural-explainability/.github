@@ -33,8 +33,10 @@ SE makes the commitment declarable and the failure detectable.
   a single structural change might preserve identity under one regime,
   break it under another, or be identity-neutral under a third.
 - **Declared Identity Semantics:** A system that branches on an undeclared field to
-  decide sameness is running a _hidden regime_.
-  SE exists to detect hidden regimes.
+  decide sameness may be running an identity model it never stated.
+  SE makes that divergence detectable as a finite witness,
+  and separates detecting the divergence from diagnosing which regime,
+  if any, the field implements.
 - **Plural Systems:** SE is built for independent architectures
   that share data without requiring a centralized authority,
   uniform naming, or a single forced ontology.
@@ -47,8 +49,8 @@ SE makes the commitment declarable and the failure detectable.
 | **Transformation Theory**     | Identifies and defines structural change pressures.                                                                                                                  |
 | **Persistence Theory**        | Classifies each transformation, relative to an identity regime, as identity-preserving (PRS), identity-breaking (BRK), identity-neutral (NEU), or inapplicable (NA). |
 | **Identity Regimes**          | Organizes identity and persistence behavior into nine core identity regimes.                                                                                         |
+| **Operational Identity**      | Compares declared identity semantics against those the implementation induces, exposing divergence as a finite witness.                                              |
 | **Structural Explainability** | Integrates these layers into an explicit, explainable account without forcing consensus.                                                                             |
-| **NS-Conformance**            | Decides, over a declared artifact, whether a deployed record system satisfies the substrate constraint.                                                              |
 
 Within the core substrate, structure, transformation, persistence, and regime
 behavior may be recorded.
@@ -90,7 +92,7 @@ The system decides. It decides by branching on some field,
 such as a version column, status flag,
 or display attribute not necessarily declared as identity-relevant.
 
-That is a _hidden regime_:
+That is a _hidden identity regime_:
 identity semantics implemented but not declared,
 which may remain invisible until the system is challenged
 in court, in audit, in appeal, in public review, or
@@ -104,18 +106,22 @@ version control, and audit logs record what happened.
 None answer what the system takes sameness to be, and none can detect a
 system that answers it differently across undeclared fields.
 
-Hidden regimes are findable, because the alternative is known in advance.
+Where a regime has a sibling,
+the alternative basis is known in advance,
+which is what lets a divergence be classified.
 Six of the nine identity regimes sit in pairs on three sibling axes:
 LOC/OBJ, SCOPE-E/SCOPE-S, RULE-C/RULE-S.
 Each pair offers two admissible identity bases for the same kind of referent.
 
-A hidden regime appears as a specific, finite thing:
-a pair of records the declared regime treats as one referent,
-the sibling regime treats as two,
-and some field in the system already treats differently.
-That pair is the witness and there is nothing to infer or interpret.
+A hidden identity regime appears as a specific, finite thing:
+a pair of records the declared regime treats as one referent
+that some field in the system already treats as two.
+That pair is the witness.
+Where the declared regime has a sibling that also splits the pair,
+the divergence can be classified against that sibling;
+the witness alone does not establish which identity basis the field carries.
 
-Accountable Records defines what a system must declare for this to be checked,
+Operational Identity defines what a system must declare for this to be checked,
 and gives the procedure.
 
 SE does not replace domain vocabularies, standards, ontologies, or existing data systems.
@@ -156,7 +162,7 @@ The papers are the normative specification.
 | ---------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | **SE-100** | Neutral Substrates: A Design Constraint for Shared Records Under Persistent Interpretive Disagreement | [2601.14271](https://arxiv.org/abs/2601.14271) |
 | **SE-200** | Referential Regimes: Transformation-Invariant Identity for Neutral Substrates                         | [2601.16152](https://arxiv.org/abs/2601.16152) |
-| **SE-300** | Accountable Records: NS-Conformance Checking for Transformation-Invariant Identity                    | _in preparation_                               |
+| **SE-210** | Operational Identity: A Finite Audit of Declared and Implemented Rules of Sameness                    | _in preparation_                               |
 
 **SE-100** establishes the neutrality-by-design constraint:
 a substrate is neutral when its foundational layer is restricted
@@ -166,58 +172,19 @@ to referential commitments and permitted attribution propositions.
 yielding six coarse families and nine core identity regimes:
 OBL, OCC, REC, LOC, OBJ, SCOPE-E, SCOPE-S, RULE-C, RULE-S.
 
-**SE-300** defines the _accountable record_,
-the deployed artifact that declares its carrier, basis, regime,
-transformation history, attribution boundary, and discriminator surfaces,
-and provides checks that decide NS-conformance over it.
+**SE-210** defines the operational identity partition,
+the rule of sameness a deployed system applies,
+and gives a finite audit comparing it against the declared regime.
+The paper specifies the finite audit inputs:
+the declared regime, the typed transformation history,
+a registry of the implementation mechanisms examined,
+and the disclosed implementation boundary.
 
-Conformance is three-valued:
-PASS, FAIL, or INDETERMINATE.
-An indeterminate result does not count as conformance.
-Failures return finite witnesses, not scores.
-
-Full conformance is disclosure-relative:
-the checker decides over the declared artifact,
-and a later undeclared-surface witness refutes the claim.
-
-A parallel stewardship track addresses governance over time covering how neutral systems are
-defined, audited, stressed, and repaired in real institutional contexts.
-
-| Repository                                                                                                  | Focus               |
-| ----------------------------------------------------------------------------------------------------------- | ------------------- |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)     | Neutral substrates  |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)       | Referential regimes |
-| [paper-300-accountable-records](https://github.com/structural-explainability/paper-300-accountable-records) | Accountable records |
-
-## NS-Conformance
-
-NS-conformance is the checkable relation defined by SE-300. This is the layer at which
-the theory meets a deployed system.
-
-| Repository                                                                    | Purpose                                                                                                                                     |
-| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ns-conformance](https://github.com/structural-explainability/ns-conformance) | Machine-readable schemas for the accountable-record bundle, the reference checker for the NS-conformance checks, and the conformance suite. |
-
-An **accountable-record bundle** supplies the following artifacts:
-
-1. a carrier-basis-regime profile;
-2. record identifiers and payload references;
-3. typed transformation histories;
-4. attribution-boundary declarations;
-5. a discriminator-surface registry; and
-6. a disclosure attestation identifying the implementation boundary.
-
-The **checker** consumes a bundle and returns a conformance report:
-per-record and per-store results, the effective declarations used by each check,
-normalized histories, and every failure and indeterminate witness.
-
-The **conformance suite** is a set of bundles with known verdicts
-sufficient to validate an independent implementation of the checks.
-It allows checkers to be tested and falsified.
-
-Bundles may be produced directly, or emitted by adapters over existing provenance graphs,
-version-control systems, schema registries, workflow engines, and audit logs.
-Adapters are not part of the specification.
+| Repository                                                                                                    | Focus                |
+| ------------------------------------------------------------------------------------------------------------- | -------------------- |
+| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)       | Neutral substrates   |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)         | Referential regimes  |
+| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity) | Operational Identity |
 
 ## Repository Manifests
 
@@ -239,13 +206,12 @@ research-object packaging may use RO-Crate.
 ```mermaid
 flowchart LR
   NS[Neutral Substrates] --> RR[Referential Regimes]
-  RR --> AR[Accountable Records]
-  AR --> NC[ns-conformance]
+  RR --> OI[Operational Identity]
 ```
 
 ## How to Use This Organization
 
 - **To understand the theory**, read the three papers.
-- **To check a declared record system**, use `ns-conformance`.
+- **To check a declared record system**, apply the Operational Identity audit from SE-210.
 
 <!-- markdownlint-enable MD024 -->
