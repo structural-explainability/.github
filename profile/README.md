@@ -117,26 +117,28 @@ visible, attributable, and useful over time.
 ## Papers
 
 The formal core of Structural Explainability is developed in three papers.
-The papers are the normative specification.
+These papers are the normative specification of the framework.
 
-| Paper      | Title                                                                                                 | arXiv                                          |
-| ---------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| **SE-100** | Neutral Substrates: A Design Constraint for Shared Records Under Persistent Interpretive Disagreement | [2601.14271](https://arxiv.org/abs/2601.14271) |
-| **SE-200** | Referential Regimes: Transformation-Invariant Identity for Neutral Substrates                         | [2601.16152](https://arxiv.org/abs/2601.16152) |
-| **SE-210** | Operational Identity: A Finite Audit of Declared and Implemented Rules of Sameness                    | _draft_                                        |
+| Paper      | Title                                                                                                   | arXiv                                          |
+| ---------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| **SE-100** | _Neutral Substrates: A Design Constraint for Shared Records Under Persistent Interpretive Disagreement_ | [2601.14271](https://arxiv.org/abs/2601.14271) |
+| **SE-200** | _Referential Regimes: Transformation-Invariant Identity for Neutral Substrates_                         | [2601.16152](https://arxiv.org/abs/2601.16152) |
+| **SE-210** | _Operational Identity: A Finite Audit of Declared and Implemented Rules of Sameness_                    | _submitted to arXiv_                           |
 
 **SE-100** establishes the neutrality-by-design constraint:
 a substrate is neutral when its foundational layer is restricted
 to referential commitments and permitted attribution propositions.
 
 **SE-200** derives the referential-regime structure that neutral substrates require,
-yielding six reference kinds and nine core identity regimes:
-OBL, OCC, REC, LOC, OBJ, SCOPE-E, SCOPE-S, RULE-C, RULE-S.
+yielding nine core identity regimes:
+three unpaired regimes, OBL, OCC, and REC,
+and six regimes paired across three sibling axes:
+LOC/OBJ, SCOPE-E/SCOPE-S, and RULE-C/RULE-S.
 
 **SE-210** defines the operational identity partition,
 the rule of sameness induced by an examined implementation surface,
-and gives a finite audit comparing it against the declared partition.
-The paper specifies the finite audit inputs:
+and a finite audit comparing it against the declared identity partition.
+The paper specifies the audit inputs:
 the examined record domain and declared regime,
 the family-labeled transformation history,
 the identified implementation boundary and registered artifacts,
@@ -144,11 +146,30 @@ the evaluated surfaces over those artifacts,
 the identity-relevant uses identified for each surface,
 and the corresponding completeness claims.
 
-| Repository                                                                                                    | Focus                |
-| ------------------------------------------------------------------------------------------------------------- | -------------------- |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)       | Neutral substrates   |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)         | Referential regimes  |
-| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity) | Operational Identity |
+| Repository                                                                                                                | Role                                                          |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)                   | Paper source for SE-100: Neutral substrates                   |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)                     | Paper source for SE-200: Referential regimes                  |
+| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)             | Paper source for SE-210: Operational Identity                 |
+| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity) | Executable verification of finite mathematical core of SE-210 |
+
+### Executable Verification
+
+The SE-210 verification repository contains two independent implementations
+of the finite operational identity audit defined by the paper.
+
+The literal oracle constructs the relevant relations explicitly
+and applies the paper definitions directly.
+The optimized checker uses union-find closures,
+operational-signature grouping,
+and declared-block comparisons.
+
+The implementations are compared across paper-derived regression cases,
+an exhaustive deterministic sweep over small instances,
+and randomized instances.
+The paper remains normative;
+the verification repository checks the internal consistency
+of the paper's finite definitions, algorithmic claims, and complexity claims.
 
 ## Repository Manifests
 
@@ -176,6 +197,6 @@ flowchart LR
 ## How to Use This Organization
 
 - **To understand the theory**, read the three papers.
-- **To check a declared record system**, apply the Operational Identity audit from SE-210.
+- **To compare a record system's declared and implemented rules of sameness**, apply the Operational Identity audit from SE-210.
 
 <!-- markdownlint-enable MD024 -->
