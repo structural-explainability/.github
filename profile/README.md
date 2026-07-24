@@ -123,7 +123,7 @@ These papers are the normative specification of the framework.
 | ---------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | **SE-100** | _Neutral Substrates: A Design Constraint for Shared Records Under Persistent Interpretive Disagreement_ | [2601.14271](https://arxiv.org/abs/2601.14271) |
 | **SE-200** | _Referential Regimes: Transformation-Invariant Identity for Neutral Substrates_                         | [2601.16152](https://arxiv.org/abs/2601.16152) |
-| **SE-210** | _Operational Identity: A Finite Audit of Declared and Implemented Rules of Sameness_                    | [2607.20729]                           |
+| **SE-210** | _Operational Identity: A Finite Audit of Declared and Implemented Rules of Sameness_                    | [2607.20729](https://arxiv.org/abs/2607.20729) |
 
 **SE-100** establishes the neutrality-by-design constraint:
 a substrate is neutral when its foundational layer is restricted
