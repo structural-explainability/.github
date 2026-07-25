@@ -43,14 +43,15 @@ SE makes the commitment declarable and the failure detectable.
 
 ### The Architecture Stack
 
-| Layer                         | Function                                                                                                                                                             |
-| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Neutral Substrate**         | Defines admissible structural description without interpretive commitment.                                                                                           |
-| **Transformation Theory**     | Identifies and defines structural change pressures.                                                                                                                  |
-| **Persistence Theory**        | Classifies each transformation, relative to an identity regime, as identity-preserving (PRS), identity-breaking (BRK), identity-neutral (NEU), or inapplicable (NA). |
-| **Identity Regimes**          | Organizes identity and persistence behavior into nine core identity regimes.                                                                                         |
-| **Operational Identity**      | Compares the declared identity partition with operational partitions induced by audited surfaces, exposing divergence as a finite witness.                           |
-| **Structural Explainability** | Integrates these layers into an explicit, explainable account without forcing consensus.                                                                             |
+| Layer                         | Function                                                                                                                                                                       |
+| :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Neutral Substrate**         | Defines admissible structural description without interpretive commitment.                                                                                                     |
+| **Transformation Theory**     | Identifies and defines structural change pressures.                                                                                                                            |
+| **Persistence Theory**        | Classifies each transformation, relative to an identity regime, as identity-preserving (PRS), identity-breaking (BRK), identity-neutral (NEU), or inapplicable (NA).           |
+| **Identity Regimes**          | Organizes identity and persistence behavior into nine core identity regimes.                                                                                                   |
+| **Operational Identity**      | Compares the declared identity partition with operational partitions induced by audited surfaces, exposing divergence as a finite witness.                                     |
+| **Interpretive Kernel**       | Transports equivalence requirements between distinct finite carriers connected by interpretation, computing kernels, least coherent output regimes, thresholds, and witnesses. |
+| **Structural Explainability** | Integrates these layers into an explicit, explainable account without forcing consensus.                                                                                       |
 
 Within the core substrate, structure, transformation, persistence, and regime
 behavior may be recorded.
@@ -124,6 +125,7 @@ These papers are the normative specification of the framework.
 | **SE-100** | _Neutral Substrates: A Design Constraint for Shared Records Under Persistent Interpretive Disagreement_ | [2601.14271](https://arxiv.org/abs/2601.14271) |
 | **SE-200** | _Referential Regimes: Transformation-Invariant Identity for Neutral Substrates_                         | [2601.16152](https://arxiv.org/abs/2601.16152) |
 | **SE-210** | _Operational Identity: A Finite Audit of Declared and Implemented Rules of Sameness_                    | [2607.20729](https://arxiv.org/abs/2607.20729) |
+| **SE-220** | _Interpretive Kernel: From Occurrence Equivalence to Frame Equivalence_                                 | _in progress_                                  |
 
 **SE-100** establishes the neutrality-by-design constraint:
 a substrate is neutral when its foundational layer is restricted
@@ -138,20 +140,28 @@ LOC/OBJ, SCOPE-E/SCOPE-S, and RULE-C/RULE-S.
 **SE-210** defines the operational identity partition,
 the rule of sameness induced by an examined implementation surface,
 and a finite audit comparing it against the declared identity partition.
-The paper specifies the audit inputs:
-the examined record domain and declared regime,
-the family-labeled transformation history,
-the identified implementation boundary and registered artifacts,
-the evaluated surfaces over those artifacts,
-the identity-relevant uses identified for each surface,
-and the corresponding completeness claims.
+The audit detects divergence, returns finite witnesses, and separates divergence detection from sibling positioning and regime-substitution claims.
 
-| Repository                                                                                                                | Role                                                          |
-| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)                   | Paper source for SE-100: Neutral substrates                   |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)                     | Paper source for SE-200: Referential regimes                  |
-| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)             | Paper source for SE-210: Operational Identity                 |
-| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity) | Executable verification of finite mathematical core of SE-210 |
+**SE-220** studies equivalence relations over distinct interpreted carriers.
+A finite probe family and an interpretation function
+connect a carrier of environments with a carrier of interpreted outputs.
+An output equivalence induces an interpretive kernel over environments.
+A declared environment regime that refines that kernel is coherent.
+
+The companion construction also computes the least output equivalence
+required to make a declared environment regime coherent.
+The resulting adjunction transports equivalence requirements between the two carriers and
+returns finite witnesses when a proposed identification is not supported by interpretation.
+
+| Repository                                                                                                                | Role                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)                   | Paper source for SE-100: Neutral substrates                                                          |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)                     | Paper source for SE-200: Referential regimes                                                         |
+| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)             | Paper source for SE-210: Operational Identity                                                        |
+| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity) | Executable verification of finite mathematical core of SE-210                                        |
+| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)               | (in-progress) Paper source for SE-220: Interpretive Kernel.                                          |
+| [se-interpretive-kernel](https://github.com/structural-explainability/se-interpretive-kernel)                             | (in-progress) Domain-agnostic executable construction for kernels, thresholds, and finite witnesses. |
+| [se-theory-interpretive-kernel](https://github.com/structural-explainability/se-theory-interpretive-kernel)               | (in-progress) Independent Lean formalization of SE-220 mathematical contract.                        |
 
 ### Executable Verification
 
@@ -160,16 +170,27 @@ of the finite operational identity audit defined by the paper.
 
 The literal oracle constructs the relevant relations explicitly
 and applies the paper definitions directly.
-The optimized checker uses union-find closures,
-operational-signature grouping,
-and declared-block comparisons.
+The optimized checker uses union-find closures, operational-signature grouping, and declared-block comparisons.
 
 The implementations are compared across paper-derived regression cases,
-an exhaustive deterministic sweep over small instances,
-and randomized instances.
-The paper remains normative;
-the verification repository checks the internal consistency
-of the paper's finite definitions, algorithmic claims, and complexity claims.
+an exhaustive deterministic sweep over small instances, and randomized instances.
+
+The SE-220 implementation work follows a related but distinct structure.
+`se-interpretive-kernel` implements the finite partition algebra and kernels and remains domain-agnostic.
+`se-theory-interpretive-kernel` formalizes the same mathematical contract in Lean.
+The Python and Lean repositories are independent realizations.
+Disagreement between them indicates that at least one definition, proof, implementation, or test obligation must be repaired.
+
+The papers remain normative.
+Companion repositories test the internal consistency, computability, algorithmic claims, and finite consequences of the academic paper definitions.
+
+## Domain Testing
+
+| Repository                                                                              | Responsibility                           |
+| --------------------------------------------------------------------------------------- | ---------------------------------------- |
+| [se-df](https://github.com/structural-explainability/se-df)                             | (in-progress) Domain-agnostic machinery. |
+| [substrate](https://github.com/structural-explainability/scheduling-semantic-substrate) | (in-progress) Domain testing.            |
+| [conformance](https://github.com/structural-explainability/schedule-conformance)        | (in-progress) Conformance.               |
 
 ## Repository Manifests
 
@@ -189,9 +210,25 @@ research-object packaging may use RO-Crate.
 ## Dependency Chain
 
 ```mermaid
-flowchart LR
-  NS[Neutral Substrates] --> RR[Referential Regimes]
-  RR --> OI[Operational Identity]
+flowchart TD
+  subgraph SE["Structural Explainability Core"]
+    NS["SE-100<br/>Neutral Substrates"]
+    RR["SE-200<br/>Referential Regimes"]
+    OI["SE-210<br/>Operational Identity"]
+    IK["SE-220<br/>Interpretive Kernel"]
+
+    NS --> RR
+    RR --> OI
+    OI --> IK
+  end
+
+  subgraph IKR["Interpretive-Kernel Realizations"]
+    IKPY["se-interpretive-kernel<br/>Python construction"]
+    IKLEAN["se-theory-interpretive-kernel<br/>Lean formalization"]
+
+    IK <--> IKPY
+    IK <--> IKLEAN
+  end
 ```
 
 ## How to Use This Organization
