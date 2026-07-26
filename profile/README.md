@@ -161,7 +161,6 @@ returns finite witnesses when a proposed identification is not supported by inte
 | [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity) | Executable verification of finite mathematical core of SE-210                                        |
 | [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)               | (in-progress) Paper source for SE-220: Interpretive Kernel.                                          |
 | [se-interpretive-kernel](https://github.com/structural-explainability/se-interpretive-kernel)                             | (in-progress) Domain-agnostic executable construction for kernels, thresholds, and finite witnesses. |
-| [se-theory-interpretive-kernel](https://github.com/structural-explainability/se-theory-interpretive-kernel)               | (in-progress) Independent Lean formalization of SE-220 mathematical contract.                        |
 
 ### Executable Verification
 
@@ -176,21 +175,38 @@ The implementations are compared across paper-derived regression cases,
 an exhaustive deterministic sweep over small instances, and randomized instances.
 
 The SE-220 implementation work follows a related but distinct structure.
-`se-interpretive-kernel` implements the finite partition algebra and kernels and remains domain-agnostic.
-`se-theory-interpretive-kernel` formalizes the same mathematical contract in Lean.
-The Python and Lean repositories are independent realizations.
-Disagreement between them indicates that at least one definition, proof, implementation, or test obligation must be repaired.
+The Python and Lean repositories are independent realizations;
+disagreement indicates at least one definition, proof, implementation, or test obligation must be repaired.
 
-The papers remain normative.
-Companion repositories test the internal consistency, computability, algorithmic claims, and finite consequences of the academic paper definitions.
+- `se-interpretive-kernel` implements the finite partition algebra and kernels and remains domain-agnostic.
+- `se-theory-interpretive-kernel` formalizes the same mathematical contract in Lean.
+
+The papers are normative.
+Companion repositories test the internal consistency, computability, algorithmic claims, and finite consequences of paper definitions.
+
+## Theory
+
+Independent Lean 4 formalizations of the SE layers.
+Each is a machine-checked realization of the corresponding normative paper.
+All namespaces are under `SE.*`.
+
+| Repository                                                                                                              | Paper / Role                                | Namespace / Provides                                                                        |
+| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate)                 | SE-100 Neutral Substrate                    | SE.NeutralSubstrate: primitives, frameworks, admissibility; neutrality adequacy proof       |
+| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation)                       | SE-200 Transformation Theory                | SE.Transformation: transformation kinds, families, and operators (change-pressure taxonomy) |
+| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence)                             | SE-200 Persistence Theory _(in progress)_   | SE.Persistence: PRS / BRK / NEU / NA classification of a transformation under a regime      |
+| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                   | SE-200 Identity Regimes                     | SE.IdentityRegimes: nine core regimes, three sibling axes, split-pressure profiles          |
+| [se-theory-operational-identity](https://github.com/structural-explainability/se-theory-operational-identity)           | SE-210 Operational Identity _(in progress)_ | SE.OperationalIdentity                                                                      |
+| [se-theory-interpretive-kernel](https://github.com/structural-explainability/se-theory-interpretive-kernel)             | SE-220 Interpretive Kernel _(in progress)_  | SE.InterpretiveKernel                                                                       |
+| [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Integration                                 | SE.StructuralExplainability: composes the layers into one explainable account               |
 
 ## Domain Testing
 
-| Repository                                                                              | Responsibility                           |
-| --------------------------------------------------------------------------------------- | ---------------------------------------- |
-| [se-df](https://github.com/structural-explainability/se-df)                             | (in-progress) Domain-agnostic machinery. |
-| [substrate](https://github.com/structural-explainability/scheduling-semantic-substrate) | (in-progress) Domain testing.            |
-| [conformance](https://github.com/structural-explainability/schedule-conformance)        | (in-progress) Conformance.               |
+| Repository                                                                              | Responsibility                          |
+| --------------------------------------------------------------------------------------- | --------------------------------------- |
+| [se-df](https://github.com/structural-explainability/se-df)                             | (in-progress) Domain-agnostic machinery |
+| [substrate](https://github.com/structural-explainability/scheduling-semantic-substrate) | (in-progress) Domain testing            |
+| [conformance](https://github.com/structural-explainability/schedule-conformance)        | (in-progress) Conformance               |
 
 ## Repository Manifests
 
