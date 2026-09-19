@@ -153,14 +153,15 @@ required to make a declared environment regime coherent.
 The resulting adjunction transports equivalence requirements between the two carriers and
 returns finite witnesses when a proposed identification is not supported by interpretation.
 
-| Repository                                                                                                                | Role                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)                   | Paper source for SE-100: Neutral substrates                                                          |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)                     | Paper source for SE-200: Referential regimes                                                         |
-| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)             | Paper source for SE-210: Operational Identity                                                        |
-| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity) | Executable verification of finite mathematical core of SE-210                                        |
-| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)               | (in-progress) Paper source for SE-220: Interpretive Kernel.                                          |
-| [se-interpretive-kernel](https://github.com/structural-explainability/se-interpretive-kernel)                             | (in-progress) Domain-agnostic executable construction for kernels, thresholds, and finite witnesses. |
+| Repository                                                                                                                    | Role                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)                       | Paper source for SE-100: Neutral substrates                                                         |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)                         | Paper source for SE-200: Referential regimes                                                        |
+| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)                 | Paper source for SE-210: Operational Identity                                                       |
+| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity)     | Executable verification of finite mathematical core of SE-210                                       |
+| [se-verification-vulnerability-matching](https://github.com/structural-explainability/se-verification-vulnerability-matching) | Exploratory study of SE-210 security-relevant identity semantics in software vulnerability matching |
+| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)                   | (in-progress) Paper source for SE-220: Interpretive Kernel                                          |
+| [se-interpretive-kernel](https://github.com/structural-explainability/se-interpretive-kernel)                                 | (in-progress) Domain-agnostic executable construction for kernels, thresholds, and finite witnesses |
 
 ### Executable Verification
 
