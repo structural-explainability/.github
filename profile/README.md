@@ -117,7 +117,7 @@ visible, attributable, and useful over time.
 
 ## Papers
 
-The formal core of Structural Explainability is developed in three papers.
+The formal core of Structural Explainability is developed in a series of papers.
 These papers are the normative specification of the framework.
 
 | Paper      | Title                                                                                                   | arXiv                                          |
@@ -153,15 +153,16 @@ required to make a declared environment regime coherent.
 The resulting adjunction transports equivalence requirements between the two carriers and
 returns finite witnesses when a proposed identification is not supported by interpretation.
 
-| Repository                                                                                                                    | Role                                                                                                |
-| ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)                       | Paper source for SE-100: Neutral substrates                                                         |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)                         | Paper source for SE-200: Referential regimes                                                        |
-| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)                 | Paper source for SE-210: Operational Identity                                                       |
-| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity)     | Executable verification of finite mathematical core of SE-210                                       |
-| [se-verification-vulnerability-matching](https://github.com/structural-explainability/se-verification-vulnerability-matching) | Exploratory study of SE-210 security-relevant identity semantics in software vulnerability matching |
-| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)                   | (in-progress) Paper source for SE-220: Interpretive Kernel                                          |
-| [se-interpretive-kernel](https://github.com/structural-explainability/se-interpretive-kernel)                                 | (in-progress) Domain-agnostic executable construction for kernels, thresholds, and finite witnesses |
+| Repository                                                                                                                                                | Role                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)                                                   | Paper source for SE-100: Neutral substrates                                                                          |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)                                                     | Paper source for SE-200: Referential regimes                                                                         |
+| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)                                             | Paper source for SE-210: Operational Identity                                                                        |
+| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity)                                 | Executable verification of finite mathematical core of SE-210                                                        |
+| [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software) | Feasibility pilot for source-grounded identity-preservation conformance across software supply-chain representations |
+| [se-verification-vulnerability-matching](https://github.com/structural-explainability/se-verification-vulnerability-matching)                             | Exploratory study of SE-210 security-relevant identity semantics in software vulnerability matching                  |
+| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)                                               | (in-progress) Paper source for SE-220: Interpretive Kernel                                                           |
+| [se-interpretive-kernel](https://github.com/structural-explainability/se-interpretive-kernel)                                                             | (in-progress) Domain-agnostic executable construction for kernels, thresholds, and finite witnesses                  |
 
 ### Executable Verification
 
@@ -185,6 +186,39 @@ disagreement indicates at least one definition, proof, implementation, or test o
 The papers are normative.
 Companion repositories test the internal consistency, computability, algorithmic claims, and finite consequences of paper definitions.
 
+### Identity-Preservation Pilot
+
+The `se-pilot-identity-preservation-supply-chain-software` repository tests a
+lower-level, source-grounded representation-preservation obligation in
+software supply-chain transformations.
+
+Its initial commitment asks whether Package URL (PURL) identity information
+survives SPDX-to-CycloneDX transformation in the canonical target location.
+
+The commitment and evaluator were fixed before real-artifact engineering
+validation.
+Validation against CycloneDX/cyclonedx-cli issue #424 reproduces
+the historical relocation defect and distinguishes it from the corrected
+behavior across the surrounding release history:
+
+```text
+0.29.0   source_parse_failure
+0.29.1   VIOLATED_RELOCATED
+0.29.2   VIOLATED_RELOCATED
+0.30.0   VIOLATED_RELOCATED
+0.31.0   VIOLATED_RELOCATED
+0.32.0   PRESERVED
+0.33.0   PRESERVED
+0.33.1   PRESERVED
+```
+
+These results are **engineering-validation** evidence,
+not held-out generalization evidence.
+
+The pilot is informed by Structural Explainability but does not assume that
+every representation-preservation commitment is an SE-210
+operational-identity relation.
+
 ## Theory
 
 Independent Lean 4 formalizations of the SE layers.
@@ -203,11 +237,15 @@ All namespaces are under `SE.*`.
 
 ## Domain Testing
 
-| Repository                                                                              | Responsibility                          |
-| --------------------------------------------------------------------------------------- | --------------------------------------- |
-| [se-df](https://github.com/structural-explainability/se-df)                             | (in-progress) Domain-agnostic machinery |
-| [substrate](https://github.com/structural-explainability/scheduling-semantic-substrate) | (in-progress) Domain testing            |
-| [conformance](https://github.com/structural-explainability/schedule-conformance)        | (in-progress) Conformance               |
+## Domain Testing
+
+| Repository                                                                                                                                                | Responsibility                                                |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software) | Software supply-chain identity-preservation feasibility pilot |
+| [se-verification-vulnerability-matching](https://github.com/structural-explainability/se-verification-vulnerability-matching)                             | Exploratory software vulnerability-matching study             |
+| [se-df](https://github.com/structural-explainability/se-df)                                                                                               | (in-progress) Domain-agnostic machinery                       |
+| [substrate](https://github.com/structural-explainability/scheduling-semantic-substrate)                                                                   | (in-progress) Domain testing                                  |
+| [conformance](https://github.com/structural-explainability/schedule-conformance)                                                                          | (in-progress) Conformance                                     |
 
 ## Repository Manifests
 
@@ -252,5 +290,7 @@ flowchart TD
 
 - **To understand the theory**, read the three papers.
 - **To compare a record system's declared and implemented rules of sameness**, apply the Operational Identity audit from SE-210.
+- **To see source-grounded identity-preservation conformance tested on real software supply-chain artifacts**, see
+  [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software).
 
 <!-- markdownlint-enable MD024 -->
