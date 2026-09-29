@@ -153,16 +153,16 @@ required to make a declared environment regime coherent.
 The resulting adjunction transports equivalence requirements between the two carriers and
 returns finite witnesses when a proposed identification is not supported by interpretation.
 
-| Repository                                                                                                                                                | Role                                                                                                                 |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)                                                   | Paper source for SE-100: Neutral substrates                                                                          |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)                                                     | Paper source for SE-200: Referential regimes                                                                         |
-| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)                                             | Paper source for SE-210: Operational Identity                                                                        |
-| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity)                                 | Executable verification of finite mathematical core of SE-210                                                        |
+| Repository                                                                                                                                                | Role                                                                                                                                                                                                                                                                    |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)                                                   | Paper source for SE-100: Neutral substrates                                                                                                                                                                                                                             |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)                                                     | Paper source for SE-200: Referential regimes                                                                                                                                                                                                                            |
+| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)                                             | Paper source for SE-210: Operational Identity                                                                                                                                                                                                                           |
+| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity)                                 | Executable verification of finite mathematical core of SE-210                                                                                                                                                                                                           |
 | [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software) | Feasibility pilot for source-grounded identity-preservation conformance across software supply-chain representations ([overview](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software/blob/main/generalization/README.md)) |
-| [se-verification-vulnerability-matching](https://github.com/structural-explainability/se-verification-vulnerability-matching)                             | Exploratory study of SE-210 security-relevant identity semantics in software vulnerability matching                  |
-| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)                                               | (in-progress) Paper source for SE-220: Interpretive Kernel                                                           |
-| [se-interpretive-kernel](https://github.com/structural-explainability/se-interpretive-kernel)                                                             | (in-progress) Domain-agnostic executable construction for kernels, thresholds, and finite witnesses                  |
+| [se-verification-vulnerability-matching](https://github.com/structural-explainability/se-verification-vulnerability-matching)                             | Exploratory study of SE-210 security-relevant identity semantics in software vulnerability matching                                                                                                                                                                     |
+| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)                                               | (in-progress) Paper source for SE-220: Interpretive Kernel                                                                                                                                                                                                              |
+| [se-interpretive-kernel](https://github.com/structural-explainability/se-interpretive-kernel)                                                             | (in-progress) Domain-agnostic executable construction for kernels, thresholds, and finite witnesses                                                                                                                                                                     |
 
 ### Executable Verification
 
@@ -225,17 +225,44 @@ Independent Lean 4 formalizations of the SE layers.
 Each is a machine-checked realization of the corresponding normative paper.
 All namespaces are under `SE.*`.
 
-| Repository                                                                                                              | Paper / Role                                | Namespace / Provides                                                                        |
-| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate)                 | SE-100 Neutral Substrate                    | SE.NeutralSubstrate: primitives, frameworks, admissibility; neutrality adequacy proof       |
-| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation)                       | SE-200 Transformation Theory                | SE.Transformation: transformation kinds, families, and operators (change-pressure taxonomy) |
-| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence)                             | SE-200 Persistence Theory _(in progress)_   | SE.Persistence: PRS / BRK / NEU / NA classification of a transformation under a regime      |
-| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                   | SE-200 Identity Regimes                     | SE.IdentityRegimes: nine core regimes, three sibling axes, split-pressure profiles          |
-| [se-theory-operational-identity](https://github.com/structural-explainability/se-theory-operational-identity)           | SE-210 Operational Identity _(in progress)_ | SE.OperationalIdentity                                                                      |
-| [se-theory-interpretive-kernel](https://github.com/structural-explainability/se-theory-interpretive-kernel)             | SE-220 Interpretive Kernel _(in progress)_  | SE.InterpretiveKernel                                                                       |
-| [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Integration                                 | SE.StructuralExplainability: composes the layers into one explainable account               |
+| Repository                                                                                                              | Paper / Role                                | Namespace / Provides                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate)                 | SE-100 Neutral Substrate                    | SE.NeutralSubstrate: primitives, frameworks, admissibility; neutrality adequacy proof                                                  |
+| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation)                       | SE-200 Transformation Theory                | SE.Transformation: transformation kinds, families, and operators (change-pressure taxonomy)                                            |
+| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence)                             | SE-200 Persistence Theory _(in progress)_   | SE.Persistence: PRS / BRK / NEU / NA classification of a transformation under a regime                                                 |
+| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                   | SE-200 Identity Regimes                     | SE.IdentityRegimes: nine core regimes, three sibling axes, split-pressure profiles                                                     |
+| [se-theory-operational-identity](https://github.com/structural-explainability/se-theory-operational-identity)           | SE-210 Operational Identity _(in progress)_ | SE.OperationalIdentity                                                                                                                 |
+| [se-theory-interpretive-kernel](https://github.com/structural-explainability/se-theory-interpretive-kernel)             | SE-220 Interpretive Kernel _(in progress)_  | SE.InterpretiveKernel                                                                                                                  |
+| [se-theory-structural-assurability](https://github.com/structural-explainability/se-theory-structural-assurability)     | Structural Assurability                     | SE.StructuralAssurability: claim-relative capability profiles, resolution bounds, approximation transfer, and separating constructions |
+| [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Integration                                 | SE.StructuralExplainability: composes the layers into one explainable account                                                          |
 
-## Domain Testing
+## Structural Assurability
+
+Structural Assurability examines which evidentiary capabilities are available
+to a specified evaluator for a particular assurance claim under stated
+access, cooperation, and resource conditions.
+
+The formal theory distinguishes capability-profile comparisons from
+claim resolution.
+Its resolution bounds identify when admissible worlds
+disagree on a claim but remain observationally indistinguishable.
+Approximation-transfer results specify conditions for carrying such
+findings between abstract and concrete models.
+
+| Resource                                                                                                                 | Role                                               |
+| ------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------- |
+| [Formal Theory: Structural Assurability](https://github.com/structural-explainability/se-theory-structural-assurability) | Lean 4 formalization, proofs, and examples         |
+| [Formal Theory Documentation](https://structural-explainability.github.io/se-theory-structural-assurability/)            | Concepts, formal results, and modeling limitations |
+| [Paper 320: Structural Assurability](https://github.com/structural-explainability/paper-320-structural-assurability)     | Paper repository; manuscript in preparation        |
+| [Structural Assurability Pilot](https://github.com/structural-explainability/se-pilot-structural-assurability) | Applied research testing the theory against concrete assurance claims, evaluation frameworks, and evidence limitations |
+
+The formal results do not independently establish the safety or
+trustworthiness of an evaluated system.
+Applying them requires justifying the modeled worlds, observation surfaces, and assumptions.
+
+External Links:
+
+- [NIST TEVV-Athlon Framework for Evaluating AI Systems](https://www.nist.gov/artificial-intelligence/ai-research/tevv-athlon-framework-evaluating-ai-systems)
 
 ## Domain Testing
 
