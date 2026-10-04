@@ -30,8 +30,11 @@ SE makes the commitment declarable and the failure detectable.
 
 - **Identity & Persistence:** Persistent tracking and provenance depend on
   inspectable identity conditions. Identity is _regime-relative_:
-  a single structural change might preserve identity under one regime,
-  break it under another, or be identity-neutral under a third.
+  a single structural change might
+  preserve identity under one regime,
+  break it under another,
+  be applicable but identity-ignoring under a third,
+  or be inapplicable under another.
 - **Declared Identity Semantics:** A system may induce a rule of sameness
   through an audited implementation surface based on one registered artifact
   or on a joint mechanism over several registered artifacts.
@@ -43,21 +46,27 @@ SE makes the commitment declarable and the failure detectable.
 
 ### The Architecture Stack
 
-| Layer                         | Function                                                                                                                                                                       |
-| :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Neutral Substrate**         | Defines admissible structural description without interpretive commitment.                                                                                                     |
-| **Transformation Theory**     | Identifies and defines structural change pressures.                                                                                                                            |
-| **Persistence Theory**        | Classifies each transformation, relative to an identity regime, as identity-preserving (PRS), identity-breaking (BRK), identity-neutral (NEU), or inapplicable (NA).           |
-| **Identity Regimes**          | Organizes identity and persistence behavior into nine core identity regimes.                                                                                                   |
-| **Operational Identity**      | Compares the declared identity partition with operational partitions induced by audited surfaces, exposing divergence as a finite witness.                                     |
-| **Interpretive Kernel**       | Transports equivalence requirements between distinct finite carriers connected by interpretation, computing kernels, least coherent output regimes, thresholds, and witnesses. |
-| **Structural Explainability** | Integrates these layers into an explicit, explainable account without forcing consensus.                                                                                       |
+| Layer                         | Function                                                                                                                                                                                                                                        |
+| :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Neutral Substrate**         | Defines admissible structural description without interpretive commitment.                                                                                                                                                                      |
+| **Transformation Theory**     | Defines named transformation operations and their intrinsic change semantics, including what an operation may change, what it must change, and selected relations among operations.                                                             |
+| **Persistence Theory**        | Defines generic applicability and identity-classification semantics for transformation steps, including identity-ignoring (IGN), identity-preserving (PRS), and identity-breaking (BRK) classifications and the identity relations they induce. |
+| **Identity Regimes**          | Defines alternative criteria of identity and determines how those criteria respond to transformation.                                                                                                                                           |
+| **Operational Identity**      | Compares declared identity semantics with operational identity relations induced by audited implementation surfaces, exposing divergence as a finite witness.                                                                                   |
+| **Interpretive Kernel**       | Transports equivalence requirements between distinct finite carriers connected by interpretation, computing kernels, least coherent output regimes, thresholds, and witnesses.                                                                  |
+| **Structural Explainability** | Integrates these layers into an explicit, explainable account without forcing consensus.                                                                                                                                                        |
 
-Within the core substrate, structure, transformation, persistence, and regime
-behavior may be recorded.
+Across SE's layered theories,
+structure, transformation, persistence, and identity-regime behavior
+are represented explicitly.
+
+The Neutral Substrate itself remains restricted to
+structural and referential commitments that do not require
+causal, normative, or other interpretive judgments.
+
 Causal explanation, normative evaluation, authority,
-legitimacy, obligation, and enforcement are not asserted as substrate-level commitments;
-they may be attached through constrained downstream mechanisms.
+legitimacy, obligation, and enforcement are not asserted
+as substrate-level commitments.
 
 Downstream domains (e.g., law, infrastructure, agentic AI systems)
 consume the core substrate without redefining it.
@@ -228,9 +237,9 @@ All namespaces are under `SE.*`.
 | Repository                                                                                                              | Paper / Role                                | Namespace / Provides                                                                                                                   |
 | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate)                 | SE-100 Neutral Substrate                    | SE.NeutralSubstrate: structural primitives, admissible frameworks, and neutrality conditions                                           |
-| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation)                       | SE-200 Transformation Theory                | SE.Transformation: transformation kinds, families, operators, and change pressures                                                     |
-| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence)                             | SE-200 Persistence Theory                   | SE.Persistence: identity survival, breakage, invariance, and equivalence under transformation                                          |
-| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                   | SE-200 Identity Regimes                     | SE.IdentityRegimes: nine core regimes, three sibling axes, and split-pressure profiles                                                 |
+| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation)                       | SE-200 Transformation Theory                | SE.Transformation: transformation kinds, families, operators, intrinsic effect semantics, and relations among operations                                                     |
+| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence)                             | SE-200 Persistence Theory                   | SE.Persistence: applicability, identity classification, preservation semantics, and induced identity relations                                          |
+| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                   | SE-200 Identity Regimes                     | SE.IdentityRegimes: identity-regime families, identity bases, canonical regimes, and regime-relative responses to transformation                                                 |
 | [se-theory-operational-identity](https://github.com/structural-explainability/se-theory-operational-identity)           | SE-210 Operational Identity _(in progress)_ | SE.OperationalIdentity                                                                                                                 |
 | [se-theory-interpretive-kernel](https://github.com/structural-explainability/se-theory-interpretive-kernel)             | SE-220 Interpretive Kernel _(in progress)_  | SE.InterpretiveKernel                                                                                                                  |
 | [se-theory-structural-assurability](https://github.com/structural-explainability/se-theory-structural-assurability)     | Structural Assurability                     | SE.StructuralAssurability: claim-relative capability profiles, resolution bounds, approximation transfer, and separating constructions |
@@ -315,7 +324,7 @@ flowchart TD
 
 ## How to Use This Organization
 
-- **To understand the theory**, read the three papers.
+- **To understand the theory**, begin with the SE papers in order.
 - **To compare a record system's declared and implemented rules of sameness**, apply the Operational Identity audit from SE-210.
 - **To see source-grounded identity-preservation conformance tested on real software supply-chain artifacts**, see
   [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software).

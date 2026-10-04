@@ -41,26 +41,24 @@ View / Command Palette / `Developer: Reload Window` to refresh.
 
 ```shell
 uv self update
-uvx pre-commit install
+uvx prek install --force
+uvx prek update
 
-# run checks
+# lint and validate files
 npx markdownlint-cli2 --fix
-uvx pre-commit run --all-files
+uvx se-manifest-schema validate-manifest --strict
+uvx cffconvert --validate
 
 # generate and check CODEOWNERS
 uvx se-codeowners generate --strict --output .github/CODEOWNERS
 uvx se-codeowners check
 
-# validate SE manifest file
-uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml --strict
-
+ # save changes
 git add -A
-uvx pre-commit run --all-files
+uvx prek run --all-files
 # repeat if changes were made
-uvx pre-commit run --all-files
-
-git commit -m "your message here"
-git push -u origin main
+git add -A
+uvx prek run --all-files
 
 # save progress
 git add -A
