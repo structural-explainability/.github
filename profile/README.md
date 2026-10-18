@@ -6,34 +6,57 @@
 ![Build Status](https://github.com/structural-explainability/.github/actions/workflows/ci-hygiene.yml/badge.svg?branch=main)
 [![Check Links](https://github.com/structural-explainability/.github/actions/workflows/links.yml/badge.svg)](https://github.com/structural-explainability/.github/actions/workflows/links.yml)
 
-> Defines the neutral constraints under which systems remain explainable,
-> inspectable, and contestable without embedding interpretation.
+> A research program on how records stay the same,
+> or stop being the same, as they change,
+> built on a foundation that
+> makes no causal or normative claims of its own.
+
+## Overview
+
+Structural Explainability (SE) is a research program on how a record stays the
+same thing, or stops being it, as it changes:
+forks, revisions, merges, replications,
+a body of law like 40 CFR whose parts change while the whole persists.
+People mostly agree on these verdicts in practice.
+The aim is to find out how they decide,
+and to write the rules down explicitly enough that
+two defensible rules can be compared and
+their disagreement traced to specific commitments,
+instead of being buried in an identifier.
+
+The foundation is a neutral substrate,
+designed to be pre-causal and pre-normative.
+It makes no causal or normative claims of its own;
+such claims can enter only as attributed assertions with a source.
+Parties who disagree about cause or responsibility
+can therefore still share the same records.
+This foundation is formalized in Lean under stated assumptions.
+
+What is open is which kinds of things need distinct identity treatment,
+and why they must differ.
+That remains active research.
+Papers, specifications, and other repositories
+written before this work may use an older inventory of
+kinds and are being revised as the theory settles.
 
 ## Core Statement
 
-Structural Explainability (SE) develops a neutral structural foundation for
-recording identity, structure, transformation, and change without silently
-embedding interpretation, authority, causality, or judgment.
+SE keeps structural commitments separate from the claims built on them.
+The foundation records identity, structure, transformation, and change;
+interpretive claims sit above it, each attributed to a source.
 
-Structural Explainability is not anti-interpretation; it is anti-implicit interpretation.
-It separates structural commitments from downstream claims
-so interpretation and disagreement
-remain explicit, attributable, and contestable over time.
+Structural Explainability is not anti-interpretation;
+it is anti-implicit interpretation.
+Interpretation is welcome when it is stated, attributed, and open to dispute,
+so disagreement remains explicit, attributable, and contestable over time.
 
-SE supports independently developed accounts of identity and change without
-requiring a single authority, ontology, or interpretation.
+SE supports independently developed accounts of identity and change
+without requiring a single authority, ontology, or interpretation.
 
-## Repository Index
-
-This page provides navigation across the Structural Explainability research
-and implementation repositories.
+## Foundational and Related Theory
 
 Each repository owns its definitions, scientific claims, evidence, implementation,
 documentation, and release information.
-
-[All Structural Explainability Repositories](https://github.com/orgs/structural-explainability/repositories)
-
-## Foundational and Related Theory
 
 Lean 4 formalizations of SE concepts, relationships, and mathematical results.
 
