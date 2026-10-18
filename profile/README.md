@@ -11,322 +11,154 @@
 
 ## Core Statement
 
-Structural Explainability (SE) defines a neutral structural substrate for recording
-identity, structure, transformation, and change without embedding interpretation,
-authority, causality, or judgment.
+Structural Explainability (SE) develops a neutral structural foundation for
+recording identity, structure, transformation, and change without silently
+embedding interpretation, authority, causality, or judgment.
 
 Structural Explainability is not anti-interpretation; it is anti-implicit interpretation.
-It separates structural facts from downstream claims so interpretation and
-disagreement can remain explicit, attributable, and contestable over time.
-
-Record systems commit to identity semantics.
-When a rule is refined, an agent redeployed, a jurisdiction subdivided,
-or two records merged, the system decides whether the thing is still the same thing.
-That decision is load-bearing for citation, liability, and audit, but not always declared.
-
-SE makes the commitment declarable and the failure detectable.
-
-### The Foundational Core
-
-- **Identity & Persistence:** Persistent tracking and provenance depend on
-  inspectable identity conditions. Identity is _regime-relative_:
-  a single structural change might
-  preserve identity under one regime,
-  break it under another,
-  be applicable but identity-ignoring under a third,
-  or be inapplicable under another.
-- **Declared Identity Semantics:** A system may induce a rule of sameness
-  through an audited implementation surface based on one registered artifact
-  or on a joint mechanism over several registered artifacts.
-  SE makes divergence from the declared rule detectable as a finite witness
-  and separates detection from sibling diagnosis and regime substitution.
-- **Plural Systems:** SE is built for independent architectures
-  that share data without requiring a centralized authority,
-  uniform naming, or a single forced ontology.
-
-### The Architecture Stack
-
-| Layer                         | Function                                                                                                                                                                                                                                        |
-| :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Neutral Substrate**         | Defines admissible structural description without interpretive commitment.                                                                                                                                                                      |
-| **Transformation Theory**     | Defines named transformation operations and their intrinsic change semantics, including what an operation may change, what it must change, and selected relations among operations.                                                             |
-| **Persistence Theory**        | Defines generic applicability and identity-classification semantics for transformation steps, including identity-ignoring (IGN), identity-preserving (PRS), and identity-breaking (BRK) classifications and the identity relations they induce. |
-| **Identity Regimes**          | Defines alternative criteria of identity and determines how those criteria respond to transformation.                                                                                                                                           |
-| **Operational Identity**      | Compares declared identity semantics with operational identity relations induced by audited implementation surfaces, exposing divergence as a finite witness.                                                                                   |
-| **Interpretive Kernel**       | Transports equivalence requirements between distinct finite carriers connected by interpretation, computing kernels, least coherent output regimes, thresholds, and witnesses.                                                                  |
-| **Structural Explainability** | Integrates these layers into an explicit, explainable account without forcing consensus.                                                                                                                                                        |
-
-Across SE's layered theories,
-structure, transformation, persistence, and identity-regime behavior
-are represented explicitly.
-
-The Neutral Substrate itself remains restricted to
-structural and referential commitments that do not require
-causal, normative, or other interpretive judgments.
-
-Causal explanation, normative evaluation, authority,
-legitimacy, obligation, and enforcement are not asserted
-as substrate-level commitments.
-
-Downstream domains (e.g., law, infrastructure, agentic AI systems)
-consume the core substrate without redefining it.
-SE records the structural commitments of a system without deciding their ultimate meaning,
-enabling continuous cross-institutional coordination through persistent disagreement.
-
-## Overview
-
-Some information systems make decisions that affect people, attribute claims to
-sources, record contested facts, or coordinate across institutions that disagree.
-Those systems can hold a compliance conclusion, a legal holding, or a causal claim
-while every party continues to refer to the same underlying artifacts.
-
-They fail in a specific way.
-Under change, the system must decide what stays the same:
-whether a refined rule is the same rule,
-whether a redeployed agent is the same agent,
-whether a subdivided scope is the same scope.
-The implementation answers through fields, predicates, workflow states,
-configuration values, or joint mechanisms over several registered artifacts.
-Identity-relevant uses of those mechanisms may induce
-an operational identity partition that differs from the declared identity partition.
-
-That divergence may remain invisible until the system is challenged
-in court, in audit, in appeal, in public review, or in cross-institutional reconciliation.
-By then, the records may already have committed to an identity model not explicitly declared.
-
-Existing infrastructure may not catch it.
-Provenance models, content credentials, software bills of materials,
-version control, and audit logs record what happened.
-They do not necessarily require a system to declare its rule of sameness
-or compare that declaration against the
-identity relation induced by its implementation.
-
-Six of the nine identity regimes sit in pairs on three sibling axes:
-LOC/OBJ, SCOPE-E/SCOPE-S, RULE-C/RULE-S.
-Each pair offers two admissible identity bases for the same kind of referent.
-When a sibling basis is available and also splits an examined declared class,
-the divergence can be classified against it;
-otherwise, the divergence is unpositioned.
-
-A divergence has a specific, finite witness:
-a pair of records the declared partition places together and an audited surface separates.
-That pair is the witness.
-The witness alone does not establish the divergence's sibling classification
-or which identity basis the surface carries.
-A surface implements a hidden identity regime only when
-the sibling differs from the declared regime on the examined domain
-and the operational partition equals the sibling partition there.
-
-Operational Identity defines what a system must declare for this to be checked,
-and gives the procedure.
-
-SE does not replace domain vocabularies, standards, ontologies, or existing data systems.
-It constrains how systems implement them so that disagreement remains
-visible, attributable, and useful over time.
-
-## Papers
-
-The formal core of Structural Explainability is developed in a series of papers.
-These papers are the normative specification of the framework.
-
-| Paper      | Title                                                                                                   | arXiv                                          |
-| ---------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| **SE-100** | _Neutral Substrates: A Design Constraint for Shared Records Under Persistent Interpretive Disagreement_ | [2601.14271](https://arxiv.org/abs/2601.14271) |
-| **SE-200** | _Referential Regimes: Transformation-Invariant Identity for Neutral Substrates_                         | [2601.16152](https://arxiv.org/abs/2601.16152) |
-| **SE-210** | _Operational Identity: A Finite Audit of Declared and Implemented Rules of Sameness_                    | [2607.20729](https://arxiv.org/abs/2607.20729) |
-| **SE-220** | _Interpretive Kernel: From Occurrence Equivalence to Frame Equivalence_                                 | _in progress_                                  |
-
-**SE-100** establishes the neutrality-by-design constraint:
-a substrate is neutral when its foundational layer is restricted
-to referential commitments and permitted attribution propositions.
-
-**SE-200** derives the referential-regime structure that neutral substrates require,
-yielding nine core identity regimes:
-three unpaired regimes, OBL, OCC, and REC,
-and six regimes paired across three sibling axes:
-LOC/OBJ, SCOPE-E/SCOPE-S, and RULE-C/RULE-S.
-
-**SE-210** defines the operational identity partition,
-the rule of sameness induced by an examined implementation surface,
-and a finite audit comparing it against the declared identity partition.
-The audit detects divergence, returns finite witnesses, and separates divergence detection from sibling positioning and regime-substitution claims.
-
-**SE-220** studies equivalence relations over distinct interpreted carriers.
-A finite probe family and an interpretation function
-connect a carrier of environments with a carrier of interpreted outputs.
-An output equivalence induces an interpretive kernel over environments.
-A declared environment regime that refines that kernel is coherent.
-
-The companion construction also computes the least output equivalence
-required to make a declared environment regime coherent.
-The resulting adjunction transports equivalence requirements between the two carriers and
-returns finite witnesses when a proposed identification is not supported by interpretation.
-
-| Repository                                                                                                                                                | Role                                                                                                                                                                                                                                                                    |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)                                                   | Paper source for SE-100: Neutral substrates                                                                                                                                                                                                                             |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)                                                     | Paper source for SE-200: Referential regimes                                                                                                                                                                                                                            |
-| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)                                             | Paper source for SE-210: Operational Identity                                                                                                                                                                                                                           |
-| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity)                                 | Executable verification of finite mathematical core of SE-210                                                                                                                                                                                                           |
-| [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software) | Feasibility pilot for source-grounded identity-preservation conformance across software supply-chain representations ([overview](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software/blob/main/generalization/README.md)) |
-| [se-verification-vulnerability-matching](https://github.com/structural-explainability/se-verification-vulnerability-matching)                             | Exploratory study of SE-210 security-relevant identity semantics in software vulnerability matching                                                                                                                                                                     |
-| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)                                               | (in-progress) Paper source for SE-220: Interpretive Kernel                                                                                                                                                                                                              |
-| [se-interpretive-kernel](https://github.com/structural-explainability/se-interpretive-kernel)                                                             | (in-progress) Domain-agnostic executable construction for kernels, thresholds, and finite witnesses                                                                                                                                                                     |
-
-### Executable Verification
-
-The SE-210 verification repository contains two independent implementations
-of the finite operational identity audit defined by the paper.
-
-The literal oracle constructs the relevant relations explicitly
-and applies the paper definitions directly.
-The optimized checker uses union-find closures, operational-signature grouping, and declared-block comparisons.
-
-The implementations are compared across paper-derived regression cases,
-an exhaustive deterministic sweep over small instances, and randomized instances.
-
-The SE-220 implementation work follows a related but distinct structure.
-The Python and Lean repositories are independent realizations;
-disagreement indicates at least one definition, proof, implementation, or test obligation must be repaired.
-
-- `se-interpretive-kernel` implements the finite partition algebra and kernels and remains domain-agnostic.
-- `se-theory-interpretive-kernel` formalizes the same mathematical contract in Lean.
-
-The papers are normative.
-Companion repositories test the internal consistency, computability, algorithmic claims, and finite consequences of paper definitions.
-
-### Identity-Preservation Pilot
-
-The `se-pilot-identity-preservation-supply-chain-software` repository tests a
-lower-level, source-grounded representation-preservation obligation in
-software supply-chain transformations.
-
-Its initial commitment asks whether Package URL (PURL) identity information
-survives SPDX-to-CycloneDX transformation in the canonical target location.
-
-The commitment and evaluator were fixed before real-artifact engineering
-validation.
-Validation against CycloneDX/cyclonedx-cli issue #424 reproduces
-the historical relocation defect and distinguishes it from the corrected
-behavior across the surrounding release history:
-
-```text
-0.29.0   source_parse_failure
-0.29.1   VIOLATED_RELOCATED
-0.29.2   VIOLATED_RELOCATED
-0.30.0   VIOLATED_RELOCATED
-0.31.0   VIOLATED_RELOCATED
-0.32.0   PRESERVED
-0.33.0   PRESERVED
-0.33.1   PRESERVED
-```
-
-These results are **engineering-validation** evidence,
-not held-out generalization evidence.
-
-The pilot is informed by Structural Explainability but does not assume that
-every representation-preservation commitment is an SE-210
-operational-identity relation.
-
-## Theory
-
-Independent Lean 4 formalizations of the SE layers.
-Each is a machine-checked realization of the corresponding normative paper.
-All namespaces are under `SE.*`.
-
-| Repository                                                                                                              | Paper / Role                                | Namespace / Provides                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate)                 | SE-100 Neutral Substrate                    | SE.NeutralSubstrate: structural primitives, admissible frameworks, and neutrality conditions                                           |
-| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation)                       | SE-200 Transformation Theory                | SE.Transformation: transformation kinds, families, operators, intrinsic effect semantics, and relations among operations                                                     |
-| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence)                             | SE-200 Persistence Theory                   | SE.Persistence: applicability, identity classification, preservation semantics, and induced identity relations                                          |
-| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                   | SE-200 Identity Regimes                     | SE.IdentityRegimes: identity-regime families, identity bases, canonical regimes, and regime-relative responses to transformation                                                 |
-| [se-theory-operational-identity](https://github.com/structural-explainability/se-theory-operational-identity)           | SE-210 Operational Identity _(in progress)_ | SE.OperationalIdentity                                                                                                                 |
-| [se-theory-interpretive-kernel](https://github.com/structural-explainability/se-theory-interpretive-kernel)             | SE-220 Interpretive Kernel _(in progress)_  | SE.InterpretiveKernel                                                                                                                  |
-| [se-theory-structural-assurability](https://github.com/structural-explainability/se-theory-structural-assurability)     | Structural Assurability                     | SE.StructuralAssurability: claim-relative capability profiles, resolution bounds, approximation transfer, and separating constructions |
-| [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability) | Integration                                 | SE.StructuralExplainability: composes the layers into one explainable account                                                          |
-
-## Structural Assurability
-
-Structural Assurability examines which evidentiary capabilities are available
-to a specified evaluator for a particular assurance claim under stated
-access, cooperation, and resource conditions.
-
-The formal theory distinguishes capability-profile comparisons from
-claim resolution.
-Its resolution bounds identify when admissible worlds
-disagree on a claim but remain observationally indistinguishable.
-Approximation-transfer results specify conditions for carrying such
-findings between abstract and concrete models.
-
-| Resource                                                                                                                 | Role                                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| [Formal Theory: Structural Assurability](https://github.com/structural-explainability/se-theory-structural-assurability) | Lean 4 formalization, proofs, and examples                                                                             |
-| [Formal Theory Documentation](https://structural-explainability.github.io/se-theory-structural-assurability/)            | Concepts, formal results, and modeling limitations                                                                     |
-| [Paper 320: Structural Assurability](https://github.com/structural-explainability/paper-320-structural-assurability)     | Paper repository; manuscript in preparation                                                                            |
-| [Structural Assurability Pilot](https://github.com/structural-explainability/se-pilot-structural-assurability)           | Applied research testing the theory against concrete assurance claims, evaluation frameworks, and evidence limitations |
-
-The formal results do not independently establish the safety or
-trustworthiness of an evaluated system.
-Applying them requires justifying the modeled worlds, observation surfaces, and assumptions.
-
-External Links:
-
-- [NIST TEVV-Athlon Framework for Evaluating AI Systems](https://www.nist.gov/artificial-intelligence/ai-research/tevv-athlon-framework-evaluating-ai-systems)
-
-## Domain Testing
-
-| Repository                                                                                                                                                | Responsibility                                                |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software) | Software supply-chain identity-preservation feasibility pilot |
-| [se-verification-vulnerability-matching](https://github.com/structural-explainability/se-verification-vulnerability-matching)                             | Exploratory software vulnerability-matching study             |
-| [se-df](https://github.com/structural-explainability/se-df)                                                                                               | (in-progress) Domain-agnostic machinery                       |
-| [substrate](https://github.com/structural-explainability/scheduling-semantic-substrate)                                                                   | (in-progress) Domain testing                                  |
-| [conformance](https://github.com/structural-explainability/schedule-conformance)                                                                          | (in-progress) Conformance                                     |
-
-## Repository Manifests
-
-SE repositories use manifests to describe the repository's role, scope, dependencies,
-provided artifacts, validation expectations, governance, and traceability.
-
-The SE manifest complements external metadata standards.
-Citation metadata belongs in `CITATION.cff`;
-software supply-chain metadata may use SPDX;
-software discovery metadata may use CodeMeta;
-research-object packaging may use RO-Crate.
-
-| Repository                                                                            | Purpose                                        |
-| ------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Canonical manifest schema for SE repositories. |
-
-## Dependency Chain
-
-```mermaid
-flowchart TD
-  subgraph SE["Structural Explainability Core"]
-    NS["SE-100<br/>Neutral Substrates"]
-    RR["SE-200<br/>Referential Regimes"]
-    OI["SE-210<br/>Operational Identity"]
-    IK["SE-220<br/>Interpretive Kernel"]
-
-    NS --> RR
-    RR --> OI
-    OI --> IK
-  end
-
-  subgraph IKR["Interpretive-Kernel Realizations"]
-    IKPY["se-interpretive-kernel<br/>Python construction"]
-    IKLEAN["se-theory-interpretive-kernel<br/>Lean formalization"]
-
-    IK <--> IKPY
-    IK <--> IKLEAN
-  end
-```
-
-## How to Use This Organization
-
-- **To understand the theory**, begin with the SE papers in order.
-- **To compare a record system's declared and implemented rules of sameness**, apply the Operational Identity audit from SE-210.
-- **To see source-grounded identity-preservation conformance tested on real software supply-chain artifacts**, see
-  [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software).
+It separates structural commitments from downstream claims
+so interpretation and disagreement
+remain explicit, attributable, and contestable over time.
+
+SE supports independently developed accounts of identity and change without
+requiring a single authority, ontology, or interpretation.
+
+## Repository Index
+
+This page provides navigation across the Structural Explainability research
+and implementation repositories.
+
+Each repository owns its definitions, scientific claims, evidence, implementation,
+documentation, and release information.
+
+[All Structural Explainability Repositories](https://github.com/orgs/structural-explainability/repositories)
+
+## Foundational and Related Theory
+
+Lean 4 formalizations of SE concepts, relationships, and mathematical results.
+
+| Repository                                                                                                                | Role in Structural Explainability                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate)                   | Neutral structural and referential foundations, admissibility, and interpretive boundaries.         |
+| [se-theory-individuation](https://github.com/structural-explainability/se-theory-individuation)                           | Criteria for identifying one whole and determining sameness across presentations.                   |
+| [se-theory-coreference](https://github.com/structural-explainability/se-theory-coreference)                               | Reference denotation, resolution, and judgments of co-reference.                                    |
+| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence)                               | Identity continuation, relational commitments, and consistency across change.                       |
+| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation)                         | Structural transformation vocabulary, operators, and intrinsic change semantics.                    |
+| [se-theory-transformation-persistence](https://github.com/structural-explainability/se-theory-transformation-persistence) | Connections between transformation classifications and persistence semantics.                       |
+| [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                     | Regime-relative identity criteria and their relationships to transformations.                       |
+| [se-theory-operational-identity](https://github.com/structural-explainability/se-theory-operational-identity)             | Relationships between declared identity semantics and identity behavior induced by implementations. |
+| [se-theory-interpretive-kernel](https://github.com/structural-explainability/se-theory-interpretive-kernel)               | Equivalence relationships and interpretation across distinct carriers.                              |
+| [se-theory-structural-assurability](https://github.com/structural-explainability/se-theory-structural-assurability)       | Claim-relative evidentiary capabilities, observation limits, and assurance reasoning.               |
+| [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability)   | Integration of foundational SE concepts and their structural relationships.                         |
+
+### Theory Infrastructure
+
+| Repository                                                                                      | Role                                                                                                 |
+| ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [se-theory-reference-kit](https://github.com/structural-explainability/se-theory-reference-kit) | Shared validation, documentation, cataloging, and reference-artifact tooling for Lean theories.      |
+| [se-protocols-research](https://github.com/structural-explainability/se-protocols-research)     | Scientific source audits, theory construction, independent review, and theory acceptance procedures. |
+
+## Research Papers
+
+Research papers develop and communicate the scientific and mathematical
+foundations of Structural Explainability.
+
+| Repository                                                                                                          | Subject                      |
+| ------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)             | SE-100: Neutral Substrates   |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)               | SE-200: Referential Regimes  |
+| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)       | SE-210: Operational Identity |
+| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)         | SE-220: Interpretive Kernel  |
+| [paper-320-structural-assurability](https://github.com/structural-explainability/paper-320-structural-assurability) | Structural Assurability      |
+
+Formal claims and their verification should be evaluated against the
+authoritative sources identified within each research repository.
+
+## Research Pilots
+
+Research pilots evaluate the applicability, explanatory value, and limitations
+of SE concepts against concrete cases and external evidence.
+
+| Repository                                                                                                                                                | Research Role                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| [se-pilot-individuation-comparison](https://github.com/structural-explainability/se-pilot-individuation-comparison)                                       | Source-grounded comparison of independently documented individuation accounts.                          |
+| [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software) | Identity-preservation conformance across software supply-chain representations, including SBOM formats. |
+| [se-pilot-structural-assurability](https://github.com/structural-explainability/se-pilot-structural-assurability)                                         | Applied investigation of assurance claims, evidence capabilities, and evaluation limitations.           |
+
+<!--
+| [se-regimes-pilot-education-math-g8](https://github.com/structural-explainability/se-regimes-pilot-education-math-g8) | Educational domain cases examining regime-relative identity and transformation behavior. |
+-->
+
+## Verification and Executable Research
+
+These repositories provide executable constructions, independent checks,
+or domain-specific verification.
+
+| Repository                                                                                                                    | Role                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity)     | Executable verification of finite Operational Identity constructions and algorithms. |
+| [se-verification-vulnerability-matching](https://github.com/structural-explainability/se-verification-vulnerability-matching) | Examination of identity semantics in software vulnerability matching.                |
+| [se-verification-judicial-record](https://github.com/structural-explainability/se-verification-judicial-record)               | Structural verification for accountable judicial record systems.                     |
+| [se-interpretive-kernel](https://github.com/structural-explainability/se-interpretive-kernel)                                 | Executable finite interpretive-kernel constructions and witnesses.                   |
+
+<!--
+| [se-verification-civic-influence-record](https://github.com/structural-explainability/se-verification-civic-influence-record) | Structural verification for civic influence records. |
+| [se-regimes](https://github.com/structural-explainability/se-regimes) | Executable identity-regime registry and transformation-response machinery. |
+| [se-regimes-explorer](https://github.com/structural-explainability/se-regimes-explorer) | Interactive exploration of regime classifications and identity assumptions. |
+-->
+
+## SE Ecosystem Infrastructure
+
+Shared specifications, contracts, registries, and tools support consistency
+and traceability across repositories.
+
+| Repository                                                                            | Role                                                                      |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Repository manifest schema and validation.                                |
+| [se-constitution](https://github.com/structural-explainability/se-constitution)       | Common governance and structural rules for the SE ecosystem.              |
+| [se-kernel](https://github.com/structural-explainability/se-kernel)                   | Shared structural primitives and invariant vocabulary.                    |
+| [se-formal-contract](https://github.com/structural-explainability/se-formal-contract) | Machine-checked formal contracts for operational SE components.           |
+| [se-mapspec](https://github.com/structural-explainability/se-mapspec)                 | Structural mapping vocabulary and correspondence rules.                   |
+| [se-contract-kit](https://github.com/structural-explainability/se-contract-kit)       | Shared contract implementation and validation utilities.                  |
+| [se-admin](https://github.com/structural-explainability/se-admin)                     | Repository administration and ecosystem consistency tooling.              |
+| [se-codeowners](https://github.com/structural-explainability/se-codeowners)           | Projection of repository oversight metadata into GitHub CODEOWNERS files. |
+| [spec-se](https://github.com/structural-explainability/spec-se)                       | Structural Explainability specification.                                  |
+| [spec-se-appendix](https://github.com/structural-explainability/spec-se-appendix)     | Supporting disclosure and provenance appendix format.                     |
+
+## Domain Applications and Mappings
+
+These repositories apply SE structures and mapping concepts to external
+domains and information systems.
+
+| Repository                                                                                | Role                                                                        |
+| ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [se-df](https://github.com/structural-explainability/se-df)                               | Domain formalization toolkit.                                               |
+| [se-mapping-assurance](https://github.com/structural-explainability/se-mapping-assurance) | Structural mappings between assurance frameworks and SE assurance concepts. |
+
+<!--
+| [se-mapping-education](https://github.com/structural-explainability/se-mapping-education) | Structural mappings for educational information. |
+| [se-mapping-education-math](https://github.com/structural-explainability/se-mapping-education-math) | Mathematics education mapping models. |
+| [se-mapping-education-math-g8](https://github.com/structural-explainability/se-mapping-education-math-g8) | Grade 8 mathematics mapping examples. |
+| [scheduling-semantic-substrate](https://github.com/structural-explainability/scheduling-semantic-substrate) | Semantic substrate for scheduling records and changes. |
+| [schedule-conformance](https://github.com/structural-explainability/schedule-conformance) | Conformance evaluation for scheduling representations. |
+-->
+
+Government-source repositories and other domain resources are available
+through the [organization repository index](https://github.com/orgs/structural-explainability/repositories).
+
+## How the Work Connects
+
+Structural Explainability develops through related but distinct activities:
+
+- **Papers** develop and communicate scientific arguments.
+- **Theory repositories** formalize definitions, assumptions, and mathematical consequences.
+- **Research pilots** investigate whether proposed concepts apply faithfully to independently documented cases.
+- **Verification repositories** examine specified formal, algorithmic, or implementation properties.
+- **Research protocols** govern source analysis, adversarial review, and scientific acceptance.
+
+For example,
+`se-theory-individuation` develops formal constructions concerning individuation,
+while `se-pilot-individuation-comparison` investigates the
+source-grounded comparison of individuation accounts.
 
 <!-- markdownlint-enable MD024 -->
