@@ -74,7 +74,7 @@ Independent (leaf) theories require no other SE theory repository:
 ### Dependent and Integrative Theories
 
 Dependent and integrative theories are built on other theories.
-Each entry indicates the repositories it requires.
+Deps lists direct SE theory dependencies, excluding transitive dependencies.
 
 NS=neutral substrate, PS=persistence, TR=transformation, IND=individuation, IR=identity regimes.
 
