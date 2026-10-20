@@ -133,6 +133,7 @@ or domain-specific verification.
 
 | Repository                                                                                                                    | Role                                                                                 |
 | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [se-verification-self-similarity](https://github.com/structural-explainability/se-verification-self-similarity)               | Lean 4 mathematical cases testing individuation, co-reference, and persistence.      |
 | [se-verification-operational-identity](https://github.com/structural-explainability/se-verification-operational-identity)     | Executable verification of finite Operational Identity constructions and algorithms. |
 | [se-verification-vulnerability-matching](https://github.com/structural-explainability/se-verification-vulnerability-matching) | Examination of identity semantics in software vulnerability matching.                |
 | [se-verification-judicial-record](https://github.com/structural-explainability/se-verification-judicial-record)               | Structural verification for accountable judicial record systems.                     |
