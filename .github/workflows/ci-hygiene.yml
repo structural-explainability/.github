@@ -40,40 +40,53 @@ jobs:
       # ============================================================
 
       - name: A1) Checkout repository code
-        # WHY: Needed to access files for checks.
-        uses: actions/checkout@v7
-
-      - name: A2) Set up Python
-        # WHY: pre-commit and uvx-based hooks require Python tooling.
-        uses: actions/setup-python@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          persist-credentials: false
+        # WHY: Required so all subsequent steps can access repo files.
 
-      - name: A3) Set up uv
-        # WHY: Local hooks invoke uvx, so CI must provide uvx on PATH.
-        uses: astral-sh/setup-uv@v7
-
-      - name: A4) Set up Node.js
-        # WHY: markdownlint hook uses npx markdownlint-cli2.
-        uses: actions/setup-node@v7
+      - name: A2) Install uv (with caching and uv.lock awareness)
+        uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          enable-cache: true
+          # WHY: Cache uv-managed artifacts for faster subsequent runs.
+          cache-dependency-glob: "uv.lock"
+          # WHY: Invalidate dependency cache when the committed lockfile changes.
 
-      - name: A5) Run pre-commit (all files)
-        # WHY: Single source of truth for locally runnable quality gates.
-        # OBS: Fails if hooks would modify files; does not commit changes.
-        id: precommit
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install pre-commit
-          pre-commit run --show-diff-on-failure --color=always --all-files
+      - name: A3) Install project Python
+        run: uv python install
+        # WHY: Ensures the Python version declared in .python-version is available.
+        # OBS: uv manages the interpreter locally in the CI environment.
 
-      - name: A5f) If pre-commit failed, explain local fix
-        if: failure()
+      - name: A4) Install dependencies from committed lockfile
+        run: uv sync --frozen
+        # WHY: Create the project environment exactly from the committed uv.lock.
+        # REQ: CI MUST fail rather than update a stale or incompatible lockfile.
+
+      - name: A5) Show tool versions
         run: |
-          echo "## Pre-commit failed" >> "$GITHUB_STEP_SUMMARY"
-          echo "Please run the following locally and commit the resulting changes:" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo '```shell' >> "$GITHUB_STEP_SUMMARY"
-          echo "uvx pre-commit run --all-files" >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          uv --version
+          uv run python --version
+          if [ -f "zensical.toml" ]; then
+            uv run python -m zensical --version
+          fi
+        # WHY: Version output makes CI logs easier to debug when tools change.
+
+      - name: A6) Run repository hooks on all files (prek)
+        run: uvx prek run --all-files
+        # WHY: Run the same repository hygiene checks used locally.
+        # OBS: uvx runs prek independently of the project environment.
+        # OBS: prek reads the repository's prek.toml configuration.
+        # OBS: A clean commit should already pass without file changes.
+        # OBS: Autofixing hooks may modify the ephemeral CI checkout.
+        #      If they do, the hook runner fails because the committed files
+        #      were not already in their required final state.
+        # FIX: Run uvx prek run --all-files locally, review any autofixes,
+        #      fix remaining issues by hand, then git add, commit, and push.
+
+      # ============================================================
+      # B) BASELINE CHECKS: Tools not covered by hooks
+      # ============================================================
+      - name: B1) Validate pyproject.toml schema
+        run: uvx "validate-pyproject[all]" pyproject.toml
+        # WHY: Catch malformed project metadata before downstream CI or release work.

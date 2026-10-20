@@ -44,6 +44,17 @@ uv self update
 uvx prek install --force
 uvx prek update
 
+# Update GitHub Actions and pin all action references to immutable SHAs.
+uvx gha-tools autoupdate --pin=all --write .github/workflows
+
+# Audit the resulting GitHub configuration for security findings.
+# NO .github\workflows\deploy-zensical.yml
+uvx zizmor@latest .github/
+
+# Validate.
+uvx cffconvert --validate
+uvx se-manifest-schema validate-manifest --strict
+
 # lint and validate files
 npx markdownlint-cli2 --fix
 uvx se-manifest-schema validate-manifest --strict
