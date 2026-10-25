@@ -28,8 +28,7 @@ The foundation is a neutral substrate,
 designed to be pre-causal and pre-normative.
 It makes no causal or normative claims of its own;
 such claims can enter only as attributed assertions with a source.
-Parties who disagree about cause or responsibility
-can therefore still share the same records.
+Parties who disagree can still share the same records when the stated assumptions hold.
 This foundation is formalized in Lean under stated assumptions.
 
 What is open is which kinds of things need distinct identity treatment,
@@ -80,6 +79,7 @@ NS=neutral substrate, PS=persistence, TR=transformation, IND=individuation, IR=i
 
 | Deps      | Repository                                                                                                                | Role in Structural Explainability                                                                                           |
 | --------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| NS        | [se-theory-common-ground](https://github.com/structural-explainability/se-theory-common-ground)                           | Conditions under which a bounded referential fragment is compatible with a class of interpretive frameworks.                |
 | NS+PS     | [se-theory-individuation](https://github.com/structural-explainability/se-theory-individuation)                           | Conditions under which a presentation picks out one whole, and same-unit and distinct-unit judgments between presentations. |
 | NS+PS+IND | [se-theory-coreference](https://github.com/structural-explainability/se-theory-coreference)                               | Context-indexed co-reference judgments, the identity they generate, and the distinct-commitments kept separate from them.   |
 | PS+TR     | [se-theory-transformation-persistence](https://github.com/structural-explainability/se-theory-transformation-persistence) | Connections between transformation classifications and persistence semantics.                                               |
@@ -100,13 +100,14 @@ NS=neutral substrate, PS=persistence, TR=transformation, IND=individuation, IR=i
 Research papers develop and communicate the scientific and mathematical
 foundations of Structural Explainability.
 
-| Repository                                                                                                          | Subject                      |
-| ------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)             | SE-100: Neutral Substrates   |
-| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)               | SE-200: Referential Regimes  |
-| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)       | SE-210: Operational Identity |
-| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)         | SE-220: Interpretive Kernel  |
-| [paper-320-structural-assurability](https://github.com/structural-explainability/paper-320-structural-assurability) | Structural Assurability      |
+| Repository                                                                                                          | Subject                         |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| [paper-100-neutral-substrate](https://github.com/structural-explainability/paper-100-neutral-substrate)             | SE-100: Neutral Substrates      |
+| [paper-110-common-ground](https://github.com/structural-explainability/paper-110-common-ground)                     | SE-110: Common Ground           |
+| [paper-200-identity-regimes](https://github.com/structural-explainability/paper-200-identity-regimes)               | SE-200: Referential Regimes     |
+| [paper-210-operational-identity](https://github.com/structural-explainability/paper-210-operational-identity)       | SE-210: Operational Identity    |
+| [paper-220-interpretive-kernel](https://github.com/structural-explainability/paper-220-interpretive-kernel)         | SE-220: Interpretive Kernel     |
+| [paper-320-structural-assurability](https://github.com/structural-explainability/paper-320-structural-assurability) | SE-320: Structural Assurability |
 
 Formal claims and their verification should be evaluated against the
 authoritative sources identified within each research repository.
