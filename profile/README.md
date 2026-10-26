@@ -59,27 +59,43 @@ Lean 4 formalizations of SE concepts, relationships, and mathematical results.
 Each repository owns its definitions, scientific claims, evidence,
 implementation, documentation, and release information.
 
+### Mathlib Mini (MM)
+
+[Mathlib Mini](https://github.com/mathlib-mini/mathlib-mini) is a small,
+unofficial, Mathlib-inspired foundation for Lean 4.
+
+It provides the limited mathematical primitives needed by Structural
+Explainability theory repositories without requiring the full Mathlib library.
+
+Mathlib Mini depends only on Lean core.
+Compatibility with corresponding Mathlib definitions and operations is verified separately.
+
+- **Repository:** [mathlib-mini/mathlib-mini](https://github.com/mathlib-mini/mathlib-mini)
+- **Documentation:** [Mathlib Mini](https://mathlib-mini.github.io/mathlib-mini/)
+
 ### Independent Theories
 
-Independent (leaf) theories require no other SE theory repository:
+Independent (leaf) theories require no other SE theory repository.
+Deps indicates a direct dependency on MM=MathlibMini or "-" for none.
 
-| Repository                                                                                                          | Role in Structural Explainability                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate)             | Neutral structural and referential foundations, admissibility, and interpretive boundaries.                                                        |
-| [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence)                         | Identity survival and breakage under change, and the commitment calculus (consistency, required, forbidden, undetermined) other theories build on. |
-| [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation)                   | Structural transformation vocabulary, operators, and intrinsic change semantics.                                                                   |
-| [se-theory-structural-assurability](https://github.com/structural-explainability/se-theory-structural-assurability) | Claim-relative evidentiary capabilities, observational limits, and conditions for resolving or failing to resolve claims about systems.            |
+| Deps | Repository | Role in Structural Explainability |
+| --- | --- | --- |
+| MM | [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate) | Neutral structural and referential foundations, admissibility, and interpretive boundaries. |
+| - | [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence) | Identity survival and breakage under change, and the commitment calculus (consistency, required, forbidden, undetermined) other theories build on. |
+| - | [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation) | Structural transformation vocabulary, operators, and intrinsic change semantics. |
+| - | [se-theory-structural-assurability](https://github.com/structural-explainability/se-theory-structural-assurability) | Claim-relative evidentiary capabilities, observational limits, and conditions for resolving or failing to resolve claims about systems. |
 
 ### Dependent and Integrative Theories
 
 Dependent and integrative theories are built on other theories.
 Deps lists direct SE theory dependencies, excluding transitive dependencies.
 
-NS=neutral substrate, PS=persistence, TR=transformation, IND=individuation, IR=identity regimes.
+MM=MathlibMini, NS=neutral substrate, PS=persistence, TR=transformation,
+IND=individuation, IR=identity regimes.
 
 | Deps      | Repository                                                                                                                | Role in Structural Explainability                                                                                           |
 | --------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| NS        | [se-theory-common-ground](https://github.com/structural-explainability/se-theory-common-ground)                           | Conditions under which a bounded referential fragment is compatible with a class of interpretive frameworks.                |
+| MM+NS        | [se-theory-common-ground](https://github.com/structural-explainability/se-theory-common-ground)                           | Conditions under which a bounded referential fragment is compatible with a class of interpretive frameworks.                |
 | NS+PS     | [se-theory-individuation](https://github.com/structural-explainability/se-theory-individuation)                           | Conditions under which a presentation picks out one whole, and same-unit and distinct-unit judgments between presentations. |
 | NS+PS+IND | [se-theory-coreference](https://github.com/structural-explainability/se-theory-coreference)                               | Context-indexed co-reference judgments, the identity they generate, and the distinct-commitments kept separate from them.   |
 | PS+TR     | [se-theory-transformation-persistence](https://github.com/structural-explainability/se-theory-transformation-persistence) | Connections between transformation classifications and persistence semantics.                                               |
