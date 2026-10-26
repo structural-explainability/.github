@@ -78,12 +78,12 @@ Compatibility with corresponding Mathlib definitions and operations is verified 
 Independent (leaf) theories require no other SE theory repository.
 Deps indicates a direct dependency on MM=MathlibMini or "-" for none.
 
-| Deps | Repository | Role in Structural Explainability |
-| --- | --- | --- |
-| MM | [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate) | Neutral structural and referential foundations, admissibility, and interpretive boundaries. |
-| - | [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence) | Identity survival and breakage under change, and the commitment calculus (consistency, required, forbidden, undetermined) other theories build on. |
-| - | [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation) | Structural transformation vocabulary, operators, and intrinsic change semantics. |
-| - | [se-theory-structural-assurability](https://github.com/structural-explainability/se-theory-structural-assurability) | Claim-relative evidentiary capabilities, observational limits, and conditions for resolving or failing to resolve claims about systems. |
+| Deps | Repository                                                                                                          | Role in Structural Explainability                                                                                                                  |
+| ---- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MM   | [se-theory-neutral-substrate](https://github.com/structural-explainability/se-theory-neutral-substrate)             | Neutral structural and referential foundations, admissibility, and interpretive boundaries.                                                        |
+| MM   | [se-theory-persistence](https://github.com/structural-explainability/se-theory-persistence)                         | Identity survival and breakage under change, and the commitment calculus (consistency, required, forbidden, undetermined) other theories build on. |
+| -    | [se-theory-transformation](https://github.com/structural-explainability/se-theory-transformation)                   | Structural transformation vocabulary, operators, and intrinsic change semantics.                                                                   |
+| MM   | [se-theory-structural-assurability](https://github.com/structural-explainability/se-theory-structural-assurability) | Claim-relative evidentiary capabilities, observational limits, and conditions for resolving or failing to resolve claims about systems.            |
 
 ### Dependent and Integrative Theories
 
@@ -93,16 +93,16 @@ Deps lists direct SE theory dependencies, excluding transitive dependencies.
 MM=MathlibMini, NS=neutral substrate, PS=persistence, TR=transformation,
 IND=individuation, IR=identity regimes.
 
-| Deps      | Repository                                                                                                                | Role in Structural Explainability                                                                                           |
-| --------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| MM+NS        | [se-theory-common-ground](https://github.com/structural-explainability/se-theory-common-ground)                           | Conditions under which a bounded referential fragment is compatible with a class of interpretive frameworks.                |
-| NS+PS     | [se-theory-individuation](https://github.com/structural-explainability/se-theory-individuation)                           | Conditions under which a presentation picks out one whole, and same-unit and distinct-unit judgments between presentations. |
-| NS+PS+IND | [se-theory-coreference](https://github.com/structural-explainability/se-theory-coreference)                               | Context-indexed co-reference judgments, the identity they generate, and the distinct-commitments kept separate from them.   |
-| PS+TR     | [se-theory-transformation-persistence](https://github.com/structural-explainability/se-theory-transformation-persistence) | Connections between transformation classifications and persistence semantics.                                               |
-| NS+PS     | [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                     | Regime-relative identity criteria and their relationships to transformations.                                               |
-| TBD       | [se-theory-operational-identity](https://github.com/structural-explainability/se-theory-operational-identity)             | Relationships between declared identity semantics and identity behavior induced by implementations.                         |
-| TBD       | [se-theory-interpretive-kernel](https://github.com/structural-explainability/se-theory-interpretive-kernel)               | Equivalence relationships and interpretation across distinct carriers.                                                      |
-| NS+IR     | [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability)   | Integration of foundational SE concepts and their structural relationships.                                                 |
+| Deps     | Repository                                                                                                                | Role in Structural Explainability                                                                                           |
+| -------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| MM+NS    | [se-theory-common-ground](https://github.com/structural-explainability/se-theory-common-ground)                           | Conditions under which a bounded referential fragment is compatible with a class of interpretive frameworks.                |
+| MM+NS+PS | [se-theory-individuation](https://github.com/structural-explainability/se-theory-individuation)                           | Conditions under which a presentation picks out one whole, and same-unit and distinct-unit judgments between presentations. |
+| NS+PS    | [se-theory-coreference](https://github.com/structural-explainability/se-theory-coreference)                               | Context-indexed co-reference judgments, the identity they generate, and the distinct-commitments kept separate from them.   |
+| PS+TR    | [se-theory-transformation-persistence](https://github.com/structural-explainability/se-theory-transformation-persistence) | Connections between transformation classifications and persistence semantics.                                               |
+| NS+PS    | [se-theory-identity-regimes](https://github.com/structural-explainability/se-theory-identity-regimes)                     | Regime-relative identity criteria and their relationships to transformations.                                               |
+| TBD      | [se-theory-operational-identity](https://github.com/structural-explainability/se-theory-operational-identity)             | Relationships between declared identity semantics and identity behavior induced by implementations.                         |
+| TBD      | [se-theory-interpretive-kernel](https://github.com/structural-explainability/se-theory-interpretive-kernel)               | Equivalence relationships and interpretation across distinct carriers.                                                      |
+| NS+IR    | [se-theory-structural-explainability](https://github.com/structural-explainability/se-theory-structural-explainability)   | Integration of foundational SE concepts and their structural relationships.                                                 |
 
 ### Theory Infrastructure
 
