@@ -71,6 +71,6 @@ uvx prek run --all-files
 # Build the professional project documentation website.
 # ============================================================
 
-# uv run python -m zensical build
+uv run python -m zensical build
 
 Write-Host "All commands executed successfully."

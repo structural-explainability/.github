@@ -39,13 +39,18 @@ optional = []
 # === Provided Artifacts ===
 
 [provides]
-artifacts = ["README.md", "profile/README.md"]
+artifacts = [
+    "README.md",
+    "profile/README.md",
+    "docs/en/research/doubts.md",
+]
 
 # === Scope ===
 
 [scope]
 includes = [
     "organization-level GitHub profile content",
+    "organization-wide research-review guidance",
     "ecosystem overview and repository navigation",
     "repository health defaults when present",
 ]
