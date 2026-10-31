@@ -57,8 +57,6 @@ uvx se-manifest-schema validate-manifest --strict
 
 # lint and validate files
 npx markdownlint-cli2 --fix
-uvx se-manifest-schema validate-manifest --strict
-uvx cffconvert --validate
 
 # generate and check CODEOWNERS
 uvx se-codeowners generate --strict --output .github/CODEOWNERS

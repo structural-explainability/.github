@@ -1,23 +1,24 @@
 # ============================================================
-# .github/workflows/ci-python-zensical.yml (ALL-PY-SRC-REPOS)
+# .github/workflows/ci-python-zensical.yml (ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-10-11
+# Updated: 2026-10-24
 #
 # WHAT: A GitHub Actions workflow that automatically checks project quality.
 #       GitHub Actions is GitHub's built-in project automation service.
 #       This YAML file tells GitHub what commands to run and when to run them.
 #
-# WHEN: Use for Python projects that also use Zensical to build a
+# WHEN: Use for projects that use Python tooling and Zensical to build a
 #       professional documentation website describing the project,
 #       its data, methods, processes, and results.
+#       These projects do not require a src/ Python application.
 #
 # TRIGGER: Runs automatically when changes are pushed to the main branch
 #          or a pull request targets main. It can also be started manually.
 #          GitHub runs the checks on a fresh, temporary computer.
 #
-# WHY: Automated checks catch errors early and help ensure that the project
-#      works consistently beyond the developer's own computer.
-#      This workflow checks project configuration, Python code, tests,
+# WHY: Automated checks catch errors early and help ensure that project
+#      documentation builds consistently beyond the developer's computer.
+#      This workflow checks repository hygiene, project configuration,
 #      and whether the Zensical documentation builds successfully.
 #
 # CI/CD: Continuous Integration (CI) automatically checks changes.
@@ -25,7 +26,7 @@
 #        This workflow performs CI only; it does not publish the website.
 #        A separate workflow handles deployment.
 #
-# SKILLS: Git, GitHub, GitHub Actions, CI/CD, automated testing,
+# SKILLS: Git, GitHub, GitHub Actions, CI/CD, automated validation,
 #         project automation, and documentation builds.
 #
 # REQ: Repository MUST contain .python-version.
@@ -73,7 +74,7 @@ jobs:
         # WHY: Required so all subsequent steps can access repo files.
 
       - name: A2) Install uv (with caching and uv.lock awareness)
-        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           enable-cache: true
           # WHY: Cache uv-managed artifacts for faster subsequent runs.
@@ -117,23 +118,6 @@ jobs:
       - name: B1) Validate pyproject.toml schema
         run: uvx "validate-pyproject[all]" pyproject.toml
         # WHY: Catch malformed project metadata before downstream CI or release work.
-
-      - name: B2) Run ty type checker
-        run: uv run ty check
-        continue-on-error: true
-        # WHY: Catch type errors that Ruff does not check.
-        # OBS: ty uses the installed project environment for analysis.
-        # OBS: Not included in hooks because it requires the full environment.
-        # OBS: continue-on-error keeps type checking non-blocking in this workflow.
-
-      # ============================================================
-      # C) COVERAGE & TESTING: Python tests
-      # ============================================================
-      - name: C1) Run pytest
-        run: uv run python -m pytest
-        # WHY: Confirm all Python tests pass in a clean CI environment.
-        # OBS: pytest config lives in pyproject.toml [tool.pytest.ini_options].
-        # OBS: Not included in hooks because tests can be slow.
 
       # ============================================================
       # D) DOCS: Build documentation without deployment

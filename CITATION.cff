@@ -12,8 +12,8 @@ message: "If you use this work, please cite it using the metadata in CITATION.cf
 type: software
 
 title: "Structural Explainability Organization Profile"
-version: "0.2.0"
-date-released: "2026-06-04"
+version: "0.3.0"
+date-released: "2026-10-31"
 
 authors:
   - family-names: Case

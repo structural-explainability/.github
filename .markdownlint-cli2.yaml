@@ -1,7 +1,7 @@
 # ============================================================
 # .markdownlint-cli2.yaml (Markdownlint CLI2 configuration)
 # ============================================================
-# Updated: 2026-06-04
+# Updated: 2026-10-31
 # WHY: Generated and dependency directories are not source content.
 # REQ: Markdown lint should check authored Markdown, not virtual
 #      environments, dependency trees, build output, or generated docs.
@@ -16,6 +16,7 @@ globs:
 
 # Do not check these files or directories
 ignores:
+  - ".github/CODEOWNERS"
   - ".lake/**"
   - "**/.lake/**"
   - ".mypy_cache/**"

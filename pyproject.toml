@@ -15,7 +15,7 @@
 name = "structural-explainability-org-repo" # Package distribution name (lowercase and dashes).
 readme = "README.md"
 requires-python = ">=3.15"
-version = "0.1.0" # CUSTOM: Updated to match the current release version
+version = "0.3.0" # CUSTOM: Updated to match the current release version
 
 # ============================================================
 # === SECTION: PROJECT RUNTIME DEPENDENCIES ===

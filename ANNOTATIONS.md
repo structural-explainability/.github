@@ -3,7 +3,6 @@
 <!--
 WHY: Defines the structured annotation vocabulary for documenting decisions.
 WHY: Annotations make decisions explicit, scannable, and comparable across files and repositories.
-OBS: Version 1.0, December 2025.
 -->
 
 Structured annotations document decisions, constraints, alternatives, and observations
@@ -155,20 +154,20 @@ Annotations are designed to be scannable by tooling.
 ### With Scope
 
 ```regex
-(WHY|OBS|REQ|ALT|CUSTOM)(\.[A-Z]+|\[[^\]]+\])?(-FILE)?:\s*(.+)
+(WHY|OBS|REQ|ALT|CUSTOM|MODEL|EVIDENCE|ATTEST)(\.[A-Z_]+|\[[^\]]+\])?(-FILE|-SECTION)?:\s*(.+)
 ```
 
 ### By Comment Style
 
 ```python
 # Python / YAML / TOML / shell
-r'#\s*(WHY|OBS|REQ|ALT|CUSTOM)(\.[A-Z_]+|\[[^\]]+\])?(-FILE)?:\s*(.+)'
+r'#\s*(WHY|OBS|REQ|ALT|CUSTOM|MODEL|EVIDENCE|ATTEST)(\.[A-Z_]+|\[[^\]]+\])?(-FILE|-SECTION)?:\s*(.+)'
 
 # HTML / Markdown / XML
-r'<!--\s*(WHY|OBS|REQ|ALT|CUSTOM)(\.[A-Z_]+|\[[^\]]+\])?(-FILE)?:\s*(.+?)\s*-->'
+r'<!--\s*(WHY|OBS|REQ|ALT|CUSTOM|MODEL|EVIDENCE|ATTEST)(\.[A-Z_]+|\[[^\]]+\])?(-FILE|-SECTION)?:\s*(.+?)\s*-->'
 
 # JavaScript / C-style
-r'//\s*(WHY|OBS|REQ|ALT|CUSTOM)(\.[A-Z_]+|\[[^\]]+\])?(-FILE)?:\s*(.+)'
+r'//\s*(WHY|OBS|REQ|ALT|CUSTOM|MODEL|EVIDENCE|ATTEST)(\.[A-Z_]+|\[[^\]]+\])?(-FILE|-SECTION)?:\s*(.+)'
 ```
 
 Tooling is optional. Annotations work without it.
