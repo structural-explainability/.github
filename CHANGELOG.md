@@ -15,10 +15,23 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [0.3.0] - 2026-10-31
 
-- Updated after theory updates and older repos are archived.
-- 7 original spec- repos archived (e.g. spec-ae)
-- 12 original lean repos archived (e.g. AccountableEntities)
-- 4 admin repos archived (e.g. se-constitution)
+### Changed
+
+- Annotation standard: clarified that `ATTEST` is a comment and not a
+  responsibility record. The scanning patterns now match the extended
+  annotations and the `-SECTION` suffix.
+- Citation metadata now points to this repository.
+
+### Retired & Archived
+
+- Retired repositories archived (read-only, historical reference only):
+  - specifications: spec-se, spec-se-appendix, spec-gb, spec-ib, spec-ae,
+    spec-ep, spec-cee
+  - Lean formalizations: StructuralExplainability, NeutralSubstrate,
+    InterpretationBoundary, IdentityRegimes, GovernanceBoundary,
+    ExchangeProtocol, EvolutionProtocol, CEE, AccountableEntities
+  - administration: se-constitution, se-kernel, se-contract-kit,
+    se-formal-contract
 
 ---
 
@@ -99,8 +112,8 @@ git push origin vX.Y.Z
 ## Only As Needed (delete a tag)
 
 ```shell
-git tag -d vX.Z.Y
-git push origin :refs/tags/vX.Z.Y
+git tag -d vX.Y.Z
+git push origin :refs/tags/vX.Y.Z
 ```
 
 ## Links
@@ -109,3 +122,5 @@ git push origin :refs/tags/vX.Z.Y
 [0.3.0]: https://github.com/structural-explainability/.github/releases/tag/v0.3.0
 [0.2.0]: https://github.com/structural-explainability/.github/releases/tag/v0.2.0
 [0.1.0]: https://github.com/structural-explainability/.github/releases/tag/v0.1.0
+
+<!-- markdownlint-enable MD024 -->
