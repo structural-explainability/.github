@@ -21,8 +21,8 @@ authors:
     orcid: "https://orcid.org/0000-0001-6165-7389"
     affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
 
-repository-code: "https://github.com/structural-explainability/se-codeowners"
-url: "https://github.com/structural-explainability/se-codeowners"
+repository-code: "https://github.com/structural-explainability/.github"
+url: "https://github.com/structural-explainability"
 
 license: MIT
 
@@ -33,7 +33,7 @@ abstract: >
 keywords:
   - structural-explainability
   - repository-governance
-  - accountable-surfaces
-  - accountable-agents
-  - accountable-records
+  - identity
+  - persistence
+  - interpretive-kernel
   - public-profile
