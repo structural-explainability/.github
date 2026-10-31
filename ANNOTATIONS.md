@@ -37,6 +37,9 @@ Three additional annotations support governance-heavy or analytical contexts.
 | `ATTEST`   | Verification       | Record that validation occurred          |
 
 Extended annotations are optional. Most repositories need only the core five.
+`ATTEST` is a comment that a check happened.
+It is not a responsibility record:
+it does not say who accepts responsibility for which version of what.
 
 ## Scoping
 
@@ -169,22 +172,6 @@ r'//\s*(WHY|OBS|REQ|ALT|CUSTOM)(\.[A-Z_]+|\[[^\]]+\])?(-FILE)?:\s*(.+)'
 ```
 
 Tooling is optional. Annotations work without it.
-
-## Theoretical Basis
-
-This standard implements concepts from the Structural Explainability framework.
-
-| Annotation | CEE Concept    |
-| ---------- | -------------- |
-| `WHY`      | Explanation    |
-| `OBS`      | Observation    |
-| `EVIDENCE` | Evidence set   |
-| `MODEL`    | Decision model |
-| `ATTEST`   | Verification   |
-
-`REQ`, `ALT`, and `CUSTOM` are pragmatic extensions for engineering use.
-They document constraints and variation points that support explainability
-but do not map directly to CEE's formal structure.
 
 ## Examples
 
