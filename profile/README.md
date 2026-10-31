@@ -162,23 +162,27 @@ or domain-specific verification.
 | [se-regimes-explorer](https://github.com/structural-explainability/se-regimes-explorer) | Interactive exploration of regime classifications and identity assumptions. |
 -->
 
-## SE Ecosystem Infrastructure
+## Related Research: Reactive Research
 
-Shared specifications, contracts, registries, and tools support consistency
-and traceability across repositories.
+Reactive Research originated within Structural Explainability and is under
+active development as an independently implementable approach for use
+across research programs, disciplines, and organizations.
 
-| Repository                                                                            | Role                                                                      |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| [se-manifest-schema](https://github.com/structural-explainability/se-manifest-schema) | Repository manifest schema and validation.                                |
-| [se-constitution](https://github.com/structural-explainability/se-constitution)       | Common governance and structural rules for the SE ecosystem.              |
-| [se-kernel](https://github.com/structural-explainability/se-kernel)                   | Shared structural primitives and invariant vocabulary.                    |
-| [se-formal-contract](https://github.com/structural-explainability/se-formal-contract) | Machine-checked formal contracts for operational SE components.           |
-| [se-mapspec](https://github.com/structural-explainability/se-mapspec)                 | Structural mapping vocabulary and correspondence rules.                   |
-| [se-contract-kit](https://github.com/structural-explainability/se-contract-kit)       | Shared contract implementation and validation utilities.                  |
-| [se-admin](https://github.com/structural-explainability/se-admin)                     | Repository administration and ecosystem consistency tooling.              |
-| [se-codeowners](https://github.com/structural-explainability/se-codeowners)           | Projection of repository oversight metadata into GitHub CODEOWNERS files. |
-| [spec-se](https://github.com/structural-explainability/spec-se)                       | Structural Explainability specification.                                  |
-| [spec-se-appendix](https://github.com/structural-explainability/spec-se-appendix)     | Supporting disclosure and provenance appendix format.                     |
+It models research objects and their typed relationships so that changes
+to definitions, evidence, implementations, or other research artifacts
+can generate explicit downstream revalidation obligations.
+
+| Repository                                                                                            | Role                                                                                    |
+| ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [reactive-research-spec](https://github.com/structural-explainability/reactive-research-spec)         | Defines the research-object model, typed relationships, and change-impact semantics.    |
+| [reactive-research-registry](https://github.com/structural-explainability/reactive-research-registry) | Provides resolvable research objects, provenance, graph snapshots, and impact tracking. |
+| [reactive-research](https://github.com/structural-explainability/reactive-research)                   | Implements extraction, validation, resolution, and impact analysis tools.               |
+
+## SE Manifest Schema
+
+The [SE Manifest Schema](https://github.com/structural-explainability/se-manifest-schema)
+provides shared **repository metadata** validation and dependency-graph checks
+for the Structural Explainability research program.
 
 ## Domain Applications and Mappings
 
