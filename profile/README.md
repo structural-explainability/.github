@@ -133,11 +133,12 @@ authoritative sources identified within each research repository.
 Research pilots evaluate the applicability, explanatory value, and limitations
 of SE concepts against concrete cases and external evidence.
 
-| Repository                                                                                                                                                | Research Role                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| [se-pilot-individuation-comparison](https://github.com/structural-explainability/se-pilot-individuation-comparison)                                       | Source-grounded comparison of independently documented individuation accounts.                          |
-| [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software) | Identity-preservation conformance across software supply-chain representations, including SBOM formats. |
-| [se-pilot-structural-assurability](https://github.com/structural-explainability/se-pilot-structural-assurability)                                         | Applied investigation of assurance claims, evidence capabilities, and evaluation limitations.           |
+| Repository                                                                                                                                                | Research Role                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| [se-pilot-individuation-comparison](https://github.com/structural-explainability/se-pilot-individuation-comparison)                                       | Source-grounded comparison of independently documented individuation accounts.                                      |
+| [se-pilot-identity-preservation-supply-chain-software](https://github.com/structural-explainability/se-pilot-identity-preservation-supply-chain-software) | Identity-preservation conformance across software supply-chain representations, including SBOM formats.             |
+| [se-pilot-structural-assurability](https://github.com/structural-explainability/se-pilot-structural-assurability)                                         | Applied investigation of assurance claims, evidence capabilities, and evaluation limitations.                       |
+| [se-identity-ops](https://github.com/structural-explainability/se-identity-ops)                                                                           | Experimental language for specifying, executing, and auditing identity-relevant operations under declared criteria. |
 
 <!--
 | [se-regimes-pilot-education-math-g8](https://github.com/structural-explainability/se-regimes-pilot-education-math-g8) | Educational domain cases examining regime-relative identity and transformation behavior. |
