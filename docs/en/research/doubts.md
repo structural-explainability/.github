@@ -176,8 +176,6 @@ The doubt categories come from argumentation theory:
 
 See also:
 
-- [Research vocabulary](docs/en/vocab.md)
-- [Design decisions](DECISIONS.md)
 - Prakken (2010), [An abstract framework for argumentation with structured arguments](https://doi.org/10.1080/19462160903564592)
 - Pollock (1987), [Defeasible reasoning](https://doi.org/10.1207/s15516709cog1104_4)
 - [Defeasible Reasoning](https://plato.stanford.edu/entries/reasoning-defeasible/), Stanford Encyclopedia of Philosophy
