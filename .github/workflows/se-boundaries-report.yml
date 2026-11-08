@@ -1,0 +1,129 @@
+# ============================================================
+# .github/workflows/se-boundaries-report.yml (SE-ORG-ONLY)
+# ============================================================
+# Updated: 2026-11-08
+#
+# WHAT: Observe the declared boundaries of every repository linked from the
+#       organization profile README, using Reactive Research.
+#       Reads each repository's SE manifest (includes, excludes, depends)
+#       and DOUBTS.md entries, then presents the result for review.
+#
+# WHEN: Use only in the organization .github repository.
+#
+# TRIGGER: Runs weekly and on demand from the Actions tab.
+#
+# WHY: A generated list of doubts, scope declarations, and diagnostics
+#      keeps research boundaries visible without a hand-maintained registry.
+#
+# CI/CD: Observation only. This workflow commits nothing, opens no issues,
+#        and pushes nothing.
+#
+# TOOLS: Reactive Research `boundaries --from-readme` reads
+#        profile/README.md, sparse-clones each linked repository
+#        (manifest and DOUBTS.md only), and reports what it found.
+#
+# REQ: Workflow permissions MUST stay at contents: read.
+# REQ: Results are an observation, not a decision. A person reviews them.
+# REQ: A repository that cannot be read is reported in the output.
+# OBS: Public repositories only. A private repository appears in the report
+#      as unreadable because the default token is scoped to this repository.
+# OBS: Requires a published reactive-research release with the
+#      `boundaries` command.
+# ============================================================
+
+name: SE Boundaries Report
+
+on:
+  schedule:
+    - cron: "17 7 * * 1" # WHY: Weekly, Monday 07:17 UTC. Change to "17 7 1 * *" for monthly.
+  workflow_dispatch: # WHY: Allow an on-demand report from the Actions tab.
+
+permissions:
+  contents: read # WHY: Read profile/README.md. Nothing is written back.
+
+concurrency:
+  group: se-boundaries-${{ github.ref }}
+  cancel-in-progress: true
+  # WHY: Only the newest report for a ref matters.
+
+env:
+  PYTHONUNBUFFERED: "1" # WHY: Real-time logging.
+  PYTHONIOENCODING: "utf-8" # WHY: Consistent encoding across platforms.
+  UV_PYTHON: "3.14" # WHY: Reactive Research requires Python 3.14 or later.
+
+jobs:
+  boundaries:
+    name: Observe SE boundaries
+    runs-on: ubuntu-latest
+    timeout-minutes: 15 # WHY: Prevent a slow remote from hanging the job.
+
+    steps:
+      # ============================================================
+      # A) ASSEMBLE: Get the README and the tool
+      # ============================================================
+
+      - name: A1) Checkout repository code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+        # WHY: Provides profile/README.md, the declared list of SE repositories.
+
+      - name: A2) Install uv
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          enable-cache: false
+          # WHY: This repository has no uv.lock, so there is nothing to key a cache on.
+
+      - name: A3) Show tool versions
+        run: |
+          uv --version
+          uvx --from "reactive-research>=0.4.0" reactive-research --version
+        # WHY: Version output makes report logs easier to debug when tools change.
+        # OBS: The lower bound is the first release that has `boundaries --from-readme`.
+
+      # ============================================================
+      # B) OBSERVE: Read the linked repositories
+      # ============================================================
+
+      - name: B1) Write the report (Markdown)
+        run: |
+          mkdir -p boundaries
+          uvx --from "reactive-research>=0.4.0" reactive-research boundaries \
+            --from-readme profile/README.md \
+            --org structural-explainability \
+            --view all \
+            --output boundaries/report.md
+        # WHY: The Markdown report is what a person reads.
+        # OBS: Links in the report are pinned to the observed commits.
+
+      - name: B2) Write the snapshot (JSON)
+        run: |
+          uvx --from "reactive-research>=0.4.0" reactive-research boundaries \
+            --from-readme profile/README.md \
+            --org structural-explainability \
+            --format json \
+            --output boundaries/boundaries.json
+        # WHY: The JSON snapshot is the machine-readable record for later comparison.
+        # OBS: The two files compare by snapshot ID. A push between B1 and B2
+        #      can make the IDs differ.
+
+      # ============================================================
+      # C) PRESENT: Make the result reviewable
+      # ============================================================
+
+      - name: C1) Show the report in the job summary
+        run: |
+          {
+            echo "## SE boundaries report"
+            echo
+            cat boundaries/report.md
+          } >> "$GITHUB_STEP_SUMMARY"
+        # WHY: The summary is the review page for this run.
+
+      - name: C2) Upload the report and snapshot
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: se-boundaries
+          path: boundaries/*
+          if-no-files-found: error
+        # WHY: Keep the exact report and snapshot of this run for review and comparison.
