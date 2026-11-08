@@ -76,4 +76,11 @@ uvx prek run --all-files
 
 uv run python -m zensical build
 
-Write-Host "All commands executed successfully."
+# ============================================================
+# D) MARKDOWN LINTING
+# Lint and fix Markdown files.
+# ============================================================
+
+npx markdownlint-cli2 --fix
+
+Write-Host "Done."
